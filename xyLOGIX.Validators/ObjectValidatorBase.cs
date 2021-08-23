@@ -1,6 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Validators.Interfaces;
+using xyLOGIX.Validators.Properties;
 
 namespace xyLOGIX.Validators
 {
@@ -36,7 +37,7 @@ namespace xyLOGIX.Validators
         /// <summary>
         /// Gets a reference to the object instance whose data is to be validated.
         /// </summary>
-        public TObject ObjectToValidate { get; }
+        protected TObject ObjectToValidate { get; }
 
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -60,6 +61,12 @@ namespace xyLOGIX.Validators
         /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" />
         /// property.
         /// </summary>
-        public abstract void Validate();
+        public virtual void Validate()
+        {
+            if (ObjectToValidate == null)
+                throw new InvalidOperationException(
+                    Resources.Error_ObjectToValidatePropertyHasNotBeenSet
+                );
+        }
     }
 }
