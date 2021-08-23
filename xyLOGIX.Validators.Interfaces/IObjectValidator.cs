@@ -8,7 +8,7 @@
     /// These objects examine the values of the properties of other objects
     /// and then decide if the object's properties' values are valid.
     /// </remarks>
-    public interface IValidator
+    public interface IObjectValidator
     {
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -29,7 +29,7 @@
 
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
-        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IValidator.IsValid" /> property.
+        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" /> property.
         /// </summary>
         void Validate();
     }

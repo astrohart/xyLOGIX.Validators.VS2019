@@ -10,11 +10,11 @@ namespace xyLOGIX.Validators
     /// Type of the object whose instances are to be
     /// validated.  Can be either a concrete instance or an interface.
     /// </typeparam>
-    public abstract class ValidatorBase<TObject> : IValidator
+    public abstract class ObjectValidatorBase<TObject> : IObjectValidator
         where TObject : class
     {
         /// <summary>
-        /// Constructs a new instance of <see cref="T:xyLOGIX.Validators.ValidatorBase" />
+        /// Constructs a new instance of <see cref="T:xyLOGIX.Validators.ObjectValidatorBase" />
         /// and returns a reference to it.
         /// </summary>
         /// <param name="objectToValidate">
@@ -25,7 +25,7 @@ namespace xyLOGIX.Validators
         /// parameter, <paramref name="objectToValidate" />, is passed a
         /// <see langword="null" /> value.
         /// </exception>
-        protected ValidatorBase(TObject objectToValidate)
+        protected ObjectValidatorBase(TObject objectToValidate)
             => ObjectToValidate = objectToValidate ??
                                   throw new ArgumentNullException(
                                       nameof(objectToValidate)
@@ -55,7 +55,7 @@ namespace xyLOGIX.Validators
 
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
-        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IValidator.IsValid" />
+        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" />
         /// property.
         /// </summary>
         public abstract void Validate();
