@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators", "xyLOG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Interfaces", "xyLOGIX.Validators.Interfaces\xyLOGIX.Validators.Interfaces.csproj", "{9491B224-3C9A-4DA8-ACC3-50EE379EB555}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Factories", "xyLOGIX.Validators.Factories\xyLOGIX.Validators.Factories.csproj", "{FBE76875-0298-4D43-8565-84B35E825806}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{9491B224-3C9A-4DA8-ACC3-50EE379EB555}.Release|x64.Build.0 = Release|x64
 		{9491B224-3C9A-4DA8-ACC3-50EE379EB555}.Release|x86.ActiveCfg = Release|x86
 		{9491B224-3C9A-4DA8-ACC3-50EE379EB555}.Release|x86.Build.0 = Release|x86
+		{FBE76875-0298-4D43-8565-84B35E825806}.Debug|x64.ActiveCfg = Debug|x64
+		{FBE76875-0298-4D43-8565-84B35E825806}.Debug|x64.Build.0 = Debug|x64
+		{FBE76875-0298-4D43-8565-84B35E825806}.Debug|x86.ActiveCfg = Debug|x86
+		{FBE76875-0298-4D43-8565-84B35E825806}.Debug|x86.Build.0 = Debug|x86
+		{FBE76875-0298-4D43-8565-84B35E825806}.Release|x64.ActiveCfg = Release|x64
+		{FBE76875-0298-4D43-8565-84B35E825806}.Release|x64.Build.0 = Release|x64
+		{FBE76875-0298-4D43-8565-84B35E825806}.Release|x86.ActiveCfg = Release|x86
+		{FBE76875-0298-4D43-8565-84B35E825806}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
