@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
 
@@ -17,7 +18,8 @@ namespace xyLOGIX.Validators
         where TObject : class
     {
         /// <summary>
-        /// Constructs a new instance of <see cref="T:xyLOGIX.Validators.ObjectValidatorBase" />
+        /// Constructs a new instance of
+        /// <see cref="T:xyLOGIX.Validators.ObjectValidatorBase" />
         /// and returns a reference to it.
         /// </summary>
         /// <param name="objectToValidate">
@@ -57,8 +59,19 @@ namespace xyLOGIX.Validators
         public string ErrorMessage { get; protected set; }
 
         /// <summary>
+        /// Occurs when validation has succeeded.
+        /// </summary>
+        public event ValidationSucceededEventHandler ValidationSucceeded;
+
+        /// <summary>
+        /// Occurs when validation has failed.
+        /// </summary>
+        public event ValidationFailedEventHandler ValidationFailed;
+
+        /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
-        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" />
+        /// updates the
+        /// <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" />
         /// property.
         /// </summary>
         public virtual void Validate()
@@ -68,5 +81,27 @@ namespace xyLOGIX.Validators
                     Resources.Error_ObjectToValidatePropertyHasNotBeenSet
                 );
         }
+
+        /// <summary>
+        /// Raises the
+        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase.ValidationFailed" /> event.
+        /// </summary>
+        /// <param name="e">
+        /// (Required.) An
+        /// <see cref="T:xyLOGIX.Validators.Events.ValidationFailedEventArgs" /> that
+        /// contains the event data.
+        /// </param>
+        protected virtual void OnValidationFailed(ValidationFailedEventArgs e)
+            => ValidationFailed?.Invoke(this, e);
+
+        /// <summary>
+        /// Raises the
+        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase.ValidationSucceeded" />
+        /// event.
+        /// </summary>
+        protected virtual void OnValidationSucceeded()
+            => ValidationSucceeded?.Invoke(
+                this, new ValidationSucceededEventArgs()
+            );
     }
 }

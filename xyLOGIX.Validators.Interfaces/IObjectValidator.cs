@@ -1,4 +1,6 @@
-﻿namespace xyLOGIX.Validators.Interfaces
+﻿using xyLOGIX.Validators.Events;
+
+namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
     /// Defines the publicly-exposed methods and properties of a <c>Validator</c>
@@ -28,8 +30,20 @@
         string ErrorMessage { get; }
 
         /// <summary>
+        /// Occurs when validation has succeeded.
+        /// </summary>
+        event ValidationSucceededEventHandler ValidationSucceeded;
+
+        /// <summary>
+        /// Occurs when validation has failed.
+        /// </summary>
+        event ValidationFailedEventHandler ValidationFailed;
+
+        /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
-        /// updates the <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" /> property.
+        /// updates the
+        /// <see cref="P:xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid" />
+        /// property.
         /// </summary>
         void Validate();
     }

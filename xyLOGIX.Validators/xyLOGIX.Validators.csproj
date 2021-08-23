@@ -128,6 +128,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Validators.Events\xyLOGIX.Validators.Events.csproj">
+      <Project>{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}</Project>
+      <Name>xyLOGIX.Validators.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Validators.Interfaces\xyLOGIX.Validators.Interfaces.csproj">
       <Project>{9491b224-3c9a-4da8-acc3-50ee379eb555}</Project>
       <Name>xyLOGIX.Validators.Interfaces</Name>
