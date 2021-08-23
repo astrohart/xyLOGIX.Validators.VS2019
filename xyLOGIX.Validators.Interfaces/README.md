@@ -3,16 +3,16 @@
 
 ## Contents
 
-- [IValidator](#T-xyLOGIX-Validators-Interfaces-IValidator 'xyLOGIX.Validators.Interfaces.IValidator')
-  - [ErrorMessage](#P-xyLOGIX-Validators-Interfaces-IValidator-ErrorMessage 'xyLOGIX.Validators.Interfaces.IValidator.ErrorMessage')
-  - [IsValid](#P-xyLOGIX-Validators-Interfaces-IValidator-IsValid 'xyLOGIX.Validators.Interfaces.IValidator.IsValid')
-  - [Validate()](#M-xyLOGIX-Validators-Interfaces-IValidator-Validate 'xyLOGIX.Validators.Interfaces.IValidator.Validate')
+- [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator')
+  - [ErrorMessage](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-ErrorMessage 'xyLOGIX.Validators.Interfaces.IObjectValidator.ErrorMessage')
+  - [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
+  - [Validate()](#M-xyLOGIX-Validators-Interfaces-IObjectValidator-Validate 'xyLOGIX.Validators.Interfaces.IObjectValidator.Validate')
 - [Resources](#T-xyLOGIX-Validators-Interfaces-Properties-Resources 'xyLOGIX.Validators.Interfaces.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-Culture 'xyLOGIX.Validators.Interfaces.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Interfaces.Properties.Resources.ResourceManager')
 
-<a name='T-xyLOGIX-Validators-Interfaces-IValidator'></a>
-## IValidator `type`
+<a name='T-xyLOGIX-Validators-Interfaces-IObjectValidator'></a>
+## IObjectValidator `type`
 
 ##### Namespace
 
@@ -28,7 +28,7 @@ object.
 These objects examine the values of the properties of other objects
 and then decide if the object's properties' values are valid.
 
-<a name='P-xyLOGIX-Validators-Interfaces-IValidator-ErrorMessage'></a>
+<a name='P-xyLOGIX-Validators-Interfaces-IObjectValidator-ErrorMessage'></a>
 ### ErrorMessage `property`
 
 ##### Summary
@@ -40,7 +40,7 @@ generated when the condition being validated fails.
 
 The error message to generate.
 
-<a name='P-xyLOGIX-Validators-Interfaces-IValidator-IsValid'></a>
+<a name='P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid'></a>
 ### IsValid `property`
 
 ##### Summary
@@ -53,13 +53,13 @@ the user-entered content in the specified control passes validation.
 `true` if the content is valid; otherwise,
 `false`.
 
-<a name='M-xyLOGIX-Validators-Interfaces-IValidator-Validate'></a>
+<a name='M-xyLOGIX-Validators-Interfaces-IObjectValidator-Validate'></a>
 ### Validate() `method`
 
 ##### Summary
 
 When implemented by a class, evaluates the condition it checks and
-updates the [IsValid](#P-xyLOGIX-Validators-Interfaces-IValidator-IsValid 'xyLOGIX.Validators.Interfaces.IValidator.IsValid') property.
+updates the [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid') property.
 
 ##### Parameters
 
