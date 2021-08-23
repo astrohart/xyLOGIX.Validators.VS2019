@@ -106,6 +106,8 @@
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="ValidationFailedEventArgs.cs" />
     <Compile Include="ValidationFailedEventHandler.cs" />
+    <Compile Include="ValidationSucceededEventArgs.cs" />
+    <Compile Include="ValidationSucceededEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
