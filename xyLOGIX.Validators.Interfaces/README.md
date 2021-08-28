@@ -59,7 +59,9 @@ the user-entered content in the specified control passes validation.
 ##### Summary
 
 When implemented by a class, evaluates the condition it checks and
-updates the [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid') property.
+updates the
+[IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
+property.
 
 ##### Parameters
 
