@@ -8,9 +8,12 @@
   - [ErrorMessage](#P-xyLOGIX-Validators-ObjectValidatorBase`1-ErrorMessage 'xyLOGIX.Validators.ObjectValidatorBase`1.ErrorMessage')
   - [IsValid](#P-xyLOGIX-Validators-ObjectValidatorBase`1-IsValid 'xyLOGIX.Validators.ObjectValidatorBase`1.IsValid')
   - [ObjectToValidate](#P-xyLOGIX-Validators-ObjectValidatorBase`1-ObjectToValidate 'xyLOGIX.Validators.ObjectValidatorBase`1.ObjectToValidate')
+  - [OnValidationFailed(e)](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationFailed-xyLOGIX-Validators-Events-ValidationFailedEventArgs- 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationFailed(xyLOGIX.Validators.Events.ValidationFailedEventArgs)')
+  - [OnValidationSucceeded()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationSucceeded 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationSucceeded')
   - [Validate()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-Validate 'xyLOGIX.Validators.ObjectValidatorBase`1.Validate')
 - [Resources](#T-xyLOGIX-Validators-Properties-Resources 'xyLOGIX.Validators.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Properties-Resources-Culture 'xyLOGIX.Validators.Properties.Resources.Culture')
+  - [Error_ObjectToValidatePropertyHasNotBeenSet](#P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet 'xyLOGIX.Validators.Properties.Resources.Error_ObjectToValidatePropertyHasNotBeenSet')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
 
 <a name='T-xyLOGIX-Validators-ObjectValidatorBase`1'></a>
@@ -36,7 +39,8 @@ validated.  Can be either a concrete instance or an interface. |
 
 ##### Summary
 
-Constructs a new instance of [ObjectValidatorBase](#T-xyLOGIX-Validators-ObjectValidatorBase 'xyLOGIX.Validators.ObjectValidatorBase')
+Constructs a new instance of
+[ObjectValidatorBase](#T-xyLOGIX-Validators-ObjectValidatorBase 'xyLOGIX.Validators.ObjectValidatorBase')
 and returns a reference to it.
 
 ##### Parameters
@@ -85,13 +89,43 @@ the user-entered content in the specified control passes validation.
 
 Gets a reference to the object instance whose data is to be validated.
 
+<a name='M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationFailed-xyLOGIX-Validators-Events-ValidationFailedEventArgs-'></a>
+### OnValidationFailed(e) `method`
+
+##### Summary
+
+Raises the
+[](#E-xyLOGIX-Validators-ObjectValidatorBase-ValidationFailed 'xyLOGIX.Validators.ObjectValidatorBase.ValidationFailed') event.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| e | [xyLOGIX.Validators.Events.ValidationFailedEventArgs](#T-xyLOGIX-Validators-Events-ValidationFailedEventArgs 'xyLOGIX.Validators.Events.ValidationFailedEventArgs') | (Required.) An
+[ValidationFailedEventArgs](#T-xyLOGIX-Validators-Events-ValidationFailedEventArgs 'xyLOGIX.Validators.Events.ValidationFailedEventArgs') that
+contains the event data. |
+
+<a name='M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationSucceeded'></a>
+### OnValidationSucceeded() `method`
+
+##### Summary
+
+Raises the
+[](#E-xyLOGIX-Validators-ObjectValidatorBase-ValidationSucceeded 'xyLOGIX.Validators.ObjectValidatorBase.ValidationSucceeded')
+event.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='M-xyLOGIX-Validators-ObjectValidatorBase`1-Validate'></a>
 ### Validate() `method`
 
 ##### Summary
 
 When implemented by a class, evaluates the condition it checks and
-updates the [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
+updates the
+[IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
 property.
 
 ##### Parameters
@@ -116,6 +150,13 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet'></a>
+### Error_ObjectToValidatePropertyHasNotBeenSet `property`
+
+##### Summary
+
+Looks up a localized string similar to The ObjectToValidate property has not been set..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
