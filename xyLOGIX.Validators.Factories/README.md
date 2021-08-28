@@ -4,7 +4,7 @@
 ## Contents
 
 - [ObjectValidatorFactoryBase\`1](#T-xyLOGIX-Validators-Factories-ObjectValidatorFactoryBase`1 'xyLOGIX.Validators.Factories.ObjectValidatorFactoryBase`1')
-  - [Object()](#M-xyLOGIX-Validators-Factories-ObjectValidatorFactoryBase`1-Object-`0- 'xyLOGIX.Validators.Factories.ObjectValidatorFactoryBase`1.Object(`0)')
+  - [Object(objectToValidate)](#M-xyLOGIX-Validators-Factories-ObjectValidatorFactoryBase`1-Object-`0- 'xyLOGIX.Validators.Factories.ObjectValidatorFactoryBase`1.Object(`0)')
 - [Resources](#T-xyLOGIX-Validators-Factories-Properties-Resources 'xyLOGIX.Validators.Factories.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Factories-Properties-Resources-Culture 'xyLOGIX.Validators.Factories.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Factories-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Factories.Properties.Resources.ResourceManager')
@@ -23,13 +23,13 @@ Creates new instances of objects that implement the
 returns references to them.
 
 <a name='M-xyLOGIX-Validators-Factories-ObjectValidatorFactoryBase`1-Object-`0-'></a>
-### Object() `method`
+### Object(objectToValidate) `method`
 
 ##### Summary
 
 Creates a new instance of an object that implements the
 [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator') interface and
-returns a reference to it.
+returns a reference to it, for the `objectToValidate` specified.
 
 ##### Returns
 
@@ -38,7 +38,9 @@ Reference to an instance of an object that implements the
 
 ##### Parameters
 
-This method has no parameters.
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| objectToValidate | [\`0](#T-`0 '`0') | (Required.) Reference to an instance of the object whose properties' values are to be validated. |
 
 <a name='T-xyLOGIX-Validators-Factories-Properties-Resources'></a>
 ## Resources `type`
