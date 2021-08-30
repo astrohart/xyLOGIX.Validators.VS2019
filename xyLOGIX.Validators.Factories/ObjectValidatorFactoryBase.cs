@@ -19,8 +19,11 @@ namespace xyLOGIX.Validators.Factories
         /// <summary>
         /// Creates a new instance of an object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IObjectValidator" /> interface and
-        /// returns a reference to it.
+        /// returns a reference to it, for the <paramref name="objectToValidate"/> specified.
         /// </summary>
+        /// <param name="objectToValidate">
+        /// (Required.) Reference to an instance of the object whose properties' values are to be validated.
+        /// </param>
         /// <returns>
         /// Reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IObjectValidator" /> interface.
