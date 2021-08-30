@@ -92,7 +92,11 @@ namespace xyLOGIX.Validators
         /// contains the event data.
         /// </param>
         protected virtual void OnValidationFailed(ValidationFailedEventArgs e)
-            => ValidationFailed?.Invoke(this, e);
+        {
+            IsValid = false;
+            ErrorMessage = e.ErrorMessage;
+            ValidationFailed?.Invoke(this, e);
+        }
 
         /// <summary>
         /// Raises the
