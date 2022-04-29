@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Factorie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Events", "xyLOGIX.Validators.Events\xyLOGIX.Validators.Events.csproj", "{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EACF5D61-C683-4EF1-9E5C-1466F6B02F15}"
+	ProjectSection(SolutionItems) = preProject
+		approvedPackages.json = approvedPackages.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
