@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\PostSharp.6.10.12\build\PostSharp.props" Condition="Exists('..\packages\PostSharp.6.10.12\build\PostSharp.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -6,7 +6,7 @@
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}</ProjectGuid>
+    <ProjectGuid>{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}</ProjectGuid>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -21,8 +21,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x64\Debug\xyLOGIX.Validators.Events.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <DocumentationFile>bin\x64\Debug\xyLOGIX.Validators.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -35,8 +34,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.Events.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -49,8 +47,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Debug\xyLOGIX.Validators.Events.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Validators.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -63,8 +60,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Release\xyLOGIX.Validators.Events.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Validators.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -73,10 +69,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Validators.Events</AssemblyName>
+    <AssemblyName>xyLOGIX.Validators</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Validators.Events</RootNamespace>
+    <RootNamespace>xyLOGIX.Validators</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
@@ -105,10 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="ValidationFailedEventArgs.cs" />
-    <Compile Include="ValidationFailedEventHandler.cs" />
-    <Compile Include="ValidationSucceededEventArgs.cs" />
-    <Compile Include="ValidationSucceededEventHandler.cs" />
+    <Compile Include="ObjectValidatorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +123,16 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Validators.Events\xyLOGIX.Validators.Events.csproj">
+      <Project>{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}</Project>
+      <Name>xyLOGIX.Validators.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Validators.Interfaces\xyLOGIX.Validators.Interfaces.csproj">
+      <Project>{9491b224-3c9a-4da8-acc3-50ee379eb555}</Project>
+      <Name>xyLOGIX.Validators.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
