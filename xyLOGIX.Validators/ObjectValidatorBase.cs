@@ -1,4 +1,4 @@
-﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
