@@ -37,9 +37,11 @@ namespace xyLOGIX.Validators
                                   );
 
         /// <summary>
-        /// Gets a reference to the object instance whose data is to be validated.
+        /// When implemented by a class, gets or sets the error message text
+        /// generated when the condition being validated fails.
         /// </summary>
-        protected TObject ObjectToValidate { get; }
+        /// <returns>The error message to generate.</returns>
+        public string ErrorMessage { get; protected set; }
 
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -52,21 +54,19 @@ namespace xyLOGIX.Validators
         public bool IsValid { get; protected set; }
 
         /// <summary>
-        /// When implemented by a class, gets or sets the error message text
-        /// generated when the condition being validated fails.
+        /// Gets a reference to the object instance whose data is to be validated.
         /// </summary>
-        /// <returns>The error message to generate.</returns>
-        public string ErrorMessage { get; protected set; }
-
-        /// <summary>
-        /// Occurs when validation has succeeded.
-        /// </summary>
-        public event ValidationSucceededEventHandler ValidationSucceeded;
+        protected TObject ObjectToValidate { get; }
 
         /// <summary>
         /// Occurs when validation has failed.
         /// </summary>
         public event ValidationFailedEventHandler ValidationFailed;
+
+        /// <summary>
+        /// Occurs when validation has succeeded.
+        /// </summary>
+        public event ValidationSucceededEventHandler ValidationSucceeded;
 
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
@@ -77,8 +77,10 @@ namespace xyLOGIX.Validators
         public virtual void Validate()
         {
             if (ObjectToValidate == null)
-                throw new InvalidOperationException(
-                    Resources.Error_ObjectToValidatePropertyHasNotBeenSet
+                OnValidationFailed(
+                    new ValidationFailedEventArgs(
+                        Resources.Error_ObjectToValidatePropertyHasNotBeenSet
+                    )
                 );
         }
 

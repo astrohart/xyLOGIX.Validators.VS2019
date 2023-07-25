@@ -13,6 +13,13 @@ namespace xyLOGIX.Validators.Interfaces
     public interface IObjectValidator
     {
         /// <summary>
+        /// When implemented by a class, gets or sets the error message text
+        /// generated when the condition being validated fails.
+        /// </summary>
+        /// <returns>The error message to generate.</returns>
+        string ErrorMessage { get; }
+
+        /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
         /// the user-entered content in the specified control passes validation.
         /// </summary>
@@ -23,21 +30,14 @@ namespace xyLOGIX.Validators.Interfaces
         bool IsValid { get; }
 
         /// <summary>
-        /// When implemented by a class, gets or sets the error message text
-        /// generated when the condition being validated fails.
+        /// Occurs when validation has failed.
         /// </summary>
-        /// <returns>The error message to generate.</returns>
-        string ErrorMessage { get; }
+        event ValidationFailedEventHandler ValidationFailed;
 
         /// <summary>
         /// Occurs when validation has succeeded.
         /// </summary>
         event ValidationSucceededEventHandler ValidationSucceeded;
-
-        /// <summary>
-        /// Occurs when validation has failed.
-        /// </summary>
-        event ValidationFailedEventHandler ValidationFailed;
 
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
