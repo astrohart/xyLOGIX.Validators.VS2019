@@ -1,4 +1,4 @@
-﻿using xyLOGIX.Validators.Events;
+using xyLOGIX.Validators.Events;
 
 namespace xyLOGIX.Validators.Interfaces
 {
