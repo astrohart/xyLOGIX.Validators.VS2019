@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
@@ -6,9 +6,7 @@ using xyLOGIX.Validators.Properties;
 
 namespace xyLOGIX.Validators
 {
-    /// <summary>
-    /// Serves as the common base class for all validator objects.
-    /// </summary>
+    /// <summary> Serves as the common base class for all validator objects. </summary>
     /// <typeparam name="TObject">
     /// Type of the object whose instances are to be
     /// validated.  Can be either a concrete instance or an interface.
@@ -19,11 +17,12 @@ namespace xyLOGIX.Validators
     {
         /// <summary>
         /// Constructs a new instance of
-        /// <see cref="T:xyLOGIX.Validators.ObjectValidatorBase" />
-        /// and returns a reference to it.
+        /// <see cref="T:xyLOGIX.Validators.ObjectValidatorBase" /> and returns a reference
+        /// to it.
         /// </summary>
         /// <param name="objectToValidate">
-        /// (Required.) Reference to an instance of the object to be validated.
+        /// (Required.) Reference to an instance of the
+        /// object to be validated.
         /// </param>
         /// <exception cref="T:System.ArgumentNullException">
         /// Thrown if the required
@@ -54,18 +53,15 @@ namespace xyLOGIX.Validators
         public bool IsValid { get; protected set; }
 
         /// <summary>
-        /// Gets a reference to the object instance whose data is to be validated.
+        /// Gets a reference to the object instance whose data is to be
+        /// validated.
         /// </summary>
         protected TObject ObjectToValidate { get; }
 
-        /// <summary>
-        /// Occurs when validation has failed.
-        /// </summary>
+        /// <summary> Occurs when validation has failed. </summary>
         public event ValidationFailedEventHandler ValidationFailed;
 
-        /// <summary>
-        /// Occurs when validation has succeeded.
-        /// </summary>
+        /// <summary> Occurs when validation has succeeded. </summary>
         public event ValidationSucceededEventHandler ValidationSucceeded;
 
         /// <summary>

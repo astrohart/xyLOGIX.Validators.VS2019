@@ -1,13 +1,11 @@
-using System;
+﻿using System;
 
 namespace xyLOGIX.Validators.Events
 {
-    /// <summary>
-    /// Provides information for ValidationFailed event handlers.
-    /// </summary>
+    /// <summary> Provides information for ValidationFailed event handlers. </summary>
     /// <remarks>
-    /// Such events normally are raised when we failed to validate an object's
-    /// properties' values according to a given set of rules.
+    /// Such events normally are raised when we failed to validate an
+    /// object's properties' values according to a given set of rules.
     /// </remarks>
     public class ValidationFailedEventArgs : EventArgs
     {
@@ -17,14 +15,13 @@ namespace xyLOGIX.Validators.Events
         /// returns a reference to it.
         /// </summary>
         /// <param name="errorMessage">
-        /// (Required.) String containing the error message to be generated.
+        /// (Required.) String containing the error message to
+        /// be generated.
         /// </param>
         public ValidationFailedEventArgs(string errorMessage)
             => ErrorMessage = errorMessage;
 
-        /// <summary>
-        /// Gets a string explaining why the validation failed.
-        /// </summary>
+        /// <summary> Gets a string explaining why the validation failed. </summary>
         public string ErrorMessage { get; }
     }
 }

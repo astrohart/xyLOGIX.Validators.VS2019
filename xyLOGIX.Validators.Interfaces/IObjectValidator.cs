@@ -1,10 +1,10 @@
-using xyLOGIX.Validators.Events;
+﻿using xyLOGIX.Validators.Events;
 
 namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
-    /// Defines the publicly-exposed methods and properties of a <c>Validator</c>
-    /// object.
+    /// Defines the publicly-exposed methods and properties of a
+    /// <c>Validator</c> object.
     /// </summary>
     /// <remarks>
     /// These objects examine the values of the properties of other objects
@@ -29,14 +29,10 @@ namespace xyLOGIX.Validators.Interfaces
         /// </returns>
         bool IsValid { get; }
 
-        /// <summary>
-        /// Occurs when validation has failed.
-        /// </summary>
+        /// <summary> Occurs when validation has failed. </summary>
         event ValidationFailedEventHandler ValidationFailed;
 
-        /// <summary>
-        /// Occurs when validation has succeeded.
-        /// </summary>
+        /// <summary> Occurs when validation has succeeded. </summary>
         event ValidationSucceededEventHandler ValidationSucceeded;
 
         /// <summary>
