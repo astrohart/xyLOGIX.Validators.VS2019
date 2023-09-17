@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Validators
 
 ## Contents
@@ -40,14 +40,15 @@ validated.  Can be either a concrete instance or an interface. |
 ##### Summary
 
 Constructs a new instance of
-[ObjectValidatorBase](#T-xyLOGIX-Validators-ObjectValidatorBase 'xyLOGIX.Validators.ObjectValidatorBase')
-and returns a reference to it.
+[ObjectValidatorBase](#T-xyLOGIX-Validators-ObjectValidatorBase 'xyLOGIX.Validators.ObjectValidatorBase') and returns a reference
+to it.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| objectToValidate | [\`0](#T-`0 '`0') | (Required.) Reference to an instance of the object to be validated. |
+| objectToValidate | [\`0](#T-`0 '`0') | (Required.) Reference to an instance of the
+object to be validated. |
 
 ##### Exceptions
 
@@ -87,7 +88,8 @@ the user-entered content in the specified control passes validation.
 
 ##### Summary
 
-Gets a reference to the object instance whose data is to be validated.
+Gets a reference to the object instance whose data is to be
+validated.
 
 <a name='M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationFailed-xyLOGIX-Validators-Events-ValidationFailedEventArgs-'></a>
 ### OnValidationFailed(e) `method`
@@ -148,8 +150,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet'></a>
 ### Error_ObjectToValidatePropertyHasNotBeenSet `property`

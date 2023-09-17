@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Validators.Events
 
 ## Contents
@@ -29,8 +29,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Validators-Events-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
@@ -52,8 +51,8 @@ Provides information for ValidationFailed event handlers.
 
 ##### Remarks
 
-Such events normally are raised when we failed to validate an object's
-properties' values according to a given set of rules.
+Such events normally are raised when we failed to validate an
+object's properties' values according to a given set of rules.
 
 <a name='M-xyLOGIX-Validators-Events-ValidationFailedEventArgs-#ctor-System-String-'></a>
 ### #ctor(errorMessage) `constructor`
@@ -68,7 +67,8 @@ returns a reference to it.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the error message to be generated. |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the error message to
+be generated. |
 
 <a name='P-xyLOGIX-Validators-Events-ValidationFailedEventArgs-ErrorMessage'></a>
 ### ErrorMessage `property`
@@ -92,11 +92,13 @@ Represents a handler for a ValidationFailed event.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| sender | [T:xyLOGIX.Validators.Events.ValidationFailedEventHandler](#T-T-xyLOGIX-Validators-Events-ValidationFailedEventHandler 'T:xyLOGIX.Validators.Events.ValidationFailedEventHandler') | Reference to the instance of the object that raised the event. |
+| sender | [T:xyLOGIX.Validators.Events.ValidationFailedEventHandler](#T-T-xyLOGIX-Validators-Events-ValidationFailedEventHandler 'T:xyLOGIX.Validators.Events.ValidationFailedEventHandler') | Reference to the instance of the object that raised the
+event. |
 
 ##### Remarks
 
-This delegate merely specifies the signature of all methods that handle the ValidationFailed event.
+This delegate merely specifies the signature of all methods that
+handle the ValidationFailed event.
 
 <a name='T-xyLOGIX-Validators-Events-ValidationSucceededEventArgs'></a>
 ## ValidationSucceededEventArgs `type`
@@ -124,8 +126,10 @@ Represents a handler for a ValidationSucceeded event.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| sender | [T:xyLOGIX.Validators.Events.ValidationSucceededEventHandler](#T-T-xyLOGIX-Validators-Events-ValidationSucceededEventHandler 'T:xyLOGIX.Validators.Events.ValidationSucceededEventHandler') | Reference to the instance of the object that raised the event. |
+| sender | [T:xyLOGIX.Validators.Events.ValidationSucceededEventHandler](#T-T-xyLOGIX-Validators-Events-ValidationSucceededEventHandler 'T:xyLOGIX.Validators.Events.ValidationSucceededEventHandler') | Reference to the instance of the object that raised the
+event. |
 
 ##### Remarks
 
-This delegate merely specifies the signature of all methods that handle the ValidationSucceeded event.
+This delegate merely specifies the signature of all methods that
+handle the ValidationSucceeded event.

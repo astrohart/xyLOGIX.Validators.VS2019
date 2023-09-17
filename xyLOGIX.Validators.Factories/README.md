@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Validators.Factories
 
 ## Contents
@@ -29,7 +29,8 @@ returns references to them.
 
 Creates a new instance of an object that implements the
 [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator') interface and
-returns a reference to it, for the `objectToValidate` specified.
+returns a reference to it, for the `objectToValidate`
+specified.
 
 ##### Returns
 
@@ -40,7 +41,8 @@ Reference to an instance of an object that implements the
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| objectToValidate | [\`0](#T-`0 '`0') | (Required.) Reference to an instance of the object whose properties' values are to be validated. |
+| objectToValidate | [\`0](#T-`0 '`0') | (Required.) Reference to an instance of the
+object whose properties' values are to be validated. |
 
 <a name='T-xyLOGIX-Validators-Factories-Properties-Resources'></a>
 ## Resources `type`
@@ -58,8 +60,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Validators-Factories-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`

@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Validators.Interfaces
 
 ## Contents
@@ -20,8 +20,8 @@ xyLOGIX.Validators.Interfaces
 
 ##### Summary
 
-Defines the publicly-exposed methods and properties of a `Validator`
-object.
+Defines the publicly-exposed methods and properties of a
+`Validator` object.
 
 ##### Remarks
 
@@ -83,8 +83,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Validators-Interfaces-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
