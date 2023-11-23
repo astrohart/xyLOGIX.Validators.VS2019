@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EACF5D61-C683-4EF1-9E5C-1466F6B02F15}"
 	ProjectSection(SolutionItems) = preProject
 		approvedPackages.json = approvedPackages.json
+		xyLOGIX.Validators.pssln = xyLOGIX.Validators.pssln
 	EndProjectSection
 EndProject
 Global
