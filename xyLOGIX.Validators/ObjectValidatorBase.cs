@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Model;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
@@ -59,9 +60,11 @@ namespace xyLOGIX.Validators
         protected TObject ObjectToValidate { get; }
 
         /// <summary> Occurs when validation has failed. </summary>
+        [WeakEvent]
         public event ValidationFailedEventHandler ValidationFailed;
 
         /// <summary> Occurs when validation has succeeded. </summary>
+        [WeakEvent]
         public event ValidationSucceededEventHandler ValidationSucceeded;
 
         /// <summary>
