@@ -1,4 +1,5 @@
-﻿using System;
+using PostSharp.Patterns.Threading;
+using System;
 
 namespace xyLOGIX.Validators.Events
 {
@@ -7,6 +8,7 @@ namespace xyLOGIX.Validators.Events
     /// Such events normally are raised when we failed to validate an
     /// object's properties' values according to a given set of rules.
     /// </remarks>
+[ExplicitlySynchronized]
     public class ValidationFailedEventArgs : EventArgs
     {
         /// <summary>
