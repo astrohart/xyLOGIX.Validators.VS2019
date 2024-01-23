@@ -117,10 +117,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
+    <Compile Include="EmailAddressValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDataValidator.cs" />
+    <Compile Include="IDateRangeValidator.cs" />
+    <Compile Include="IEmailAddressValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

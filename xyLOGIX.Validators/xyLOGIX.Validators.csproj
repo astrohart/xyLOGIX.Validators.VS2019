@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
+    <Compile Include="DateRangeValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="ObjectValidatorBase.cs" />
   </ItemGroup>
