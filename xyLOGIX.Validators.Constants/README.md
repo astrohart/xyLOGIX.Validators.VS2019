@@ -46,7 +46,7 @@ validate the format of a `RFC 3339` timestamp.
 
 ##### Summary
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression on used to
 validate the format of an email address.
 
 <a name='T-xyLOGIX-Validators-Constants-Properties-Resources'></a>
