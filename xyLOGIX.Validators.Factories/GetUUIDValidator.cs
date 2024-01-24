@@ -6,16 +6,16 @@ namespace xyLOGIX.Validators.Factories
     /// <summary>
     /// Provides access to the one and only instance of the object that implements the
     /// <see
-    ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
+    ///     cref="T:xyLOGIX.Validators.Interfaces.IUUIDValidator" />
     /// interface.
     /// </summary>
-    public static class GetRF3339TimestampFormatValidator
+    public static class GetUUIDValidator
     {
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only
         /// for the
         /// <see
-        ///     cref="T:xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator" />
+        ///     cref="T:xyLOGIX.Validators.Factories.GetUUIDValidator" />
         /// class.
         /// </summary>
         /// <remarks>
@@ -23,21 +23,21 @@ namespace xyLOGIX.Validators.Factories
         /// being created or before any static members are referenced.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        static GetRF3339TimestampFormatValidator() { }
+        static GetUUIDValidator() { }
 
         /// <summary>
         /// Obtains access to the sole instance of the object that implements the
         /// <see
-        ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
+        ///     cref="T:xyLOGIX.Validators.Interfaces.IUUIDValidator" />
         /// interface, and returns a reference to it.
         /// </summary>
         /// <returns>
         /// Reference to the one, and only, instance of the object that implements the
         /// <see
-        ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
+        ///     cref="T:xyLOGIX.Validators.Interfaces.IUUIDValidator" />
         /// interface.
         /// </returns>
-        public static IRFC3339TimestampFormatValidator SoleInstance()
-            => RF3339TimestampFormatValidator.Instance;
+        public static IUUIDValidator SoleInstance()
+            => UUIDValidator.Instance;
     }
 }

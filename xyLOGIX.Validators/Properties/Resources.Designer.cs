@@ -86,5 +86,41 @@ namespace xyLOGIX.Validators.Properties {
                 return ResourceManager.GetString("Error_ObjectToValidatePropertyHasNotBeenSet", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A blank value was passed for the argument of the &apos;uuid&apos; parameter.  This is not valid, as a non-blank value is required..
+        /// </summary>
+        public static string Error_UUID_CannotBeBlank {
+            get {
+                return ResourceManager.GetString("Error_UUID_CannotBeBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value of the &apos;uuid&apos; parameter, &apos;{0}&apos;, must be a GUID but with no braces and all letters in lowercase; e.g., &apos;e83cdb4e-7b01-4a59-a71c-1220ea6d7892&apos;..
+        /// </summary>
+        public static string Error_UUID_InvalidFormat {
+            get {
+                return ResourceManager.GetString("Error_UUID_InvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value of the &apos;webAddress&apos; parameter, &apos;{0}&apos;, is not in a valid format for a Web address..
+        /// </summary>
+        public static string Error_WebAddress_InvalidFormat {
+            get {
+                return ResourceManager.GetString("Error_WebAddress_InvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;webAddress&apos; parameter was passed a blank value as its argument.  This is not valid, as the &apos;webAddress&apos; is a required value.  Stopping..
+        /// </summary>
+        public static string Error_WebAddress_IsBlank {
+            get {
+                return ResourceManager.GetString("Error_WebAddress_IsBlank", resourceCulture);
+            }
+        }
     }
 }

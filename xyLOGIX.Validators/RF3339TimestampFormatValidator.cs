@@ -29,7 +29,7 @@ namespace xyLOGIX.Validators
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see
-        ///     cref="T:xyLOGIX.CoinbaseAT.Models.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
+        ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
         /// interface.
         /// </summary>
         public static IRFC3339TimestampFormatValidator Instance { get; } =
