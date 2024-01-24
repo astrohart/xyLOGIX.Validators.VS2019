@@ -46,9 +46,9 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the specified <paramref name="uuid" /> has
         /// a valid format; <see langword="false" /> otherwise.
         /// </returns>
-        public bool IsValid(string uuid)
+        public bool IsValid([NotLogged] string uuid)
         {
-            bool result;
+            var result = true;
 
             try
             {
@@ -66,14 +66,6 @@ namespace xyLOGIX.Validators
                     throw new FormatException(
                         string.Format(Resources.Error_UUID_InvalidFormat, uuid)
                     );
-
-                /*
-                 * If we are here, then the uuid is of a valid format.
-                 *
-                 * Valid formats are, e.g.: a0ab35ac-b860-43a5-b7c8-88779fd3cb03
-                 */
-
-                result = true;
             }
             catch (Exception ex)
             {
