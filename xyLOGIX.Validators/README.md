@@ -3,6 +3,16 @@
 
 ## Contents
 
+- [DateRangeValidator](#T-xyLOGIX-Validators-DateRangeValidator 'xyLOGIX.Validators.DateRangeValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-DateRangeValidator-#ctor 'xyLOGIX.Validators.DateRangeValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-DateRangeValidator-Instance 'xyLOGIX.Validators.DateRangeValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-DateRangeValidator-#cctor 'xyLOGIX.Validators.DateRangeValidator.#cctor')
+  - [IsValid(start,end)](#M-xyLOGIX-Validators-DateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.DateRangeValidator.IsValid(System.DateTime,System.DateTime)')
+- [EmailAddressValidator](#T-xyLOGIX-Validators-EmailAddressValidator 'xyLOGIX.Validators.EmailAddressValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-EmailAddressValidator-#ctor 'xyLOGIX.Validators.EmailAddressValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-EmailAddressValidator-Instance 'xyLOGIX.Validators.EmailAddressValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-EmailAddressValidator-#cctor 'xyLOGIX.Validators.EmailAddressValidator.#cctor')
+  - [IsValid(emailAddress)](#M-xyLOGIX-Validators-EmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.EmailAddressValidator.IsValid(System.String)')
 - [ObjectValidatorBase\`1](#T-xyLOGIX-Validators-ObjectValidatorBase`1 'xyLOGIX.Validators.ObjectValidatorBase`1')
   - [#ctor(objectToValidate)](#M-xyLOGIX-Validators-ObjectValidatorBase`1-#ctor-`0- 'xyLOGIX.Validators.ObjectValidatorBase`1.#ctor(`0)')
   - [ErrorMessage](#P-xyLOGIX-Validators-ObjectValidatorBase`1-ErrorMessage 'xyLOGIX.Validators.ObjectValidatorBase`1.ErrorMessage')
@@ -11,10 +21,167 @@
   - [OnValidationFailed(e)](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationFailed-xyLOGIX-Validators-Events-ValidationFailedEventArgs- 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationFailed(xyLOGIX.Validators.Events.ValidationFailedEventArgs)')
   - [OnValidationSucceeded()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationSucceeded 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationSucceeded')
   - [Validate()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-Validate 'xyLOGIX.Validators.ObjectValidatorBase`1.Validate')
+- [RF3339TimestampFormatValidator](#T-xyLOGIX-Validators-RF3339TimestampFormatValidator 'xyLOGIX.Validators.RF3339TimestampFormatValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-RF3339TimestampFormatValidator-Instance 'xyLOGIX.Validators.RF3339TimestampFormatValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#cctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#cctor')
+  - [IsValid(value)](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.RF3339TimestampFormatValidator.IsValid(System.String)')
 - [Resources](#T-xyLOGIX-Validators-Properties-Resources 'xyLOGIX.Validators.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Properties-Resources-Culture 'xyLOGIX.Validators.Properties.Resources.Culture')
+  - [Error_EmailAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_EmailAddress_InvalidFormat')
+  - [Error_EmailAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_EmailAddress_IsBlank')
   - [Error_ObjectToValidatePropertyHasNotBeenSet](#P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet 'xyLOGIX.Validators.Properties.Resources.Error_ObjectToValidatePropertyHasNotBeenSet')
+  - [Error_UUID_CannotBeBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeBlank 'xyLOGIX.Validators.Properties.Resources.Error_UUID_CannotBeBlank')
+  - [Error_UUID_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_UUID_InvalidFormat')
+  - [Error_WebAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_InvalidFormat')
+  - [Error_WebAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_IsBlank')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
+- [UUIDValidator](#T-xyLOGIX-Validators-UUIDValidator 'xyLOGIX.Validators.UUIDValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-UUIDValidator-#ctor 'xyLOGIX.Validators.UUIDValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-UUIDValidator-Instance 'xyLOGIX.Validators.UUIDValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-UUIDValidator-#cctor 'xyLOGIX.Validators.UUIDValidator.#cctor')
+  - [IsValid(uuid)](#M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.UUIDValidator.IsValid(System.String)')
+- [WebAddressValidator](#T-xyLOGIX-Validators-WebAddressValidator 'xyLOGIX.Validators.WebAddressValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-WebAddressValidator-#ctor 'xyLOGIX.Validators.WebAddressValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-WebAddressValidator-Instance 'xyLOGIX.Validators.WebAddressValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-WebAddressValidator-#cctor 'xyLOGIX.Validators.WebAddressValidator.#cctor')
+  - [IsValid(webAddress)](#M-xyLOGIX-Validators-WebAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.WebAddressValidator.IsValid(System.String)')
+
+<a name='T-xyLOGIX-Validators-DateRangeValidator'></a>
+## DateRangeValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Runs rules on date ranges to verify that they are valid.
+
+<a name='M-xyLOGIX-Validators-DateRangeValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-DateRangeValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-DateRangeValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-DateRangeValidator-IsValid-System-DateTime,System-DateTime-'></a>
+### IsValid(start,end) `method`
+
+##### Summary
+
+Validates that the `end` and `start` dates
+passed are not equal, and that `end` follows
+`start`.
+
+##### Returns
+
+`true` if the date range is valid;
+`false` otheriwse.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| start | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the start of the time interval. |
+| end | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the end of the time interval. |
+
+##### Remarks
+
+This method returns `true` if either `start`
+or `end` are set to the value
+`January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
+otherwise then the method returns `false`.
+
+<a name='T-xyLOGIX-Validators-EmailAddressValidator'></a>
+## EmailAddressValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of strings containing a universally-unique identifier
+(UUID) of a resource on the `Coinbase (Advanced Trade)` trading platform.
+
+<a name='M-xyLOGIX-Validators-EmailAddressValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-EmailAddressValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-EmailAddressValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-EmailAddressValidator-IsValid-System-String-'></a>
+### IsValid(emailAddress) `method`
+
+##### Summary
+
+Determines whether the contents of the specified
+`emailAddress` has a valid format.
+
+##### Returns
+
+`true` if the specified
+`emailAddress` has a valid format; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| emailAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing an email address whose format is to be checked. |
 
 <a name='T-xyLOGIX-Validators-ObjectValidatorBase`1'></a>
 ## ObjectValidatorBase\`1 `type`
@@ -134,6 +301,69 @@ property.
 
 This method has no parameters.
 
+<a name='T-xyLOGIX-Validators-RF3339TimestampFormatValidator'></a>
+## RF3339TimestampFormatValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Runs validation logic to determine whether strings are formatted with
+valid UTC `RFC 3339` timestamps.
+
+<a name='M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-RF3339TimestampFormatValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-RF3339TimestampFormatValidator-IsValid-System-String-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Determines whether a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a UTC date and
+time is formatted in a valid fashion per the requirements of RFC 3339.
+
+##### Returns
+
+`true` if the specified `value` is
+in a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+examined. |
+
 <a name='T-xyLOGIX-Validators-Properties-Resources'></a>
 ## Resources `type`
 
@@ -150,7 +380,22 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_InvalidFormat'></a>
+### Error_EmailAddress_InvalidFormat `property`
+
+##### Summary
+
+Looks up a localized string similar to The value of the 'emailAddress' parameter, '{0}', is not in a valid format for an email address..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_IsBlank'></a>
+### Error_EmailAddress_IsBlank `property`
+
+##### Summary
+
+Looks up a localized string similar to A blank text string was passed for the value of the desired email address.  This is not valid..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet'></a>
 ### Error_ObjectToValidatePropertyHasNotBeenSet `property`
@@ -159,9 +404,165 @@ Overrides the current thread's CurrentUICulture property for all resource lookup
 
 Looks up a localized string similar to The ObjectToValidate property has not been set..
 
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeBlank'></a>
+### Error_UUID_CannotBeBlank `property`
+
+##### Summary
+
+Looks up a localized string similar to A blank value was passed for the argument of the 'uuid' parameter.  This is not valid, as a non-blank value is required..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_UUID_InvalidFormat'></a>
+### Error_UUID_InvalidFormat `property`
+
+##### Summary
+
+Looks up a localized string similar to The value of the 'uuid' parameter, '{0}', must be a GUID but with no braces and all letters in lowercase; e.g., 'e83cdb4e-7b01-4a59-a71c-1220ea6d7892'..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat'></a>
+### Error_WebAddress_InvalidFormat `property`
+
+##### Summary
+
+Looks up a localized string similar to The value of the 'webAddress' parameter, '{0}', is not in a valid format for a Web address..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank'></a>
+### Error_WebAddress_IsBlank `property`
+
+##### Summary
+
+Looks up a localized string similar to The 'webAddress' parameter was passed a blank value as its argument.  This is not valid, as the 'webAddress' is a required value.  Stopping..
+
 <a name='P-xyLOGIX-Validators-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
 
 ##### Summary
 
 Returns the cached ResourceManager instance used by this class.
+
+<a name='T-xyLOGIX-Validators-UUIDValidator'></a>
+## UUIDValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of strings containing a universally-unique identifier
+(UUID) of a resource on the `Coinbase (Advanced Trade)` trading platform.
+
+<a name='M-xyLOGIX-Validators-UUIDValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-UUIDValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-UUIDValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String-'></a>
+### IsValid(uuid) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `uuid` has a
+valid format.
+
+##### Returns
+
+`true` if the specified `uuid` has
+a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a universally-unique
+identifier corresponding to an account on the `Coinbase (Advanced Trade)`
+trading platform, whose format is to be checked. |
+
+<a name='T-xyLOGIX-Validators-WebAddressValidator'></a>
+## WebAddressValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of strings containing a universally-unique identifier
+(UUID) of a resource on the `Coinbase (Advanced Trade)` trading platform.
+
+<a name='M-xyLOGIX-Validators-WebAddressValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-WebAddressValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IWebAddressValidator](#T-xyLOGIX-Validators-Interfaces-IWebAddressValidator 'xyLOGIX.Validators.Interfaces.IWebAddressValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-WebAddressValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-WebAddressValidator-IsValid-System-String-'></a>
+### IsValid(webAddress) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `webAddress`
+has a valid format.
+
+##### Returns
+
+`true` if the specified
+`webAddress` has a valid format; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| webAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing a Web address whose format is to be checked. |

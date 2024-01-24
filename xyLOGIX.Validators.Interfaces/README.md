@@ -3,13 +3,110 @@
 
 ## Contents
 
+- [IDataValidator](#T-xyLOGIX-Validators-Interfaces-IDataValidator 'xyLOGIX.Validators.Interfaces.IDataValidator')
+- [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
+  - [IsValid(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValid(System.DateTime,System.DateTime)')
+- [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
+  - [IsValid(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValid(System.String)')
 - [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator')
   - [ErrorMessage](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-ErrorMessage 'xyLOGIX.Validators.Interfaces.IObjectValidator.ErrorMessage')
   - [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
   - [Validate()](#M-xyLOGIX-Validators-Interfaces-IObjectValidator-Validate 'xyLOGIX.Validators.Interfaces.IObjectValidator.Validate')
+- [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
+  - [IsValid(value)](#M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator.IsValid(System.String)')
+- [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
+  - [IsValid(uuid)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String)')
+- [IWebAddressValidator](#T-xyLOGIX-Validators-Interfaces-IWebAddressValidator 'xyLOGIX.Validators.Interfaces.IWebAddressValidator')
+  - [IsValid(webAddress)](#M-xyLOGIX-Validators-Interfaces-IWebAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IWebAddressValidator.IsValid(System.String)')
 - [Resources](#T-xyLOGIX-Validators-Interfaces-Properties-Resources 'xyLOGIX.Validators.Interfaces.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-Culture 'xyLOGIX.Validators.Interfaces.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Interfaces.Properties.Resources.ResourceManager')
+
+<a name='T-xyLOGIX-Validators-Interfaces-IDataValidator'></a>
+## IDataValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties that are in common to all
+data validators.
+
+<a name='T-xyLOGIX-Validators-Interfaces-IDateRangeValidator'></a>
+## IDateRangeValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that runs
+rules on date ranges to verify that they are valid.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime-'></a>
+### IsValid(start,end) `method`
+
+##### Summary
+
+Validates that the `end` and `start` dates
+passed are not equal, and that `end` follows
+`start`.
+
+##### Returns
+
+`true` if the date range is valid;
+`false` otheriwse.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| start | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the start of the time interval. |
+| end | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the end of the time interval. |
+
+##### Remarks
+
+This method returns `true` if either `start`
+or `end` are set to the value
+`January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
+otherwise then the method returns `false`.
+
+<a name='T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator'></a>
+## IEmailAddressValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that is
+responsible for validating the format of email addresses.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String-'></a>
+### IsValid(emailAddress) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `emailAddress` has a
+valid format.
+
+##### Returns
+
+`true` if the specified `emailAddress` has
+a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| emailAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
+universally-unique identifier whose format is to be checked. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-IObjectValidator'></a>
 ## IObjectValidator `type`
@@ -66,6 +163,104 @@ property.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator'></a>
+## IRFC3339TimestampFormatValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that runs
+validation logic to determine whether strings are formatted with valid UTC RFC
+3339 timestamps.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Determines whether a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a UTC date and
+time is formatted in a valid fashion per the requirements of RFC 3339.
+
+##### Returns
+
+`true` if the specified `value` is
+in a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+examined. |
+
+<a name='T-xyLOGIX-Validators-Interfaces-IUUIDValidator'></a>
+## IUUIDValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that is
+responsible for validating the format of universally-unique identifiers.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String-'></a>
+### IsValid(uuid) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `uuid` has a
+valid format.
+
+##### Returns
+
+`true` if the specified `uuid` has
+a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
+universally-unique identifier whose format is to be checked. |
+
+<a name='T-xyLOGIX-Validators-Interfaces-IWebAddressValidator'></a>
+## IWebAddressValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that is
+responsible for validating the format of Web addresses.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IWebAddressValidator-IsValid-System-String-'></a>
+### IsValid(webAddress) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `webAddress`
+has a valid format.
+
+##### Returns
+
+`true` if the specified
+`webAddress` has a valid format; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| webAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing a Web address whose format is to be checked. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-Properties-Resources'></a>
 ## Resources `type`
