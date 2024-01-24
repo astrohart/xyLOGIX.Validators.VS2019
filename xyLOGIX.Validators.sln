@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators", "xyLOGIX.Validators\xyLOGIX.Validators.csproj", "{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		approvedPackages.json = approvedPackages.json
 		xyLOGIX.Validators.pssln = xyLOGIX.Validators.pssln
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Constants", "xyLOGIX.Validators.Constants\xyLOGIX.Validators.Constants.csproj", "{001C84CE-256E-48F6-A7FC-8180AC07AA43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,14 @@ Global
 		{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}.Release|x64.Build.0 = Release|x64
 		{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}.Release|x86.ActiveCfg = Release|x86
 		{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}.Release|x86.Build.0 = Release|x86
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Debug|x64.ActiveCfg = Debug|x64
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Debug|x64.Build.0 = Debug|x64
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Debug|x86.ActiveCfg = Debug|x86
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Debug|x86.Build.0 = Debug|x86
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Release|x64.ActiveCfg = Release|x64
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Release|x64.Build.0 = Release|x64
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Release|x86.ActiveCfg = Release|x86
+		{001C84CE-256E-48F6-A7FC-8180AC07AA43}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
