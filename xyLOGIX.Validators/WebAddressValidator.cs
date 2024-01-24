@@ -48,7 +48,7 @@ namespace xyLOGIX.Validators
         /// <paramref name="webAddress" /> has a valid format; <see langword="false" />
         /// otherwise.
         /// </returns>
-        public bool IsValid(string webAddress)
+        public bool IsValid([NotLogged] string webAddress)
         {
             var result = true;
 

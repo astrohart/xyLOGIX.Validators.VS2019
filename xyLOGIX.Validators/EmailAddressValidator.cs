@@ -48,7 +48,7 @@ namespace xyLOGIX.Validators
         /// <paramref name="emailAddress" /> has a valid format; <see langword="false" />
         /// otherwise.
         /// </returns>
-        public bool IsValid(string emailAddress)
+        public bool IsValid([NotLogged] string emailAddress)
         {
             var result = true;
 
