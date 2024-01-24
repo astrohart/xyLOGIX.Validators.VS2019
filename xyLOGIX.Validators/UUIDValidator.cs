@@ -54,7 +54,7 @@ namespace xyLOGIX.Validators
             {
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"UUIDValidator.IsValid: Attempting to validate the format of the account UUID '{uuid}'..."
+                    $"UUIDValidator.IsValid: Attempting to validate the format of a UUID..."
                 );
 
                 if (string.IsNullOrWhiteSpace(uuid))
