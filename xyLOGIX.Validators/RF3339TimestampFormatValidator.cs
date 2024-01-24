@@ -2,6 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Validators.Constants;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -57,7 +58,7 @@ namespace xyLOGIX.Validators
                         "Value cannot be null or whitespace.", nameof(value)
                     );
 
-                if (!Regex.IsMatch(value, CoinbaseRegexes.RFC3339Timestamp))
+                if (!Regex.IsMatch(value, Regexes.RFC3339Timestamp))
                     throw new FormatException(
                         $"The value supplied, '{value}', does not match the format of a valid RFC 3339 timestamp."
                     );

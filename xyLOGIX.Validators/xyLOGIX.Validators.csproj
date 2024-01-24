@@ -149,6 +149,10 @@
       <Project>{C445C052-26B6-4884-9A7B-25DC7ABC0DED}</Project>
       <Name>xyLOGIX.Core.Debug</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Validators.Constants\xyLOGIX.Validators.Constants.csproj">
+      <Project>{001C84CE-256E-48F6-A7FC-8180AC07AA43}</Project>
+      <Name>xyLOGIX.Validators.Constants</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Validators.Events\xyLOGIX.Validators.Events.csproj">
       <Project>{F1E3A4DD-876F-428C-BA4A-DF5FBD75B2CF}</Project>
       <Name>xyLOGIX.Validators.Events</Name>

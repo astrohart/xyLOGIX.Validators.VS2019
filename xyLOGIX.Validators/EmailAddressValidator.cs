@@ -2,6 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Validators.Constants;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
 
