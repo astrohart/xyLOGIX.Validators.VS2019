@@ -119,6 +119,7 @@
     <None Include="key.snk" />
     <Compile Include="GetDateRangeValidator.cs" />
     <Compile Include="GetEmailAddressValidator.cs" />
+    <Compile Include="GetRF3339TimestampFormatValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
