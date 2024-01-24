@@ -68,7 +68,7 @@ namespace xyLOGIX.Validators
                 if (!Regex.IsMatch(emailAddress, Regexes.EmailAddress))
                     throw new FormatException(
                         string.Format(
-                            (string)Resources.Error_EmailAddress_InvalidFormat,
+                            Resources.Error_EmailAddress_InvalidFormat,
                             emailAddress
                         )
                     );
