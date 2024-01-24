@@ -22,10 +22,9 @@ namespace xyLOGIX.Validators.Constants
             Resources.Regex_RFC3339_Timestamp;
 
         /// <summary>
-        /// A <see cref="T:System.String" /> that contains a regular expression used to
+        /// A <see cref="T:System.String" /> that contains a regular expression on used to
         /// validate the format of an email address.
         /// </summary>
-        /// s
         public static string WebAddress { get; } = Resources.Regex_WebAddress;
     }
 }
