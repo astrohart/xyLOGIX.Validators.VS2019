@@ -52,11 +52,6 @@ namespace xyLOGIX.Validators
 
             try
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    $"UUIDValidator.IsValid: Attempting to validate the format of a UUID..."
-                );
-
                 if (string.IsNullOrWhiteSpace(uuid))
                     throw new ArgumentException(
                         Resources.Error_UUID_CannotBeBlank, nameof(uuid)
@@ -74,10 +69,6 @@ namespace xyLOGIX.Validators
 
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug, $"UUIDValidator.IsValid: Result = {result}"
-            );
 
             return result;
         }
