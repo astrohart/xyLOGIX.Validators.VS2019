@@ -1,4 +1,5 @@
 using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
@@ -11,7 +12,7 @@ namespace xyLOGIX.Validators
     /// Type of the object whose instances are to be
     /// validated.  Can be either a concrete instance or an interface.
     /// </typeparam>
-    [Log(AttributeExclude = true)]
+    [Log(AttributeExclude = true), Synchronized]
     public abstract class ObjectValidatorBase<TObject> : IObjectValidator
         where TObject : class
     {
