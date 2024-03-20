@@ -3,6 +3,9 @@
 
 ## Contents
 
+- [GetAssetSymbolValidator](#T-xyLOGIX-Validators-Factories-GetAssetSymbolValidator 'xyLOGIX.Validators.Factories.GetAssetSymbolValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetAssetSymbolValidator-#cctor 'xyLOGIX.Validators.Factories.GetAssetSymbolValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetAssetSymbolValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetAssetSymbolValidator.SoleInstance')
 - [GetDateRangeValidator](#T-xyLOGIX-Validators-Factories-GetDateRangeValidator 'xyLOGIX.Validators.Factories.GetDateRangeValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetDateRangeValidator-#cctor 'xyLOGIX.Validators.Factories.GetDateRangeValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetDateRangeValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetDateRangeValidator.SoleInstance')
@@ -23,6 +26,57 @@
 - [Resources](#T-xyLOGIX-Validators-Factories-Properties-Resources 'xyLOGIX.Validators.Factories.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Factories-Properties-Resources-Culture 'xyLOGIX.Validators.Factories.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Factories-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Factories.Properties.Resources.ResourceManager')
+
+<a name='T-xyLOGIX-Validators-Factories-GetAssetSymbolValidator'></a>
+## GetAssetSymbolValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[IAssetSymbolValidator](#T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetAssetSymbolValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the
+[GetAssetSymbolValidator](#T-xyLOGIX-Validators-Factories-GetAssetSymbolValidator 'xyLOGIX.Validators.Factories.GetAssetSymbolValidator')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetAssetSymbolValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[IAssetSymbolValidator](#T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[IAssetSymbolValidator](#T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator')
+interface.
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='T-xyLOGIX-Validators-Factories-GetDateRangeValidator'></a>
 ## GetDateRangeValidator `type`

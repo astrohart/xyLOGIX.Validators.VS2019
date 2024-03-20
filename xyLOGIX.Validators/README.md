@@ -3,6 +3,11 @@
 
 ## Contents
 
+- [AssetSymbolValidator](#T-xyLOGIX-Validators-AssetSymbolValidator 'xyLOGIX.Validators.AssetSymbolValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-AssetSymbolValidator-#ctor 'xyLOGIX.Validators.AssetSymbolValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-AssetSymbolValidator-Instance 'xyLOGIX.Validators.AssetSymbolValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-AssetSymbolValidator-#cctor 'xyLOGIX.Validators.AssetSymbolValidator.#cctor')
+  - [IsValid(symbol)](#M-xyLOGIX-Validators-AssetSymbolValidator-IsValid-System-String- 'xyLOGIX.Validators.AssetSymbolValidator.IsValid(System.String)')
 - [DateRangeValidator](#T-xyLOGIX-Validators-DateRangeValidator 'xyLOGIX.Validators.DateRangeValidator')
   - [#ctor()](#M-xyLOGIX-Validators-DateRangeValidator-#ctor 'xyLOGIX.Validators.DateRangeValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-DateRangeValidator-Instance 'xyLOGIX.Validators.DateRangeValidator.Instance')
@@ -28,6 +33,8 @@
   - [IsValid(value)](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.RF3339TimestampFormatValidator.IsValid(System.String)')
 - [Resources](#T-xyLOGIX-Validators-Properties-Resources 'xyLOGIX.Validators.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Properties-Resources-Culture 'xyLOGIX.Validators.Properties.Resources.Culture')
+  - [Error_AssetSymbol_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_AssetSymbol_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_AssetSymbol_InvalidFormat')
+  - [Error_AssetSymbol_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_AssetSymbol_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_AssetSymbol_IsBlank')
   - [Error_EmailAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_EmailAddress_InvalidFormat')
   - [Error_EmailAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_EmailAddress_IsBlank')
   - [Error_ObjectToValidatePropertyHasNotBeenSet](#P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet 'xyLOGIX.Validators.Properties.Resources.Error_ObjectToValidatePropertyHasNotBeenSet')
@@ -46,6 +53,82 @@
   - [Instance](#P-xyLOGIX-Validators-WebAddressValidator-Instance 'xyLOGIX.Validators.WebAddressValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-WebAddressValidator-#cctor 'xyLOGIX.Validators.WebAddressValidator.#cctor')
   - [IsValid(webAddress)](#M-xyLOGIX-Validators-WebAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.WebAddressValidator.IsValid(System.String)')
+
+<a name='T-xyLOGIX-Validators-AssetSymbolValidator'></a>
+## AssetSymbolValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of strings containing an asset symbol, such as for a stock
+or cryptocurrency.
+
+<a name='M-xyLOGIX-Validators-AssetSymbolValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-AssetSymbolValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IAssetSymbolValidator](#T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-AssetSymbolValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-AssetSymbolValidator-IsValid-System-String-'></a>
+### IsValid(symbol) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `symbol` has
+a
+valid format.
+
+##### Returns
+
+`true` if the specified `symbol` has a valid
+format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| symbol | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing an asset symbol whose
+format is to be checked. |
+
+##### Remarks
+
+This method returns `false` if the
+`symbol` passed is a `null` reference, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+that contains only whitespace characters.
+
+
+
+Valid asset symbols are [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')s that contain no
+whitespace, having only letters (both upper- and lower-case) and digits.
 
 <a name='T-xyLOGIX-Validators-DateRangeValidator'></a>
 ## DateRangeValidator `type`
@@ -383,12 +466,26 @@ A strongly-typed resource class, for looking up localized strings, etc.
 Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_AssetSymbol_InvalidFormat'></a>
+### Error_AssetSymbol_InvalidFormat `property`
+
+##### Summary
+
+Looks up a localized string similar to The 'symbol' parameter must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. '00' or '1INCH' or 'ZRX'.  This is not the case..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_AssetSymbol_IsBlank'></a>
+### Error_AssetSymbol_IsBlank `property`
+
+##### Summary
+
+Looks up a localized string similar to A blank value was passed for the argument of the 'symbol' parameter.  This is not valid, as a non-blank value is required..
+
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_InvalidFormat'></a>
 ### Error_EmailAddress_InvalidFormat `property`
 
 ##### Summary
 
-Looks up a localized string similar to The value of the 'emailAddress' parameter, '{0}', is not in a valid format for an email address..
+Looks up a localized string similar to The value of the 'emailAddress' parameter is not in a valid format for an email address..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_IsBlank'></a>
 ### Error_EmailAddress_IsBlank `property`
@@ -416,14 +513,14 @@ Looks up a localized string similar to A blank value was passed for the argument
 
 ##### Summary
 
-Looks up a localized string similar to The value of the 'uuid' parameter, '{0}', must be a GUID but with no braces and all letters in lowercase; e.g., 'e83cdb4e-7b01-4a59-a71c-1220ea6d7892'..
+Looks up a localized string similar to The value of the 'uuid' parameter must be a GUID but with no braces and all letters in lowercase; e.g., 'e83cdb4e-7b01-4a59-a71c-1220ea6d7892'..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat'></a>
 ### Error_WebAddress_InvalidFormat `property`
 
 ##### Summary
 
-Looks up a localized string similar to The value of the 'webAddress' parameter, '{0}', is not in a valid format for a Web address..
+Looks up a localized string similar to The value of the 'webAddress' parameter is not in a valid format for a Web address..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank'></a>
 ### Error_WebAddress_IsBlank `property`
