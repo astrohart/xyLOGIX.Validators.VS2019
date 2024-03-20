@@ -119,6 +119,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetSymbolValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
     <Compile Include="WebAddressValidator.cs" />

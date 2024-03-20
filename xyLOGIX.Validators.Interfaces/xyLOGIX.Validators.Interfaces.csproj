@@ -124,6 +124,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAssetSymbolValidator.cs" />
     <Compile Include="IDataValidator.cs" />
     <Compile Include="IDateRangeValidator.cs" />
     <Compile Include="IEmailAddressValidator.cs" />

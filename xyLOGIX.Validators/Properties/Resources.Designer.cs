@@ -61,6 +61,15 @@ namespace xyLOGIX.Validators.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The &apos;symbol&apos; parameter, &apos;{0}&apos;, must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. &apos;00&apos; or &apos;1INCH&apos; or &apos;ZRX&apos;.  This is not the case..
+        /// </summary>
+        public static string Error_AssetSymbol_InvalidFormat {
+            get {
+                return ResourceManager.GetString("Error_AssetSymbol_InvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value of the &apos;emailAddress&apos; parameter, &apos;{0}&apos;, is not in a valid format for an email address..
         /// </summary>
         public static string Error_EmailAddress_InvalidFormat {
@@ -88,7 +97,7 @@ namespace xyLOGIX.Validators.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A blank value was passed for the argument of the &apos;uuid&apos; parameter.  This is not valid, as a non-blank value is required..
+        ///   Looks up a localized string similar to A blank value was passed for the argument of the &apos;symbol&apos; parameter.  This is not valid, as a non-blank value is required..
         /// </summary>
         public static string Error_UUID_CannotBeBlank {
             get {
@@ -97,7 +106,7 @@ namespace xyLOGIX.Validators.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value of the &apos;uuid&apos; parameter, &apos;{0}&apos;, must be a GUID but with no braces and all letters in lowercase; e.g., &apos;e83cdb4e-7b01-4a59-a71c-1220ea6d7892&apos;..
+        ///   Looks up a localized string similar to The value of the &apos;symbol&apos; parameter, &apos;{0}&apos;, must be a GUID but with no braces and all letters in lowercase; e.g., &apos;e83cdb4e-7b01-4a59-a71c-1220ea6d7892&apos;..
         /// </summary>
         public static string Error_UUID_InvalidFormat {
             get {
