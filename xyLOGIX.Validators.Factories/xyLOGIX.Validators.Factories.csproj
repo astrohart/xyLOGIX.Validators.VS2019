@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
+    <Compile Include="GetAssetSymbolValidator.cs" />
     <Compile Include="GetDateRangeValidator.cs" />
     <Compile Include="GetEmailAddressValidator.cs" />
     <Compile Include="GetRF3339TimestampFormatValidator.cs" />
