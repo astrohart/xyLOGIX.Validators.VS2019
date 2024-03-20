@@ -68,37 +68,49 @@ namespace xyLOGIX.Validators
                     $"AssetSymbolValidator.IsValid: symbol = '{symbol}'"
                 );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "AssetSymbolValidator.IsValid: Checking whether the argument of the 'symbol' parameter is blank..."
+                );
+
                 if (string.IsNullOrWhiteSpace(symbol))
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "*** ERROR *** The value of the 'symbol' parameter cannot be blank."
-                    );
-
                     throw new ArgumentException(
-                        Resources.Error_UUID_CannotBeBlank, nameof(symbol)
+                        Resources.Error_AssetSymbol_IsBlank, nameof(symbol)
                     );
-                }
 
-                if (!symbol.IsValidLowercaseGuidWithNoBraces())
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "AssetSymbolValidator.IsValid: *** SUCCESS *** We've determined that the argument of the 'symbol' parameter is not blank.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "AssetSymbolValidator.IsValid: Checking whether the argument of the 'symbol' parameter is of a valid format..."
+                );
+
+                if (!symbol.IsValidAssetSymbol())
                     throw new FormatException(
-                        string.Format(
-                            Resources.Error_AssetSymbol_InvalidFormat, symbol
-                        )
+                        Resources.Error_AssetSymbol_InvalidFormat
                     );
 
-                /*
-                 * If we are here, then the symbol that we were passed
-                 * has the correct format.
-                 */
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "AssetSymbolValidator.IsValid: *** SUCCESS *** The argument of the 'symbol' parameter is of a valid format."
+                );
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"AssetSymbolValidator.IsValid: Result = {result}"
+            );
 
             return result;
         }

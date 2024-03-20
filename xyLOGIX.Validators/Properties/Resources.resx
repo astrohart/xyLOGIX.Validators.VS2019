@@ -124,21 +124,24 @@
     <value>A blank text string was passed for the value of the desired email address.  This is not valid.</value>
   </data>
   <data name="Error_EmailAddress_InvalidFormat" xml:space="preserve">
-    <value>The value of the 'emailAddress' parameter, '{0}', is not in a valid format for an email address.</value>
+    <value>The value of the 'emailAddress' parameter is not in a valid format for an email address.</value>
   </data>
   <data name="Error_UUID_CannotBeBlank" xml:space="preserve">
-    <value>A blank value was passed for the argument of the 'symbol' parameter.  This is not valid, as a non-blank value is required.</value>
+    <value>A blank value was passed for the argument of the 'uuid' parameter.  This is not valid, as a non-blank value is required.</value>
   </data>
   <data name="Error_UUID_InvalidFormat" xml:space="preserve">
-    <value>The value of the 'symbol' parameter, '{0}', must be a GUID but with no braces and all letters in lowercase; e.g., 'e83cdb4e-7b01-4a59-a71c-1220ea6d7892'.</value>
+    <value>The value of the 'uuid' parameter must be a GUID but with no braces and all letters in lowercase; e.g., 'e83cdb4e-7b01-4a59-a71c-1220ea6d7892'.</value>
   </data>
   <data name="Error_WebAddress_InvalidFormat" xml:space="preserve">
-    <value>The value of the 'webAddress' parameter, '{0}', is not in a valid format for a Web address.</value>
+    <value>The value of the 'webAddress' parameter is not in a valid format for a Web address.</value>
   </data>
   <data name="Error_WebAddress_IsBlank" xml:space="preserve">
     <value>The 'webAddress' parameter was passed a blank value as its argument.  This is not valid, as the 'webAddress' is a required value.  Stopping.</value>
   </data>
   <data name="Error_AssetSymbol_InvalidFormat" xml:space="preserve">
-    <value>The 'symbol' parameter, '{0}', must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. '00' or '1INCH' or 'ZRX'.  This is not the case.</value>
+    <value>The 'symbol' parameter must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. '00' or '1INCH' or 'ZRX'.  This is not the case.</value>
+  </data>
+  <data name="Error_AssetSymbol_IsBlank" xml:space="preserve">
+    <value>A blank value was passed for the argument of the 'symbol' parameter.  This is not valid, as a non-blank value is required.</value>
   </data>
 </root>

@@ -56,7 +56,7 @@ namespace xyLOGIX.Validators
             {
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"WebAddressValidator.IsValid: Attempting to validate the format of the Web address '{webAddress}'..."
+                    "*** INFO: Checking whether the value of the 'webAddress' parameter is blank..."
                 );
 
                 if (string.IsNullOrWhiteSpace(webAddress))
@@ -64,17 +64,31 @@ namespace xyLOGIX.Validators
                         Resources.Error_WebAddress_IsBlank, nameof(webAddress)
                     );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'webAddress' is not blank.  Continuing..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "WebAddressValidator.IsValid: Attempting to validate the format of the Web address 'webAddress'..."
+                );
+
                 if (!Regex.IsMatch(webAddress, Regexes.WebAddress))
                     throw new FormatException(
-                        string.Format(
-                            Resources.Error_WebAddress_InvalidFormat, webAddress
-                        )
+                        Resources.Error_WebAddress_InvalidFormat
                     );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "WebAddressValidator.IsValid: *** SUCCESS *** The argument of the 'webAddress' parameter appears to be of a valid format."
+                );
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }

@@ -49,33 +49,53 @@ namespace xyLOGIX.Validators
         /// </returns>
         public bool IsValid(string value)
         {
-            bool result;
+            var result = true;
 
             try
             {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** INFO: Checking whether the value of the 'value' parameter is blank..."
+                );
+
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException(
                         "Value cannot be null or whitespace.", nameof(value)
                     );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'value' is not blank.  Continuing..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "RF3339TimestampFormatValidator.IsValid: Validating whether the argument of the 'value' parameter is of the proper format..."
+                );
+
                 if (!Regex.IsMatch(value, Regexes.RFC3339Timestamp))
                     throw new FormatException(
-                        $"The value supplied, '{value}', does not match the format of a valid RFC 3339 timestamp."
+                        "The value supplied does not match the format of a valid RFC 3339 timestamp."
                     );
 
-                /*
-                 * If we made it here, then the data is in a valid format.
-                 */
-
-                result = true;
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "RF3339TimestampFormatValidator.IsValid: *** SUCCESS *** The argument of the 'value' parameter appears to be of a proper format."
+                );
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"RF3339TimestampFormatValidator.IsValid: Result = {result}"
+            );
 
             return result;
         }

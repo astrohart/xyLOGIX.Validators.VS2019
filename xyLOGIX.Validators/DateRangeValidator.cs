@@ -60,6 +60,11 @@ namespace xyLOGIX.Validators
 
             try
             {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"DateRangeValidator.IsValid: Validating the date range '{start}'-'{end}'..."
+                );
+
                 if (start == default && end == default)
                 {
                     /*
@@ -83,6 +88,11 @@ namespace xyLOGIX.Validators
                         result; // silently return FALSE here, do not throw an exception
                 }
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DateRangeValidator.IsValid: Running rules to ensure the values of 'start' and 'end' make logical sense..."
+                );
+
                 if (start != default && end != default && end <= start)
                 {
                     DebugUtils.WriteLine(
@@ -103,8 +113,9 @@ namespace xyLOGIX.Validators
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }

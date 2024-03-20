@@ -56,7 +56,7 @@ namespace xyLOGIX.Validators
             {
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"EmailAddressValidator.IsValid: Attempting to validate the format of the email address '{emailAddress}'..."
+                    "*** INFO: Checking whether the value of the 'emailAddress' parameter is blank..."
                 );
 
                 if (string.IsNullOrWhiteSpace(emailAddress))
@@ -65,18 +65,31 @@ namespace xyLOGIX.Validators
                         nameof(emailAddress)
                     );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'emailAddress' is not blank.  Continuing..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "EmailAddressValidator.IsValid: Attempting to validate the format of the value of the 'emailAddress' parameter..."
+                );
+
                 if (!Regex.IsMatch(emailAddress, Regexes.EmailAddress))
                     throw new FormatException(
-                        string.Format(
-                            Resources.Error_EmailAddress_InvalidFormat,
-                            emailAddress
-                        )
+                        Resources.Error_EmailAddress_InvalidFormat
                     );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "EmailAddressValidator.IsValid: *** SUCCESS *** It is apparent that the value of the 'emailAddress' parameter is of a valid format."
+                );
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }

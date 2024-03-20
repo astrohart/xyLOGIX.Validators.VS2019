@@ -52,23 +52,43 @@ namespace xyLOGIX.Validators
 
             try
             {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is a blank or null string..."
+                );
+
                 if (string.IsNullOrWhiteSpace(uuid))
                     throw new ArgumentException(
                         Resources.Error_UUID_CannotBeBlank, nameof(uuid)
                     );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is of a valid format, e.g., 'a49bf1b0-debd-46d7-b32f-d7db7da00380'..."
+                );
+
                 if (!uuid.IsValidLowercaseGuidWithNoBraces())
                     throw new FormatException(
-                        string.Format(Resources.Error_UUID_InvalidFormat, uuid)
+                        Resources.Error_UUID_InvalidFormat
                     );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "UUIDValidator.IsValid: *** SUCCESS *** The argument of the 'uuid' parameter is of a valid format."
+                );
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                DebugUtils.WriteLine(
+                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                );
 
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug, $"UUIDValidator.IsValid: Result = {result}"
+            );
 
             return result;
         }
