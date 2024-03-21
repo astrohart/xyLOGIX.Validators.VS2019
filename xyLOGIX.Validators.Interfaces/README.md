@@ -3,6 +3,8 @@
 
 ## Contents
 
+- [IAssetSymbolValidator](#T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator')
+  - [IsValid(symbol)](#M-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IAssetSymbolValidator.IsValid(System.String)')
 - [IDataValidator](#T-xyLOGIX-Validators-Interfaces-IDataValidator 'xyLOGIX.Validators.Interfaces.IDataValidator')
 - [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
   - [IsValid(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValid(System.DateTime,System.DateTime)')
@@ -21,6 +23,51 @@
 - [Resources](#T-xyLOGIX-Validators-Interfaces-Properties-Resources 'xyLOGIX.Validators.Interfaces.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-Culture 'xyLOGIX.Validators.Interfaces.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Interfaces-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Interfaces.Properties.Resources.ResourceManager')
+
+<a name='T-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator'></a>
+## IAssetSymbolValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that is
+responsible for validating the format of asset symbols.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IAssetSymbolValidator-IsValid-System-String-'></a>
+### IsValid(symbol) `method`
+
+##### Summary
+
+Determines whether the contents of the specified `symbol` has
+a
+valid format.
+
+##### Returns
+
+`true` if the specified `symbol` has a valid
+format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| symbol | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing an asset symbol whose
+format is to be checked. |
+
+##### Remarks
+
+This method returns `false` if the
+`symbol` passed is a `null` reference, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+that contains only whitespace characters.
+
+
+
+Valid asset symbols are [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')s that contain no
+whitespace, having only letters (both upper- and lower-case) and digits.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IDataValidator'></a>
 ## IDataValidator `type`
