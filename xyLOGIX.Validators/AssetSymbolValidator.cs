@@ -62,12 +62,6 @@ namespace xyLOGIX.Validators
 
             try
             {
-                // Dump the parameter symbol to the log
-                DebugUtils.WriteLine(
-                    DebugLevel.Debug,
-                    $"AssetSymbolValidator.IsValid: symbol = '{symbol}'"
-                );
-
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
                     "AssetSymbolValidator.IsValid: Checking whether the argument of the 'symbol' parameter is blank..."
