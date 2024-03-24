@@ -39,6 +39,7 @@
   - [Error_EmailAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_EmailAddress_IsBlank')
   - [Error_ObjectToValidatePropertyHasNotBeenSet](#P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet 'xyLOGIX.Validators.Properties.Resources.Error_ObjectToValidatePropertyHasNotBeenSet')
   - [Error_UUID_CannotBeBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeBlank 'xyLOGIX.Validators.Properties.Resources.Error_UUID_CannotBeBlank')
+  - [Error_UUID_CannotBeZeroGUID](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeZeroGUID 'xyLOGIX.Validators.Properties.Resources.Error_UUID_CannotBeZeroGUID')
   - [Error_UUID_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_UUID_InvalidFormat')
   - [Error_WebAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_InvalidFormat')
   - [Error_WebAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_IsBlank')
@@ -507,6 +508,13 @@ Looks up a localized string similar to The ObjectToValidate property has not bee
 ##### Summary
 
 Looks up a localized string similar to A blank value was passed for the argument of the 'uuid' parameter.  This is not valid, as a non-blank value is required..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeZeroGUID'></a>
+### Error_UUID_CannotBeZeroGUID `property`
+
+##### Summary
+
+Looks up a localized string similar to The UUID passed cannot be equal to the Zero GUID.  We take this to mean the corresponding entity has not been involved in a transaction; however, this value cannot be used for a REST API request..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_UUID_InvalidFormat'></a>
 ### Error_UUID_InvalidFormat `property`

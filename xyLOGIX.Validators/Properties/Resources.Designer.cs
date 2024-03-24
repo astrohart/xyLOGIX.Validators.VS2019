@@ -115,6 +115,15 @@ namespace xyLOGIX.Validators.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The UUID passed cannot be equal to the Zero GUID.  We take this to mean the corresponding entity has not been involved in a transaction; however, this value cannot be used for a REST API request..
+        /// </summary>
+        public static string Error_UUID_CannotBeZeroGUID {
+            get {
+                return ResourceManager.GetString("Error_UUID_CannotBeZeroGUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value of the &apos;uuid&apos; parameter must be a GUID but with no braces and all letters in lowercase; e.g., &apos;e83cdb4e-7b01-4a59-a71c-1220ea6d7892&apos;..
         /// </summary>
         public static string Error_UUID_InvalidFormat {

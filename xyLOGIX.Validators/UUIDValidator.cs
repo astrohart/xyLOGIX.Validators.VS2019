@@ -64,6 +64,17 @@ namespace xyLOGIX.Validators
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
+                    $"UUIDValidator.IsValid: Checking whether the 'uuid' parameter is set to the Zero UUID, i.e., 00000000-0000-0000-0000-000000000000..."
+                );
+
+                if (Guid.Empty.ToString("D")
+                        .Equals(uuid))
+                    throw new ArgumentException(
+                        Resources.Error_UUID_CannotBeZeroGUID
+                    );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
                     "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is of a valid format, e.g., 'a49bf1b0-debd-46d7-b32f-d7db7da00380'..."
                 );
 
