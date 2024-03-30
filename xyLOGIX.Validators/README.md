@@ -472,14 +472,14 @@ Overrides the current thread's CurrentUICulture property for all
 
 ##### Summary
 
-Looks up a localized string similar to The 'symbol' parameter must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. '00' or '1INCH' or 'ZRX'.  This is not the case..
+Looks up a localized string similar to The 'symbol' parameter must be a string containing only upper- or lowercase letters, the digits 0-9, and no other characters and no blank spaces, e.g. '00' or '1INCH' or 'ZRX'.  This not the case..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_AssetSymbol_IsBlank'></a>
 ### Error_AssetSymbol_IsBlank `property`
 
 ##### Summary
 
-Looks up a localized string similar to A blank value was passed for the argument of the 'symbol' parameter.  This is not valid, as a non-blank value is required..
+Looks up a localized string similar to A blank value was passed for the argument of the 'symbol' parameter.  This not valid, as a non-blank value is required..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_EmailAddress_InvalidFormat'></a>
 ### Error_EmailAddress_InvalidFormat `property`
@@ -493,7 +493,7 @@ Looks up a localized string similar to The value of the 'emailAddress' parameter
 
 ##### Summary
 
-Looks up a localized string similar to A blank text string was passed for the value of the desired email address.  This is not valid..
+Looks up a localized string similar to A blank text string was passed for the value of the desired email address.  This not valid..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_ObjectToValidatePropertyHasNotBeenSet'></a>
 ### Error_ObjectToValidatePropertyHasNotBeenSet `property`
@@ -507,7 +507,7 @@ Looks up a localized string similar to The ObjectToValidate property has not bee
 
 ##### Summary
 
-Looks up a localized string similar to A blank value was passed for the argument of the 'uuid' parameter.  This is not valid, as a non-blank value is required..
+Looks up a localized string similar to A blank value was passed for the argument of the 'uuid' parameter.  This not valid, as a non-blank value is required..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-Error_UUID_CannotBeZeroGUID'></a>
 ### Error_UUID_CannotBeZeroGUID `property`
@@ -535,7 +535,7 @@ Looks up a localized string similar to The value of the 'webAddress' parameter i
 
 ##### Summary
 
-Looks up a localized string similar to The 'webAddress' parameter was passed a blank value as its argument.  This is not valid, as the 'webAddress' is a required value.  Stopping..
+Looks up a localized string similar to The 'webAddress' parameter was passed a blank value as its argument.  This not valid, as the 'webAddress' is a required value.  Stopping..
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
