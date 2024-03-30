@@ -97,7 +97,7 @@ namespace xyLOGIX.Validators
                 {
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        $"DateRangeValidator.IsValid: *** ERROR *** The end date, '{end}', is BEFORE or THE SAME AS the start date, '{start}'.  This illogical.  Stopping..."
+                        $"DateRangeValidator.IsValid: *** ERROR *** The end date, '{end}', is BEFORE or THE SAME AS the start date, '{start}'.  This is illogical.  Stopping..."
                     );
 
                     DebugUtils.WriteLine(
