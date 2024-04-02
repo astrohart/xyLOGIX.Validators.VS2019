@@ -49,6 +49,11 @@
   - [Instance](#P-xyLOGIX-Validators-UUIDValidator-Instance 'xyLOGIX.Validators.UUIDValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-UUIDValidator-#cctor 'xyLOGIX.Validators.UUIDValidator.#cctor')
   - [IsValid(uuid)](#M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.UUIDValidator.IsValid(System.String)')
+- [VersionStringValidator](#T-xyLOGIX-Validators-VersionStringValidator 'xyLOGIX.Validators.VersionStringValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-VersionStringValidator-#ctor 'xyLOGIX.Validators.VersionStringValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-VersionStringValidator-Instance 'xyLOGIX.Validators.VersionStringValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-VersionStringValidator-#cctor 'xyLOGIX.Validators.VersionStringValidator.#cctor')
+  - [IsValid(versionString)](#M-xyLOGIX-Validators-VersionStringValidator-IsValid-System-String- 'xyLOGIX.Validators.VersionStringValidator.IsValid(System.String)')
 - [WebAddressValidator](#T-xyLOGIX-Validators-WebAddressValidator 'xyLOGIX.Validators.WebAddressValidator')
   - [#ctor()](#M-xyLOGIX-Validators-WebAddressValidator-#ctor 'xyLOGIX.Validators.WebAddressValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-WebAddressValidator-Instance 'xyLOGIX.Validators.WebAddressValidator.Instance')
@@ -607,6 +612,76 @@ a valid format; `false` otherwise.
 | uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a universally-unique
 identifier corresponding to an account on the `Coinbase (Advanced Trade)`
 trading platform, whose format is to be checked. |
+
+<a name='T-xyLOGIX-Validators-VersionStringValidator'></a>
+## VersionStringValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of software version strings.
+
+<a name='M-xyLOGIX-Validators-VersionStringValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-VersionStringValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-VersionStringValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-VersionStringValidator-IsValid-System-String-'></a>
+### IsValid(versionString) `method`
+
+##### Summary
+
+Determines whether the contents of the specified
+`versionString` have a valid format.
+
+##### Returns
+
+`true` if the specified `versionString` has
+a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| versionString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a software version
+string whose format is to be checked. |
+
+##### Remarks
+
+If the value of the `versionString` parameter is a
+`null` reference or is the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or a value containing only
+whitespace, then the method returns `false` without performing
+any additional validation.
 
 <a name='T-xyLOGIX-Validators-WebAddressValidator'></a>
 ## WebAddressValidator `type`

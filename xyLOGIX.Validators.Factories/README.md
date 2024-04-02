@@ -18,6 +18,9 @@
 - [GetUUIDValidator](#T-xyLOGIX-Validators-Factories-GetUUIDValidator 'xyLOGIX.Validators.Factories.GetUUIDValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetUUIDValidator-#cctor 'xyLOGIX.Validators.Factories.GetUUIDValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetUUIDValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetUUIDValidator.SoleInstance')
+- [GetVersionStringValidator](#T-xyLOGIX-Validators-Factories-GetVersionStringValidator 'xyLOGIX.Validators.Factories.GetVersionStringValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetVersionStringValidator-#cctor 'xyLOGIX.Validators.Factories.GetVersionStringValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetVersionStringValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetVersionStringValidator.SoleInstance')
 - [GetWebAddressValidator](#T-xyLOGIX-Validators-Factories-GetWebAddressValidator 'xyLOGIX.Validators.Factories.GetWebAddressValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetWebAddressValidator-#cctor 'xyLOGIX.Validators.Factories.GetWebAddressValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetWebAddressValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetWebAddressValidator.SoleInstance')
@@ -276,6 +279,56 @@ interface, and returns a reference to it.
 
 Reference to the one, and only, instance of the object that implements the
 [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
+interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetVersionStringValidator'></a>
+## GetVersionStringValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetVersionStringValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the
+[GetVersionStringValidator](#T-xyLOGIX-Validators-Factories-GetVersionStringValidator 'xyLOGIX.Validators.Factories.GetVersionStringValidator') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetVersionStringValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
 interface.
 
 ##### Parameters

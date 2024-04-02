@@ -49,6 +49,11 @@ Returns the cached ResourceManager instance used by this class.
 
 xyLOGIX.Validators.Tests
 
+##### Summary
+
+Unit tests for the methods and properties of the
+[VersionStringValidator](#T-xyLOGIX-Validators-VersionStringValidator 'xyLOGIX.Validators.VersionStringValidator') class.
+
 <a name='P-xyLOGIX-Validators-Tests-VersionStringValidatorTests-VersionStringValidator'></a>
 ### VersionStringValidator `property`
 

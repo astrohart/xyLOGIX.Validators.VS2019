@@ -18,6 +18,8 @@
   - [IsValid(value)](#M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator.IsValid(System.String)')
 - [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
   - [IsValid(uuid)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String)')
+- [IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
+  - [IsValid(versionString)](#M-xyLOGIX-Validators-Interfaces-IVersionStringValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IVersionStringValidator.IsValid(System.String)')
 - [IWebAddressValidator](#T-xyLOGIX-Validators-Interfaces-IWebAddressValidator 'xyLOGIX.Validators.Interfaces.IWebAddressValidator')
   - [IsValid(webAddress)](#M-xyLOGIX-Validators-Interfaces-IWebAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IWebAddressValidator.IsValid(System.String)')
 - [Resources](#T-xyLOGIX-Validators-Interfaces-Properties-Resources 'xyLOGIX.Validators.Interfaces.Properties.Resources')
@@ -275,6 +277,46 @@ a valid format; `false` otherwise.
 | ---- | ---- | ----------- |
 | uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
 universally-unique identifier whose format is to be checked. |
+
+<a name='T-xyLOGIX-Validators-Interfaces-IVersionStringValidator'></a>
+## IVersionStringValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that is
+responsible for validating the format of version strings.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IVersionStringValidator-IsValid-System-String-'></a>
+### IsValid(versionString) `method`
+
+##### Summary
+
+Determines whether the contents of the specified
+`versionString` have a valid format.
+
+##### Returns
+
+`true` if the specified `versionString` has
+a valid format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| versionString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a software version
+string whose format is to be checked. |
+
+##### Remarks
+
+If the value of the `versionString` parameter is a
+`null` reference or is the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or a value containing only
+whitespace, then the method returns `false` without performing
+any additional validation.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IWebAddressValidator'></a>
 ## IWebAddressValidator `type`

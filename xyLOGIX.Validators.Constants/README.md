@@ -4,6 +4,7 @@
 ## Contents
 
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
+  - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
   - [WebAddress](#P-xyLOGIX-Validators-Constants-Regexes-WebAddress 'xyLOGIX.Validators.Constants.Regexes.WebAddress')
@@ -24,6 +25,14 @@ xyLOGIX.Validators.Constants
 ##### Summary
 
 Values for regular expressions to be utilized when pattern-matching.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion'></a>
+### ThreePartVersion `constants`
+
+##### Summary
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
+validate a three-part version string, i.e., `0.2.5`.
 
 <a name='P-xyLOGIX-Validators-Constants-Regexes-EmailAddress'></a>
 ### EmailAddress `property`
@@ -46,7 +55,7 @@ validate the format of a `RFC 3339` timestamp.
 
 ##### Summary
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression on used to
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
 validate the format of an email address.
 
 <a name='T-xyLOGIX-Validators-Constants-Properties-Resources'></a>
