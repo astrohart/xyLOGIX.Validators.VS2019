@@ -9,6 +9,12 @@ namespace xyLOGIX.Validators.Constants
     {
         /// <summary>
         /// A <see cref="T:System.String" /> that contains a regular expression used to
+        /// validate a three-part version string, i.e., <c>0.2.5</c>.
+        /// </summary>
+        public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
+
+        /// <summary>
+        /// A <see cref="T:System.String" /> that contains a regular expression used to
         /// validate the format of an email address.
         /// </summary>
         public static string EmailAddress { get; } =
@@ -22,7 +28,7 @@ namespace xyLOGIX.Validators.Constants
             Resources.Regex_RFC3339_Timestamp;
 
         /// <summary>
-        /// A <see cref="T:System.String" /> that contains a regular expression on used to
+        /// A <see cref="T:System.String" /> that contains a regular expression used to
         /// validate the format of an email address.
         /// </summary>
         public static string WebAddress { get; } = Resources.Regex_WebAddress;
