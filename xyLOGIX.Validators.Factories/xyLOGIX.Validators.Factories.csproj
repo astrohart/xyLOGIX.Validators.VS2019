@@ -125,6 +125,7 @@
     <Compile Include="GetEmailAddressValidator.cs" />
     <Compile Include="GetRF3339TimestampFormatValidator.cs" />
     <Compile Include="GetUUIDValidator.cs" />
+    <Compile Include="GetVersionStringValidator.cs" />
     <Compile Include="GetWebAddressValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
     <None Include="packages.config" />
