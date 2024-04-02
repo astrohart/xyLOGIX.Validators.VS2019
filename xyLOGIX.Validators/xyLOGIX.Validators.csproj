@@ -122,6 +122,7 @@
     <Compile Include="AssetSymbolValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
+    <Compile Include="VersionStringValidator.cs" />
     <Compile Include="WebAddressValidator.cs" />
     <None Include="key.snk" />
     <Compile Include="DateRangeValidator.cs" />
