@@ -52,7 +52,8 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the specified <paramref name="uuid" /> has
         /// a valid format; <see langword="false" /> otherwise.
         /// </returns>
-        public bool IsValid([NotLogged] string uuid, bool silent = false)
+        [Log(AttributeExclude = true)]
+        public bool IsValid(string uuid, bool silent = false)
         {
             var result = true;
 
