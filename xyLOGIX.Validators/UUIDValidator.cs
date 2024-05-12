@@ -42,17 +42,23 @@ namespace xyLOGIX.Validators
         /// identifier corresponding to an account on the <c>Coinbase (Advanced Trade)</c>
         /// trading platform, whose format is to be checked.
         /// </param>
+        /// <param name="silent">
+        /// (Required.) A <see cref="T:System.Boolean" />  indicating whether logging
+        /// messages emitted by this method are to be suppressed.
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="uuid" /> has
         /// a valid format; <see langword="false" /> otherwise.
         /// </returns>
-        public bool IsValid([NotLogged] string uuid)
+        public bool IsValid([NotLogged] string uuid, bool silent = false)
         {
             var result = true;
 
             try
             {
-                DebugUtils.WriteLine(
+                if (!silent) DebugUtils.WriteLine(
                     DebugLevel.Info,
                     "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is a blank or null string..."
                 );
@@ -62,9 +68,9 @@ namespace xyLOGIX.Validators
                         Resources.Error_UUID_CannotBeBlank, nameof(uuid)
                     );
 
-                DebugUtils.WriteLine(
+                if (!silent) DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"UUIDValidator.IsValid: Checking whether the 'uuid' parameter is set to the Zero UUID, i.e., 00000000-0000-0000-0000-000000000000..."
+                    "UUIDValidator.IsValid: Checking whether the 'uuid' parameter is set to the Zero UUID, i.e., 00000000-0000-0000-0000-000000000000..."
                 );
 
                 if (Guid.Empty.ToString("D")
@@ -73,7 +79,7 @@ namespace xyLOGIX.Validators
                         Resources.Error_UUID_CannotBeZeroGUID
                     );
 
-                DebugUtils.WriteLine(
+                if (!silent) DebugUtils.WriteLine(
                     DebugLevel.Info,
                     "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is of a valid format, e.g., 'a49bf1b0-debd-46d7-b32f-d7db7da00380'..."
                 );
@@ -83,21 +89,21 @@ namespace xyLOGIX.Validators
                         Resources.Error_UUID_InvalidFormat
                     );
 
-                DebugUtils.WriteLine(
+                if (!silent) DebugUtils.WriteLine(
                     DebugLevel.Info,
                     "UUIDValidator.IsValid: *** SUCCESS *** The argument of the 'uuid' parameter is of a valid format."
                 );
             }
             catch (Exception ex)
             {
-                DebugUtils.WriteLine(
+                if (!silent) DebugUtils.WriteLine(
                     DebugLevel.Error, $"*** ERROR *** {ex.Message}"
                 );
 
                 result = false;
             }
 
-            DebugUtils.WriteLine(
+            if (!silent) DebugUtils.WriteLine(
                 DebugLevel.Debug, $"UUIDValidator.IsValid: Result = {result}"
             );
 
