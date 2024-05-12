@@ -48,7 +48,7 @@
   - [#ctor()](#M-xyLOGIX-Validators-UUIDValidator-#ctor 'xyLOGIX.Validators.UUIDValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-UUIDValidator-Instance 'xyLOGIX.Validators.UUIDValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-UUIDValidator-#cctor 'xyLOGIX.Validators.UUIDValidator.#cctor')
-  - [IsValid(uuid)](#M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.UUIDValidator.IsValid(System.String)')
+  - [IsValid(uuid,silent)](#M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String,System-Boolean- 'xyLOGIX.Validators.UUIDValidator.IsValid(System.String,System.Boolean)')
 - [VersionStringValidator](#T-xyLOGIX-Validators-VersionStringValidator 'xyLOGIX.Validators.VersionStringValidator')
   - [#ctor()](#M-xyLOGIX-Validators-VersionStringValidator-#ctor 'xyLOGIX.Validators.VersionStringValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-VersionStringValidator-Instance 'xyLOGIX.Validators.VersionStringValidator.Instance')
@@ -592,8 +592,8 @@ Empty, static constructor to prohibit direct allocation of this class.
 
 This method has no parameters.
 
-<a name='M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String-'></a>
-### IsValid(uuid) `method`
+<a name='M-xyLOGIX-Validators-UUIDValidator-IsValid-System-String,System-Boolean-'></a>
+### IsValid(uuid,silent) `method`
 
 ##### Summary
 
@@ -612,6 +612,12 @@ a valid format; `false` otherwise.
 | uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a universally-unique
 identifier corresponding to an account on the `Coinbase (Advanced Trade)`
 trading platform, whose format is to be checked. |
+| silent | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Required.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') indicating whether logging
+messages emitted by this method are to be suppressed.
+
+
+
+The default value of this parameter is `false`. |
 
 <a name='T-xyLOGIX-Validators-VersionStringValidator'></a>
 ## VersionStringValidator `type`
