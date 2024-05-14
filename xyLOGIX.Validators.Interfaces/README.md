@@ -17,7 +17,7 @@
 - [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
   - [IsValid(value)](#M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator.IsValid(System.String)')
 - [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
-  - [IsValid(uuid)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String)')
+  - [IsValid(uuid,silent)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String,System-Boolean- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String,System.Boolean)')
 - [IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
   - [IsValid(versionString)](#M-xyLOGIX-Validators-Interfaces-IVersionStringValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IVersionStringValidator.IsValid(System.String)')
 - [IWebAddressValidator](#T-xyLOGIX-Validators-Interfaces-IWebAddressValidator 'xyLOGIX.Validators.Interfaces.IWebAddressValidator')
@@ -258,8 +258,8 @@ xyLOGIX.Validators.Interfaces
 Defines the publicly-exposed methods and properties of an object that is
 responsible for validating the format of universally-unique identifiers.
 
-<a name='M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String-'></a>
-### IsValid(uuid) `method`
+<a name='M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String,System-Boolean-'></a>
+### IsValid(uuid,silent) `method`
 
 ##### Summary
 
@@ -275,8 +275,15 @@ a valid format; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
-universally-unique identifier whose format is to be checked. |
+| uuid | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a universally-unique
+identifier corresponding to an account on the `Coinbase (Advanced Trade)`
+trading platform, whose format is to be checked. |
+| silent | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Required.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') indicating whether logging
+messages emitted by this method are to be suppressed.
+
+
+
+The default value of this parameter is `false`. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-IVersionStringValidator'></a>
 ## IVersionStringValidator `type`
