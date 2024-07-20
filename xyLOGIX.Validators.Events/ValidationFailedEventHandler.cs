@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Validators.Events
+namespace xyLOGIX.Validators.Events
 {
     /// <summary> Represents a handler for a ValidationFailed event. </summary>
     /// <param name="sender">

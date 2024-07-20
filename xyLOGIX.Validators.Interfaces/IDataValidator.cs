@@ -1,4 +1,4 @@
-﻿using PostSharp.Patterns.Threading;
+using PostSharp.Patterns.Threading;
 
 namespace xyLOGIX.Validators.Interfaces
 {

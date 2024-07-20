@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Validators.Constants")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020-24 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright ï¿½ 2020-24 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX PortfolioGPT.  PortfolioGPT is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]

@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using xyLOGIX.Validators.Factories;
 using xyLOGIX.Validators.Interfaces;
