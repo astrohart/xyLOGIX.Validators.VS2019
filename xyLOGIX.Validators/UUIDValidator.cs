@@ -31,7 +31,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IUUIDValidator" />
         /// interface.
         /// </summary>
-        public static IUUIDValidator Instance { get; } = new UUIDValidator();
+        public static IUUIDValidator Instance { [DebuggerStepThrough] get; } = new UUIDValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified <paramref name="uuid" /> has a

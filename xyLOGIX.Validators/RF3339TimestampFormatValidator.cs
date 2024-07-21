@@ -32,7 +32,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
         /// interface.
         /// </summary>
-        public static IRFC3339TimestampFormatValidator Instance { get; } =
+        public static IRFC3339TimestampFormatValidator Instance { [DebuggerStepThrough] get; } =
             new RF3339TimestampFormatValidator();
 
         /// <summary>

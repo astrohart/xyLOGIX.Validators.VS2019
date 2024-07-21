@@ -57,7 +57,7 @@ namespace xyLOGIX.Validators
         /// Gets a reference to the object instance whose data is to be
         /// validated.
         /// </summary>
-        protected TObject ObjectToValidate { get; }
+        protected TObject ObjectToValidate { [DebuggerStepThrough] get; }
 
         /// <summary> Occurs when validation has failed. </summary>
         public event ValidationFailedEventHandler ValidationFailed;

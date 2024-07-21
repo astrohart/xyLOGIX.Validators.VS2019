@@ -32,7 +32,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IEmailAddressValidator" />
         /// interface.
         /// </summary>
-        public static IEmailAddressValidator Instance { get; } =
+        public static IEmailAddressValidator Instance { [DebuggerStepThrough] get; } =
             new EmailAddressValidator();
 
         /// <summary>

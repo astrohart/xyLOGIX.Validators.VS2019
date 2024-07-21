@@ -17,7 +17,7 @@ namespace xyLOGIX.Validators.Interfaces
         /// generated when the condition being validated fails.
         /// </summary>
         /// <returns>The error message to generate.</returns>
-        string ErrorMessage { get; }
+        string ErrorMessage { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -27,7 +27,7 @@ namespace xyLOGIX.Validators.Interfaces
         /// <see langword="true" /> if the content is valid; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool IsValid { get; }
+        bool IsValid { [DebuggerStepThrough] get; }
 
         /// <summary> Occurs when validation has failed. </summary>
         event ValidationFailedEventHandler ValidationFailed;

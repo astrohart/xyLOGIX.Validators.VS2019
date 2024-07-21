@@ -31,7 +31,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IAssetSymbolValidator" />
         /// interface.
         /// </summary>
-        public static IAssetSymbolValidator Instance { get; } =
+        public static IAssetSymbolValidator Instance { [DebuggerStepThrough] get; } =
             new AssetSymbolValidator();
 
         /// <summary>

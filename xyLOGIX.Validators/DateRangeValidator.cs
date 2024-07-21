@@ -28,7 +28,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IDateRangeValidator" />
         /// interface.
         /// </summary>
-        public static IDateRangeValidator Instance { get; } =
+        public static IDateRangeValidator Instance { [DebuggerStepThrough] get; } =
             new DateRangeValidator();
 
         /// <summary>

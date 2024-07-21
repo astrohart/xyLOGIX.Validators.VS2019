@@ -29,7 +29,7 @@ namespace xyLOGIX.Validators
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IVersionStringValidator" />
         /// interface.
         /// </summary>
-        public static IVersionStringValidator Instance { get; } =
+        public static IVersionStringValidator Instance { [DebuggerStepThrough] get; } =
             new VersionStringValidator();
 
         /// <summary>

@@ -24,6 +24,6 @@ namespace xyLOGIX.Validators.Events
             => ErrorMessage = errorMessage;
 
         /// <summary> Gets a string explaining why the validation failed. </summary>
-        public string ErrorMessage { get; }
+        public string ErrorMessage { [DebuggerStepThrough] get; }
     }
 }

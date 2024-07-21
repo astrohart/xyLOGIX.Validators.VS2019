@@ -32,7 +32,7 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IWebAddressValidator" />
         /// interface.
         /// </summary>
-        public static IWebAddressValidator Instance { get; } =
+        public static IWebAddressValidator Instance { [DebuggerStepThrough] get; } =
             new WebAddressValidator();
 
         /// <summary>
