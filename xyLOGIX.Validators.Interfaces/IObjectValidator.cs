@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using xyLOGIX.Validators.Events;
 
 namespace xyLOGIX.Validators.Interfaces
