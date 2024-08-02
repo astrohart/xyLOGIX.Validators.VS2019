@@ -1,3 +1,4 @@
+﻿using System.Diagnostics;
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using xyLOGIX.Validators.Factories;
@@ -17,7 +18,7 @@ namespace xyLOGIX.Validators.Tests
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IVersionStringValidator" />
         /// interface.
         /// </summary>
-        private static IVersionStringValidator VersionStringValidator { get; } =
+        private static IVersionStringValidator VersionStringValidator { [DebuggerStepThrough] get; } =
             GetVersionStringValidator.SoleInstance();
 
         /// <summary>
