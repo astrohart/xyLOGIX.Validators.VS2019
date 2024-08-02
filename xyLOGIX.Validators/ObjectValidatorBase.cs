@@ -42,7 +42,7 @@ namespace xyLOGIX.Validators
         /// generated when the condition being validated fails.
         /// </summary>
         /// <returns>The error message to generate.</returns>
-        public string ErrorMessage { get; protected set; }
+        public string ErrorMessage { [DebuggerStepThrough] get; [DebuggerStepThrough] protected set; }
 
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -52,7 +52,7 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the content is valid; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        public bool IsValid { get; protected set; }
+        public bool IsValid { [DebuggerStepThrough] get; [DebuggerStepThrough] protected set; }
 
         /// <summary>
         /// Gets a reference to the object instance whose data is to be
