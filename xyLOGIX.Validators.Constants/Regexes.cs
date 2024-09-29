@@ -1,3 +1,4 @@
+using PostSharp.Patterns.Diagnostics;
 using System.Diagnostics;
 using xyLOGIX.Validators.Constants.Properties;
 
@@ -13,6 +14,20 @@ namespace xyLOGIX.Validators.Constants
         /// validate a three-part version string, i.e., <c>0.2.5</c>.
         /// </summary>
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
+
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Validators.Constants.Regexes" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static Regexes() { }
 
         /// <summary>
         /// A <see cref="T:System.String" /> that contains a regular expression used to
@@ -32,6 +47,7 @@ namespace xyLOGIX.Validators.Constants
         /// A <see cref="T:System.String" /> that contains a regular expression used to
         /// validate the format of an email address.
         /// </summary>
-        public static string WebAddress { [DebuggerStepThrough] get; } = Resources.Regex_WebAddress;
+        public static string WebAddress { [DebuggerStepThrough] get; } =
+            Resources.Regex_WebAddress;
     }
 }
