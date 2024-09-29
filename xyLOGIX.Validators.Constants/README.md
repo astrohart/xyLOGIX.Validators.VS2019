@@ -8,6 +8,7 @@
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
   - [WebAddress](#P-xyLOGIX-Validators-Constants-Regexes-WebAddress 'xyLOGIX.Validators.Constants.Regexes.WebAddress')
+  - [#cctor()](#M-xyLOGIX-Validators-Constants-Regexes-#cctor 'xyLOGIX.Validators.Constants.Regexes.#cctor')
 - [Resources](#T-xyLOGIX-Validators-Constants-Properties-Resources 'xyLOGIX.Validators.Constants.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Constants-Properties-Resources-Culture 'xyLOGIX.Validators.Constants.Properties.Resources.Culture')
   - [Regex_EmailAddress](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_EmailAddress 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_EmailAddress')
@@ -57,6 +58,28 @@ validate the format of a `RFC 3339` timestamp.
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
 validate the format of an email address.
+
+<a name='M-xyLOGIX-Validators-Constants-Regexes-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
 
 <a name='T-xyLOGIX-Validators-Constants-Properties-Resources'></a>
 ## Resources `type`
