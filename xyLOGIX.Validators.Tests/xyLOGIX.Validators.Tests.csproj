@@ -10,8 +10,7 @@
     <ProjectGuid>{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}</ProjectGuid>
     <Deterministic>false</Deterministic>
     <NuGetPackageImportStamp />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +21,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>bin\x64\Debug\xyLOGIX.Validators.Tests.xml</DocumentationFile>
+    <SkipPostSharp>False</SkipPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -32,6 +32,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.Tests.xml</DocumentationFile>
+    <SkipPostSharp>False</SkipPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>bin\x86\Debug\xyLOGIX.Validators.Tests.xml</DocumentationFile>
+    <SkipPostSharp>False</SkipPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -52,6 +54,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>bin\x86\Release\xyLOGIX.Validators.Tests.xml</DocumentationFile>
+    <SkipPostSharp>False</SkipPostSharp>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>

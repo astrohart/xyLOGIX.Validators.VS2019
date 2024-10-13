@@ -7,8 +7,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{FBE76875-0298-4D43-8565-84B35E825806}</ProjectGuid>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <SkipPostSharp>True</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.Factories.xml</DocumentationFile>
     <NoWarn>CS1591;CS1587</NoWarn>
   </PropertyGroup>

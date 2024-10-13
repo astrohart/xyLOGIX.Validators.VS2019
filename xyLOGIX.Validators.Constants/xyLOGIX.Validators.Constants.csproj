@@ -8,8 +8,7 @@
     <TargetFrameworkProfile />
     <ProjectGuid>{001C84CE-256E-48F6-A7FC-8180AC07AA43}</ProjectGuid>
     <Deterministic>false</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -36,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <SkipPostSharp>True</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.Constants.xml</DocumentationFile>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1591;CS1587</NoWarn>
@@ -126,8 +125,7 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
     <Compile Include="Properties\AssemblyInfo.cs" />
