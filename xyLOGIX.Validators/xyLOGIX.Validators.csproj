@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetSymbolValidator.cs" />
+    <Compile Include="DnsHostnameValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
     <Compile Include="VersionStringValidator.cs" />
