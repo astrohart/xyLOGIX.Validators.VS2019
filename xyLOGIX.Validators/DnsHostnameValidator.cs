@@ -17,6 +17,13 @@ namespace xyLOGIX.Validators
     public class DnsHostnameValidator : IDnsHostnameValidator
     {
         /// <summary>
+        /// A <see cref="T:System.String" /> containing the regular-expression pattern to
+        /// be utilized for validating DNS hostnames, e.g., <c>myserver.myexample.com</c>
+        /// </summary>
+        private const string DNS_PATTERN =
+            @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
+
+        /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
@@ -36,6 +43,17 @@ namespace xyLOGIX.Validators
         {
             [DebuggerStepThrough] get;
         } = new DnsHostnameValidator();
+
+        /// <summary>
+        /// Gets a reference to an instance of
+        /// <see cref="T:System.Text.RegularExpressions.Regex" /> that compiles the
+        /// <see cref="F:xyLOGIX.Validators.DnsHostnameValidator.DNS_PATTERN" /> regular
+        /// expression.
+        /// </summary>
+        private static Regex TheDnsRegex { [DebuggerStepThrough] get; } =
+            new Regex(
+                DNS_PATTERN, RegexOptions.Compiled | RegexOptions.IgnoreCase
+            );
 
         /// <summary>
         /// Validates if the given <paramref name="host" /> address is either a valid IPv4
@@ -87,15 +105,10 @@ namespace xyLOGIX.Validators
 
             try
             {
-                // Regular expression for validating DNS addresses
-                const string DNS_PATTERN =
-                    @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
+                if (string.IsNullOrWhiteSpace(dnsAddress))
+                    return result;
 
-                var regex = new Regex(
-                    DNS_PATTERN, RegexOptions.Compiled | RegexOptions.IgnoreCase
-                );
-
-                result = regex.IsMatch(dnsAddress);
+                result = TheDnsRegex.IsMatch(dnsAddress);
             }
             catch (Exception ex)
             {
