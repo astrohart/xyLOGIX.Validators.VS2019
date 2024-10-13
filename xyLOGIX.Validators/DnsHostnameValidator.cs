@@ -1,8 +1,10 @@
 using PostSharp.Patterns.Diagnostics;
+using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -44,40 +46,66 @@ namespace xyLOGIX.Validators
         /// address of the host to be validated.
         /// </param>
         /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
-        public bool IsValid(string host)
+        public bool IsValid([NotLogged] string host)
         {
-            if (string.IsNullOrWhiteSpace(host))
-                return false;
+            var result = false;
 
-            // Check if it's a valid IPv4 address
-            if (IPAddress.TryParse(host, out var ip))
+            try
             {
-                return ip.AddressFamily ==
-                       AddressFamily.InterNetwork; // Only allow IPv4
+                if (string.IsNullOrWhiteSpace(host))
+                    return result;
+
+                result = IPAddress.TryParse(host, out var ip)
+                    ? ip.AddressFamily == AddressFamily.InterNetwork
+                    : IsValidDnsAddress(host);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
             }
 
-            // Check if it's a valid DNS address
-            return IsValidDnsAddress(host);
+            return result;
         }
 
         /// <summary>
         /// Validates whether a given string is a valid DNS address.
         /// </summary>
-        /// <param name="dnsAddress">The DNS address to validate.</param>
+        /// <param name="dnsAddress">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the DNS address to be validated.
+        /// </param>
         /// <returns>
         /// <see langword="true" /> if the address is valid, otherwise
         /// <see langword="false" />.
         /// </returns>
-        private static bool IsValidDnsAddress(string dnsAddress)
+        private static bool IsValidDnsAddress([NotLogged] string dnsAddress)
         {
-            // Regular expression for validating DNS addresses
-            var dnsPattern =
-                @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
+            var result = false;
 
-            var regex = new Regex(
-                dnsPattern, RegexOptions.Compiled | RegexOptions.IgnoreCase
-            );
-            return regex.IsMatch(dnsAddress);
+            try
+            {
+                // Regular expression for validating DNS addresses
+                const string DNS_PATTERN =
+                    @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
+
+                var regex = new Regex(
+                    DNS_PATTERN, RegexOptions.Compiled | RegexOptions.IgnoreCase
+                );
+
+                result = regex.IsMatch(dnsAddress);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
     }
 }

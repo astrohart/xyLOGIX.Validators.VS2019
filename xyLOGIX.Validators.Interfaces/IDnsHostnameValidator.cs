@@ -1,7 +1,12 @@
+using PostSharp.Patterns.Diagnostics;
+
 namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
-    /// TODO: Add interface documentation here.
+    /// Defines the publicly-exposed events, methods and properties of an object that
+    /// validates the contents of <see cref="T:System.String" /> variables that purport
+    /// to contain a valid hostname for use with Windows Sockets to establish either a
+    /// TCP or UDP connection to a remote host..
     /// </summary>
     public interface IDnsHostnameValidator
     {
@@ -14,6 +19,6 @@ namespace xyLOGIX.Validators.Interfaces
         /// address of the host to be validated.
         /// </param>
         /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
-        bool IsValid(string host);
+        bool IsValid([NotLogged] string host);
     }
 }
