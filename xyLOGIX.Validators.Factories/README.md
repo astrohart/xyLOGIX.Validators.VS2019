@@ -9,6 +9,9 @@
 - [GetDateRangeValidator](#T-xyLOGIX-Validators-Factories-GetDateRangeValidator 'xyLOGIX.Validators.Factories.GetDateRangeValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetDateRangeValidator-#cctor 'xyLOGIX.Validators.Factories.GetDateRangeValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetDateRangeValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetDateRangeValidator.SoleInstance')
+- [GetDnsHostnameValidator](#T-xyLOGIX-Validators-Factories-GetDnsHostnameValidator 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetDnsHostnameValidator-#cctor 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetDnsHostnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator.SoleInstance')
 - [GetEmailAddressValidator](#T-xyLOGIX-Validators-Factories-GetEmailAddressValidator 'xyLOGIX.Validators.Factories.GetEmailAddressValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetEmailAddressValidator-#cctor 'xyLOGIX.Validators.Factories.GetEmailAddressValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetEmailAddressValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetEmailAddressValidator.SoleInstance')
@@ -127,6 +130,53 @@ interface, and returns a reference to it.
 Reference to the one, and only, instance of the object that implements the
 [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
 interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetDnsHostnameValidator'></a>
+## GetDnsHostnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetDnsHostnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the [GetDnsHostnameValidator](#T-xyLOGIX-Validators-Factories-GetDnsHostnameValidator 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetDnsHostnameValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface, and returns a reference to
+it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface.
 
 ##### Parameters
 

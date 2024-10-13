@@ -13,6 +13,12 @@
   - [Instance](#P-xyLOGIX-Validators-DateRangeValidator-Instance 'xyLOGIX.Validators.DateRangeValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-DateRangeValidator-#cctor 'xyLOGIX.Validators.DateRangeValidator.#cctor')
   - [IsValid(start,end)](#M-xyLOGIX-Validators-DateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.DateRangeValidator.IsValid(System.DateTime,System.DateTime)')
+- [DnsHostnameValidator](#T-xyLOGIX-Validators-DnsHostnameValidator 'xyLOGIX.Validators.DnsHostnameValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-DnsHostnameValidator-#ctor 'xyLOGIX.Validators.DnsHostnameValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-DnsHostnameValidator-Instance 'xyLOGIX.Validators.DnsHostnameValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-DnsHostnameValidator-#cctor 'xyLOGIX.Validators.DnsHostnameValidator.#cctor')
+  - [IsValid(host)](#M-xyLOGIX-Validators-DnsHostnameValidator-IsValid-System-String- 'xyLOGIX.Validators.DnsHostnameValidator.IsValid(System.String)')
+  - [IsValidDnsAddress(dnsAddress)](#M-xyLOGIX-Validators-DnsHostnameValidator-IsValidDnsAddress-System-String- 'xyLOGIX.Validators.DnsHostnameValidator.IsValidDnsAddress(System.String)')
 - [EmailAddressValidator](#T-xyLOGIX-Validators-EmailAddressValidator 'xyLOGIX.Validators.EmailAddressValidator')
   - [#ctor()](#M-xyLOGIX-Validators-EmailAddressValidator-#ctor 'xyLOGIX.Validators.EmailAddressValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-EmailAddressValidator-Instance 'xyLOGIX.Validators.EmailAddressValidator.Instance')
@@ -207,6 +213,84 @@ This method returns `true` if either `start`
 or `end` are set to the value
 `January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
 otherwise then the method returns `false`.
+
+<a name='T-xyLOGIX-Validators-DnsHostnameValidator'></a>
+## DnsHostnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+TODO: Add class documentation here.
+
+<a name='M-xyLOGIX-Validators-DnsHostnameValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-DnsHostnameValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface.
+
+<a name='M-xyLOGIX-Validators-DnsHostnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-DnsHostnameValidator-IsValid-System-String-'></a>
+### IsValid(host) `method`
+
+##### Summary
+
+Validates if the given `host` address is either a valid IPv4
+address or a valid DNS address.
+
+##### Returns
+
+`true` if valid, otherwise `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| host | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+address of the host to be validated. |
+
+<a name='M-xyLOGIX-Validators-DnsHostnameValidator-IsValidDnsAddress-System-String-'></a>
+### IsValidDnsAddress(dnsAddress) `method`
+
+##### Summary
+
+Validates whether a given string is a valid DNS address.
+
+##### Returns
+
+`true` if the address is valid, otherwise
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dnsAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The DNS address to validate. |
 
 <a name='T-xyLOGIX-Validators-EmailAddressValidator'></a>
 ## EmailAddressValidator `type`

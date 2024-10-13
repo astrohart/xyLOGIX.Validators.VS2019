@@ -8,6 +8,7 @@
 - [IDataValidator](#T-xyLOGIX-Validators-Interfaces-IDataValidator 'xyLOGIX.Validators.Interfaces.IDataValidator')
 - [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
   - [IsValid(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValid(System.DateTime,System.DateTime)')
+- [IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator')
 - [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
   - [IsValid(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValid(System.String)')
 - [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator')
@@ -124,6 +125,17 @@ This method returns `true` if either `start`
 or `end` are set to the value
 `January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
 otherwise then the method returns `false`.
+
+<a name='T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator'></a>
+## IDnsHostnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+TODO: Add interface documentation here.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator'></a>
 ## IEmailAddressValidator `type`
