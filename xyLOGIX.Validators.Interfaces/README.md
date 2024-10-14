@@ -18,6 +18,9 @@
   - [Validate()](#M-xyLOGIX-Validators-Interfaces-IObjectValidator-Validate 'xyLOGIX.Validators.Interfaces.IObjectValidator.Validate')
 - [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
   - [IsValid(value)](#M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator.IsValid(System.String)')
+- [ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator')
+  - [IsValid(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValid(System.String)')
+  - [IsValid(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-Int32- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValid(System.Int32)')
 - [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
   - [IsValid(uuid,silent)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String,System-Boolean- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String,System.Boolean)')
 - [IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
@@ -280,6 +283,60 @@ in a valid format; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
 examined. |
+
+<a name='T-xyLOGIX-Validators-Interfaces-ITCPPortValidator'></a>
+## ITCPPortValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines the publicly-exposed events, methods and properties of a TCP Port
+Number validator.
+
+<a name='M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-String-'></a>
+### IsValid(port) `method`
+
+##### Summary
+
+Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), that
+represents the TCP `port` number using ASCII characters, is
+(a) parsable as an integer and (b) is in the range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is
+parsable as an integer, and in the range `1`-`65535` (inclusive);
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the ASCII representation of a TCP port number. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-Int32-'></a>
+### IsValid(port) `method`
+
+##### Summary
+
+Determines whether the specified TCP `port` number is in the
+range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is in the
+range `1`-`65535` (inclusive); otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that set to the TCP port number
+that is to be validated. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-IUUIDValidator'></a>
 ## IUUIDValidator `type`
