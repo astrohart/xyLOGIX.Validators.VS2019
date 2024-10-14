@@ -7,7 +7,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{9491B224-3C9A-4DA8-ACC3-50EE379EB555}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -130,6 +131,7 @@
     <Compile Include="IEmailAddressValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
     <Compile Include="IRFC3339TimestampFormatValidator.cs" />
+    <Compile Include="ITCPPortValidator.cs" />
     <Compile Include="IUUIDValidator.cs" />
     <Compile Include="IVersionStringValidator.cs" />
     <Compile Include="IWebAddressValidator.cs" />
