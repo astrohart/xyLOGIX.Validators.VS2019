@@ -46,7 +46,7 @@ namespace xyLOGIX.Validators
         /// parsable as an integer, and in the range <c>1</c>-<c>65535</c> (inclusive);
         /// otherwise, <see langword="false" />.
         /// </returns>
-        public bool IsValid(string port)
+        public bool IsValid([NotLogged] string port)
         {
             var result = false;
 
@@ -80,7 +80,7 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the specified <paramref name="port" /> is in the
         /// range <c>1</c>-<c>65535</c> (inclusive); otherwise, <see langword="false" />.
         /// </returns>
-        public bool IsValid(int port)
+        public bool IsValid([NotLogged] int port)
         {
             bool result;
 
@@ -113,7 +113,9 @@ namespace xyLOGIX.Validators
         /// the
         /// range <c>1</c>-<c>65535</c> (inclusive); otherwise, <see langword="false" />.
         /// </returns>
-        private static bool PortNumberIsInCorrectRange(int portNumber)
+        private static bool PortNumberIsInCorrectRange(
+            [NotLogged] int portNumber
+        )
             => portNumber.IsInRangeWithLowerBound(1, 65535);
     }
 }
