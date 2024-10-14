@@ -52,6 +52,13 @@
   - [Error_WebAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_InvalidFormat')
   - [Error_WebAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_IsBlank')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
+- [TCPPortValidator](#T-xyLOGIX-Validators-TCPPortValidator 'xyLOGIX.Validators.TCPPortValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-TCPPortValidator-#ctor 'xyLOGIX.Validators.TCPPortValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-TCPPortValidator-Instance 'xyLOGIX.Validators.TCPPortValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-TCPPortValidator-#cctor 'xyLOGIX.Validators.TCPPortValidator.#cctor')
+  - [IsValid(port)](#M-xyLOGIX-Validators-TCPPortValidator-IsValid-System-String- 'xyLOGIX.Validators.TCPPortValidator.IsValid(System.String)')
+  - [IsValid(port)](#M-xyLOGIX-Validators-TCPPortValidator-IsValid-System-Int32- 'xyLOGIX.Validators.TCPPortValidator.IsValid(System.Int32)')
+  - [PortNumberIsInCorrectRange(portNumber)](#M-xyLOGIX-Validators-TCPPortValidator-PortNumberIsInCorrectRange-System-Int32- 'xyLOGIX.Validators.TCPPortValidator.PortNumberIsInCorrectRange(System.Int32)')
 - [UUIDValidator](#T-xyLOGIX-Validators-UUIDValidator 'xyLOGIX.Validators.UUIDValidator')
   - [#ctor()](#M-xyLOGIX-Validators-UUIDValidator-#ctor 'xyLOGIX.Validators.UUIDValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-UUIDValidator-Instance 'xyLOGIX.Validators.UUIDValidator.Instance')
@@ -655,6 +662,109 @@ Looks up a localized string similar to The 'webAddress' parameter was passed a b
 ##### Summary
 
 Returns the cached ResourceManager instance used by this class.
+
+<a name='T-xyLOGIX-Validators-TCPPortValidator'></a>
+## TCPPortValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Exposes functionality to validate the values of variables that purport to hold
+TCP port numbers.
+
+<a name='M-xyLOGIX-Validators-TCPPortValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-TCPPortValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface.
+
+<a name='M-xyLOGIX-Validators-TCPPortValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-TCPPortValidator-IsValid-System-String-'></a>
+### IsValid(port) `method`
+
+##### Summary
+
+Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), that
+represents the TCP `port` number using ASCII characters, is
+(a) parsable as an integer and (b) is in the range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is
+parsable as an integer, and in the range `1`-`65535` (inclusive);
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the ASCII representation of a TCP port number. |
+
+<a name='M-xyLOGIX-Validators-TCPPortValidator-IsValid-System-Int32-'></a>
+### IsValid(port) `method`
+
+##### Summary
+
+Determines whether the specified TCP `port` number is in the
+range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is in the
+range `1`-`65535` (inclusive); otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that set to the TCP port number
+that is to be validated. |
+
+<a name='M-xyLOGIX-Validators-TCPPortValidator-PortNumberIsInCorrectRange-System-Int32-'></a>
+### PortNumberIsInCorrectRange(portNumber) `method`
+
+##### Summary
+
+Determines whether the specified `portNumber` is within the
+defined range of valid values.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| portNumber | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that set to the TCP port number
+that is to be validated. |
 
 <a name='T-xyLOGIX-Validators-UUIDValidator'></a>
 ## UUIDValidator `type`

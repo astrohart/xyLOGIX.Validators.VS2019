@@ -18,6 +18,9 @@
 - [GetRF3339TimestampFormatValidator](#T-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-#cctor 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.SoleInstance')
+- [GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetTCPPortValidator-#cctor 'xyLOGIX.Validators.Factories.GetTCPPortValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetTCPPortValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetTCPPortValidator.SoleInstance')
 - [GetUUIDValidator](#T-xyLOGIX-Validators-Factories-GetUUIDValidator 'xyLOGIX.Validators.Factories.GetUUIDValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetUUIDValidator-#cctor 'xyLOGIX.Validators.Factories.GetUUIDValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetUUIDValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetUUIDValidator.SoleInstance')
@@ -279,6 +282,53 @@ interface, and returns a reference to it.
 Reference to the one, and only, instance of the object that implements the
 [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
 interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetTCPPortValidator'></a>
+## GetTCPPortValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetTCPPortValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the [GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetTCPPortValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface, and returns a reference to
+it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface.
 
 ##### Parameters
 
