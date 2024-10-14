@@ -1,3 +1,5 @@
+using PostSharp.Patterns.Diagnostics;
+
 namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
@@ -20,7 +22,7 @@ namespace xyLOGIX.Validators.Interfaces
         /// parsable as an integer, and in the range <c>1</c>-<c>65535</c> (inclusive);
         /// otherwise, <see langword="false" />.
         /// </returns>
-        bool IsValid(string port);
+        bool IsValid([NotLogged] string port);
 
         /// <summary>
         /// Determines whether the specified TCP <paramref name="port" /> number is in the
@@ -34,6 +36,6 @@ namespace xyLOGIX.Validators.Interfaces
         /// <see langword="true" /> if the specified <paramref name="port" /> is in the
         /// range <c>1</c>-<c>65535</c> (inclusive); otherwise, <see langword="false" />.
         /// </returns>
-        bool IsValid(int port);
+        bool IsValid([NotLogged] int port);
     }
 }
