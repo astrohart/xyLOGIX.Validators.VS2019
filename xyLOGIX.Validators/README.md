@@ -15,7 +15,9 @@
   - [IsValid(start,end)](#M-xyLOGIX-Validators-DateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.DateRangeValidator.IsValid(System.DateTime,System.DateTime)')
 - [DnsHostnameValidator](#T-xyLOGIX-Validators-DnsHostnameValidator 'xyLOGIX.Validators.DnsHostnameValidator')
   - [#ctor()](#M-xyLOGIX-Validators-DnsHostnameValidator-#ctor 'xyLOGIX.Validators.DnsHostnameValidator.#ctor')
+  - [DNS_PATTERN](#F-xyLOGIX-Validators-DnsHostnameValidator-DNS_PATTERN 'xyLOGIX.Validators.DnsHostnameValidator.DNS_PATTERN')
   - [Instance](#P-xyLOGIX-Validators-DnsHostnameValidator-Instance 'xyLOGIX.Validators.DnsHostnameValidator.Instance')
+  - [TheDnsRegex](#P-xyLOGIX-Validators-DnsHostnameValidator-TheDnsRegex 'xyLOGIX.Validators.DnsHostnameValidator.TheDnsRegex')
   - [#cctor()](#M-xyLOGIX-Validators-DnsHostnameValidator-#cctor 'xyLOGIX.Validators.DnsHostnameValidator.#cctor')
   - [IsValid(host)](#M-xyLOGIX-Validators-DnsHostnameValidator-IsValid-System-String- 'xyLOGIX.Validators.DnsHostnameValidator.IsValid(System.String)')
   - [IsValidDnsAddress(dnsAddress)](#M-xyLOGIX-Validators-DnsHostnameValidator-IsValidDnsAddress-System-String- 'xyLOGIX.Validators.DnsHostnameValidator.IsValidDnsAddress(System.String)')
@@ -223,7 +225,9 @@ xyLOGIX.Validators
 
 ##### Summary
 
-TODO: Add class documentation here.
+Validates the contents of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables that purport
+to contain a valid hostname for use with Windows Sockets to establish either a
+TCP or UDP connection to a remote host.
 
 <a name='M-xyLOGIX-Validators-DnsHostnameValidator-#ctor'></a>
 ### #ctor() `constructor`
@@ -236,6 +240,14 @@ Empty, protected constructor to prohibit direct allocation of this class.
 
 This constructor has no parameters.
 
+<a name='F-xyLOGIX-Validators-DnsHostnameValidator-DNS_PATTERN'></a>
+### DNS_PATTERN `constants`
+
+##### Summary
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the regular-expression pattern to
+be utilized for validating DNS hostnames, e.g., `myserver.myexample.com`
+
 <a name='P-xyLOGIX-Validators-DnsHostnameValidator-Instance'></a>
 ### Instance `property`
 
@@ -243,6 +255,16 @@ This constructor has no parameters.
 
 Gets a reference to the one and only instance of the object that implements the
 [IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface.
+
+<a name='P-xyLOGIX-Validators-DnsHostnameValidator-TheDnsRegex'></a>
+### TheDnsRegex `property`
+
+##### Summary
+
+Gets a reference to an instance of
+[Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that compiles the
+[DNS_PATTERN](#F-xyLOGIX-Validators-DnsHostnameValidator-DNS_PATTERN 'xyLOGIX.Validators.DnsHostnameValidator.DNS_PATTERN') regular
+expression.
 
 <a name='M-xyLOGIX-Validators-DnsHostnameValidator-#cctor'></a>
 ### #cctor() `method`
@@ -290,7 +312,8 @@ Validates whether a given string is a valid DNS address.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| dnsAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The DNS address to validate. |
+| dnsAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the DNS address to be validated. |
 
 <a name='T-xyLOGIX-Validators-EmailAddressValidator'></a>
 ## EmailAddressValidator `type`

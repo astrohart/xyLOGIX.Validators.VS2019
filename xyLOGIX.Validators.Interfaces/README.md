@@ -9,6 +9,7 @@
 - [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
   - [IsValid(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValid(System.DateTime,System.DateTime)')
 - [IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator')
+  - [IsValid(host)](#M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator.IsValid(System.String)')
 - [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
   - [IsValid(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValid(System.String)')
 - [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator')
@@ -135,7 +136,29 @@ xyLOGIX.Validators.Interfaces
 
 ##### Summary
 
-TODO: Add interface documentation here.
+Defines the publicly-exposed events, methods and properties of an object that
+validates the contents of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables that purport
+to contain a valid hostname for use with Windows Sockets to establish either a
+TCP or UDP connection to a remote host..
+
+<a name='M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValid-System-String-'></a>
+### IsValid(host) `method`
+
+##### Summary
+
+Validates if the given `host` address is either a valid IPv4
+address or a valid DNS address.
+
+##### Returns
+
+`true` if valid, otherwise `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| host | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+address of the host to be validated. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator'></a>
 ## IEmailAddressValidator `type`
