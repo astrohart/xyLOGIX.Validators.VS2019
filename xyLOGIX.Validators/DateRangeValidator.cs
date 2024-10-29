@@ -1,7 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
-using xyLOGIX.Core.Debug;
+using System.Diagnostics;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -29,8 +28,10 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IDateRangeValidator" />
         /// interface.
         /// </summary>
-        public static IDateRangeValidator Instance { [DebuggerStepThrough] get; } =
-            new DateRangeValidator();
+        public static IDateRangeValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new DateRangeValidator();
 
         /// <summary>
         /// Validates that the <paramref name="end" /> and <paramref name="start" /> dates
@@ -62,70 +63,18 @@ namespace xyLOGIX.Validators
 
             try
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    $"DateRangeValidator.IsValid: Validating the date range '{start}'-'{end}'..."
-                );
-
-                if (start == default && end == default)
-                {
-                    /*
-                     * OKAY, if both the start and end dates are their
-                     * default value, just silently fail here.  All this
-                     * means is that they aren't being used as search query
-                     * parameters.
-                     */
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Info,
-                        $"DateRangeValidator.IsValid: The value '{default(DateTime)}' was passed for both the 'start' and the 'end' parameters.  This means they aren't being used for a search."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"DateRangeValidator.IsValid: Result = {result}"
-                    );
-
-                    return
-                        result; // silently return FALSE here, do not throw an exception
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "DateRangeValidator.IsValid: Running rules to ensure the values of 'start' and 'end' make logical sense..."
-                );
-
+                if (start == default && end == default) return result;
                 if (start != default && end != default && end <= start)
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        $"DateRangeValidator.IsValid: *** ERROR *** The end date, '{end}', is BEFORE or THE SAME AS the start date, '{start}'.  This is illogical.  Stopping..."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"DateRangeValidator.IsValid: Result = {result}"
-                    );
-
                     return result;
-                }
 
                 result = (start == default && end != default) ||
                          (start != default && end == default) || end > start;
             }
-            catch (Exception ex)
+            catch
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
-                );
-
+                //Ignore.
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"DateRangeValidator.IsValid: Result = {result}"
-            );
 
             return result;
         }
