@@ -55,6 +55,7 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the date range is valid;
         /// <see langword="false" /> otheriwse.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public bool IsValid(DateTime start, DateTime end)
         {
             var result = false;
