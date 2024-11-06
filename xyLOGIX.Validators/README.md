@@ -34,6 +34,12 @@
   - [OnValidationFailed(e)](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationFailed-xyLOGIX-Validators-Events-ValidationFailedEventArgs- 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationFailed(xyLOGIX.Validators.Events.ValidationFailedEventArgs)')
   - [OnValidationSucceeded()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-OnValidationSucceeded 'xyLOGIX.Validators.ObjectValidatorBase`1.OnValidationSucceeded')
   - [Validate()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-Validate 'xyLOGIX.Validators.ObjectValidatorBase`1.Validate')
+- [PathnameValidator](#T-xyLOGIX-Validators-PathnameValidator 'xyLOGIX.Validators.PathnameValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-PathnameValidator-#ctor 'xyLOGIX.Validators.PathnameValidator.#ctor')
+  - [Path](#F-xyLOGIX-Validators-PathnameValidator-Path 'xyLOGIX.Validators.PathnameValidator.Path')
+  - [Instance](#P-xyLOGIX-Validators-PathnameValidator-Instance 'xyLOGIX.Validators.PathnameValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Validators-PathnameValidator-#cctor 'xyLOGIX.Validators.PathnameValidator.#cctor')
+  - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPath(System.String)')
 - [RF3339TimestampFormatValidator](#T-xyLOGIX-Validators-RF3339TimestampFormatValidator 'xyLOGIX.Validators.RF3339TimestampFormatValidator')
   - [#ctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-RF3339TimestampFormatValidator-Instance 'xyLOGIX.Validators.RF3339TimestampFormatValidator.Instance')
@@ -503,6 +509,86 @@ property.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-PathnameValidator'></a>
+## PathnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the format of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) that are
+supposed to contain valid filesystem pathnames for the Windows operating
+system.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='F-xyLOGIX-Validators-PathnameValidator-Path'></a>
+### Path `constants`
+
+##### Summary
+
+Reference to an instance of
+[Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that is a compiled regex
+pattern to match `"C:\folder\path"` or `--root="\\server\share\path"`
+with or without quotes.
+
+##### Remarks
+
+This particular regex supports both drive-letter paths and UNC
+pathnames.
+
+<a name='P-xyLOGIX-Validators-PathnameValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String-'></a>
+### IsValidFolderPath(pathname) `method`
+
+##### Summary
+
+Validates that the specified `pathname` is of a valid format
+on the Windows operating system.
+
+##### Returns
+
+`true` depending whether the specified
+`pathname` contains text whose format is valid for a
+filesystem pathname on the Windows operating system; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the data that is to be examined. |
 
 <a name='T-xyLOGIX-Validators-RF3339TimestampFormatValidator'></a>
 ## RF3339TimestampFormatValidator `type`
