@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="AssetSymbolValidator.cs" />
     <Compile Include="DnsHostnameValidator.cs" />
+    <Compile Include="PathnameValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
     <Compile Include="TCPPortValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
