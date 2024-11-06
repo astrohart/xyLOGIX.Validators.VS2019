@@ -151,6 +151,10 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\xyLOGIX.Tests.Logging.VS2019\xyLOGIX.Tests.Logging\xyLOGIX.Tests.Logging.csproj">
+      <Project>{52243153-1A0D-409A-91A8-638DBD7CF23F}</Project>
+      <Name>xyLOGIX.Tests.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Validators.Factories\xyLOGIX.Validators.Factories.csproj">
       <Project>{FBE76875-0298-4D43-8565-84B35E825806}</Project>
       <Name>xyLOGIX.Validators.Factories</Name>

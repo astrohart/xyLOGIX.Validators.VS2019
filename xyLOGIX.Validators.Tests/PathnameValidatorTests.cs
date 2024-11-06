@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using xyLOGIX.Tests.Logging;
 
 namespace xyLOGIX.Validators.Tests
 {
@@ -7,8 +8,8 @@ namespace xyLOGIX.Validators.Tests
     /// <see cref="T:xyLOGIX.Validators.PathnameValidator" /> class.
     /// </summary>
     [TestFixture]
-    public class PathnameValidatorTests
+    public class PathnameValidatorTests : LoggingTestBase
     {
-        // TODO: Add test fixture implementation here
+
     }
 }
