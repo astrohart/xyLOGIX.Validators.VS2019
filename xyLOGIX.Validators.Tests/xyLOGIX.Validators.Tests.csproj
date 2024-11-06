@@ -10,7 +10,8 @@
     <ProjectGuid>{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}</ProjectGuid>
     <Deterministic>false</Deterministic>
     <NuGetPackageImportStamp />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -124,6 +125,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PathnameValidatorTests.cs" />
     <Compile Include="VersionStringValidatorTests.cs" />
     <None Include="key.snk" />
     <Compile Include="Properties\AssemblyInfo.cs" />
