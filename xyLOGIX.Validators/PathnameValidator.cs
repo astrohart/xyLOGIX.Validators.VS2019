@@ -39,16 +39,14 @@ namespace xyLOGIX.Validators
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected PathnameValidator()
-        { }
+        protected PathnameValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface.
         /// </summary>
         public static IPathnameValidator
-            Instance
-        { [DebuggerStepThrough] get; } = new PathnameValidator();
+            Instance { [DebuggerStepThrough] get; } = new PathnameValidator();
 
         /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of a valid format

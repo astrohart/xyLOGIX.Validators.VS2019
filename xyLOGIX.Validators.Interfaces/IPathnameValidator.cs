@@ -5,7 +5,7 @@
     /// validate the format of <see cref="T:System.String" /> values that purport to
     /// contain pathnames..
     /// </summary>
-    public interface IPathnameValidator
+    public interface IPathnameValidator : IDataValidator
     {
         /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of a valid format
