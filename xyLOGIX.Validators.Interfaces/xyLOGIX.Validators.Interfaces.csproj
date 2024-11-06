@@ -130,6 +130,7 @@
     <Compile Include="IDnsHostnameValidator.cs" />
     <Compile Include="IEmailAddressValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
+    <Compile Include="IPathnameValidator.cs" />
     <Compile Include="IRFC3339TimestampFormatValidator.cs" />
     <Compile Include="ITCPPortValidator.cs" />
     <Compile Include="IUUIDValidator.cs" />
