@@ -5,16 +5,16 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xyLOGIX.Validators.Tests")]
-[assembly: AssemblyDescription("Provides unit tests for ")]
+[assembly: AssemblyDescription("Provides unit tests for various validator objects within this framework.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Unit Test Library for ")]
+[assembly: AssemblyProduct("xyLOGIX Unit Test Library for Validators")]
 [assembly:
     AssemblyCopyright(
         "Copyright © 2020-24 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of xyLOGIX Foo.  Foo is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+        "This software is a component of xyLOGIX Unit Test Library for Validators.  Unit Test Library for Validators is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
