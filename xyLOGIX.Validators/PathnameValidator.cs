@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -24,6 +25,7 @@ namespace xyLOGIX.Validators
         /// This particular regex supports both drive-letter paths and UNC
         /// pathnames.
         /// </remarks>
+        [ExplicitlySynchronized]
         private static readonly Regex Path = new Regex(
             @"^(""?)(\\{2}[^\\]+\\[^""\s]+|[a-zA-Z]:\\[^""\s]*)(""?)$",
             RegexOptions.Compiled
@@ -39,14 +41,16 @@ namespace xyLOGIX.Validators
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected PathnameValidator() { }
+        protected PathnameValidator()
+        { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface.
         /// </summary>
         public static IPathnameValidator
-            Instance { [DebuggerStepThrough] get; } = new PathnameValidator();
+            Instance
+        { [DebuggerStepThrough] get; } = new PathnameValidator();
 
         /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of a valid format
