@@ -3,6 +3,7 @@
 
 ## Contents
 
+- [PathnameValidatorTests](#T-xyLOGIX-Validators-Tests-PathnameValidatorTests 'xyLOGIX.Validators.Tests.PathnameValidatorTests')
 - [Resources](#T-xyLOGIX-Validators-Tests-Properties-Resources 'xyLOGIX.Validators.Tests.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Tests-Properties-Resources-Culture 'xyLOGIX.Validators.Tests.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Validators-Tests-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Tests.Properties.Resources.ResourceManager')
@@ -15,6 +16,18 @@
   - [IsValid_InputWithNonNumericCharactersAndNumbersSeparatedByDots_ReturnsFalse()](#M-xyLOGIX-Validators-Tests-VersionStringValidatorTests-IsValid_InputWithNonNumericCharactersAndNumbersSeparatedByDots_ReturnsFalse 'xyLOGIX.Validators.Tests.VersionStringValidatorTests.IsValid_InputWithNonNumericCharactersAndNumbersSeparatedByDots_ReturnsFalse')
   - [IsValid_InputWithNonNumericCharacters_ReturnsFalse()](#M-xyLOGIX-Validators-Tests-VersionStringValidatorTests-IsValid_InputWithNonNumericCharacters_ReturnsFalse 'xyLOGIX.Validators.Tests.VersionStringValidatorTests.IsValid_InputWithNonNumericCharacters_ReturnsFalse')
   - [IsValid_InputWithThreeNumbersSeparatedByDots_ReturnsTrue()](#M-xyLOGIX-Validators-Tests-VersionStringValidatorTests-IsValid_InputWithThreeNumbersSeparatedByDots_ReturnsTrue 'xyLOGIX.Validators.Tests.VersionStringValidatorTests.IsValid_InputWithThreeNumbersSeparatedByDots_ReturnsTrue')
+
+<a name='T-xyLOGIX-Validators-Tests-PathnameValidatorTests'></a>
+## PathnameValidatorTests `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Tests
+
+##### Summary
+
+Provides unit tests for the methods, properties, and events of the
+[PathnameValidator](#T-xyLOGIX-Validators-PathnameValidator 'xyLOGIX.Validators.PathnameValidator') class.
 
 <a name='T-xyLOGIX-Validators-Tests-Properties-Resources'></a>
 ## Resources `type`
