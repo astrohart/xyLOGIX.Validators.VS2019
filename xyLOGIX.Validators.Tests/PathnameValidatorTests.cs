@@ -107,7 +107,5 @@ namespace xyLOGIX.Validators.Tests
             string invalidPath
         )
             => Assert.That(!PathnameValidator.IsValidFolderPath(invalidPath));
-
-        /*...*/
     }
 }
