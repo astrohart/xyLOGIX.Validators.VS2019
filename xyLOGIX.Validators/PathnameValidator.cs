@@ -108,7 +108,7 @@ namespace xyLOGIX.Validators
                 result = false;
             }
 
-            return true;
+            return result;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace xyLOGIX.Validators
                 {
                     if (string.IsNullOrWhiteSpace(reservedName)) continue;
                     if (!segment.Equals(
-                            reservedName, StringComparison.OrdinalIgnoreCase
+                            reservedName, StringComparison.Ordinal
                         ))
                         continue;
 
