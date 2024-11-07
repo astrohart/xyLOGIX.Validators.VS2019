@@ -3,6 +3,8 @@ using PostSharp.Patterns.Threading;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using xyLOGIX.Core.Debug;
+using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -73,22 +75,39 @@ namespace xyLOGIX.Validators
         /// </returns>
         public bool IsValidFolderPath(string pathname)
         {
-            if (string.IsNullOrWhiteSpace(pathname))
-                return false;
+            var result = false;
 
-            var match = Path.Match(pathname);
-            if (!match.Success)
-                return false;
-
-            // Check for reserved device names in each segment
-            var pathWithoutQuotes = match.Groups["path"].Value;
-            var pathSegments = pathWithoutQuotes.Split('\\');
-
-            foreach (var segment in pathSegments)
+            try
             {
-                if (IsReservedDeviceName(segment))
-                    return false;
+                if (string.IsNullOrWhiteSpace(pathname))
+                    return result;
+
+                var match = Path.Match(pathname);
+                if (match == null) return result;
+                result = match.Success;
+                if (!result) return result;
+
+                // Check for reserved device names in each segment
+                var pathWithoutQuotes = match.Groups["path"].Value;
+                var pathSegments = pathWithoutQuotes.Split('\\');
+
+                foreach (var segment in pathSegments)
+                {
+                    if (string.IsNullOrWhiteSpace(segment)) continue;
+                    if (!IsReservedDeviceName(segment)) continue;
+
+                    result = true;
+                    break;
+                }
             }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
 
             return true;
         }
@@ -101,18 +120,37 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the <paramref name="segment" /> is a reserved device
         /// name; <see langword="false" /> otherwise.
         /// </returns>
+        [Log(AttributeExclude = true)]
         private static bool IsReservedDeviceName(string segment)
         {
-            foreach (var reservedName in ReservedDeviceNames)
+            var result = false;
+
+            try
             {
-                if (string.Equals(
-                        segment, reservedName,
-                        StringComparison.OrdinalIgnoreCase
-                    ))
-                    return true;
+                if (string.IsNullOrWhiteSpace(segment)) return result;
+                if (!segment.IsAlphaNumericUppercase()) return result;
+
+                foreach (var reservedName in ReservedDeviceNames)
+                {
+                    if (string.IsNullOrWhiteSpace(reservedName)) continue;
+                    if (!segment.Equals(
+                            reservedName, StringComparison.OrdinalIgnoreCase
+                        ))
+                        continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
             }
 
-            return false;
+            return result;
         }
     }
 }
