@@ -37,8 +37,10 @@
 - [PathnameValidator](#T-xyLOGIX-Validators-PathnameValidator 'xyLOGIX.Validators.PathnameValidator')
   - [#ctor()](#M-xyLOGIX-Validators-PathnameValidator-#ctor 'xyLOGIX.Validators.PathnameValidator.#ctor')
   - [Path](#F-xyLOGIX-Validators-PathnameValidator-Path 'xyLOGIX.Validators.PathnameValidator.Path')
+  - [ReservedDeviceNames](#F-xyLOGIX-Validators-PathnameValidator-ReservedDeviceNames 'xyLOGIX.Validators.PathnameValidator.ReservedDeviceNames')
   - [Instance](#P-xyLOGIX-Validators-PathnameValidator-Instance 'xyLOGIX.Validators.PathnameValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-PathnameValidator-#cctor 'xyLOGIX.Validators.PathnameValidator.#cctor')
+  - [IsReservedDeviceName(segment)](#M-xyLOGIX-Validators-PathnameValidator-IsReservedDeviceName-System-String- 'xyLOGIX.Validators.PathnameValidator.IsReservedDeviceName(System.String)')
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPath(System.String)')
 - [RF3339TimestampFormatValidator](#T-xyLOGIX-Validators-RF3339TimestampFormatValidator 'xyLOGIX.Validators.RF3339TimestampFormatValidator')
   - [#ctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#ctor')
@@ -539,15 +541,22 @@ This constructor has no parameters.
 
 ##### Summary
 
-Reference to an instance of
-[Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that is a compiled regex
-pattern to match `"C:\folder\path"` or `--root="\\server\share\path"`
-with or without quotes.
+Regex pattern to match valid Windows pathnames.
+This pattern supports both drive-letter paths and UNC pathnames.
 
 ##### Remarks
 
-This particular regex supports both drive-letter paths and UNC
-pathnames.
+This regex allows an optional trailing backslash, checks for illegal
+characters,
+and excludes reserved device names.
+
+<a name='F-xyLOGIX-Validators-PathnameValidator-ReservedDeviceNames'></a>
+### ReservedDeviceNames `constants`
+
+##### Summary
+
+Array of reserved Windows device names that are not allowed in any path
+segment.
 
 <a name='P-xyLOGIX-Validators-PathnameValidator-Instance'></a>
 ### Instance `property`
@@ -568,6 +577,24 @@ Empty, static constructor to prohibit direct allocation of this class.
 
 This method has no parameters.
 
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsReservedDeviceName-System-String-'></a>
+### IsReservedDeviceName(segment) `method`
+
+##### Summary
+
+Checks if the specified `segment` is a reserved device name.
+
+##### Returns
+
+`true` if the `segment` is a reserved device
+name; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| segment | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A path segment to check. |
+
 <a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String-'></a>
 ### IsValidFolderPath(pathname) `method`
 
@@ -578,10 +605,9 @@ a valid format on the Windows operating system.
 
 ##### Returns
 
-`true` depending whether the specified
-`pathname` contains text whose format is valid for a
-filesystem pathname of a folder on the Windows operating system;
-`false` otherwise.
+`true` if the specified `pathname`
+contains text whose format is valid for a filesystem pathname of a folder
+on the Windows operating system; `false` otherwise.
 
 ##### Parameters
 
