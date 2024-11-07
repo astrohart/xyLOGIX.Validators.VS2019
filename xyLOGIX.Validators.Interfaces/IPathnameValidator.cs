@@ -8,8 +8,8 @@
     public interface IPathnameValidator : IDataValidator
     {
         /// <summary>
-        /// Validates that the specified <paramref name="pathname" /> is of a valid format
-        /// on the Windows operating system.
+        /// Validates that the specified folder <paramref name="pathname" /> is of
+        /// a valid format on the Windows operating system.
         /// </summary>
         /// <param name="pathname">
         /// (Required.) A <see cref="T:System.String" /> containing
@@ -18,8 +18,8 @@
         /// <returns>
         /// <see langword="true" /> depending whether the specified
         /// <paramref name="pathname" /> contains text whose format is valid for a
-        /// filesystem pathname on the Windows operating system; <see langword="false" />
-        /// otherwise.
+        /// filesystem pathname of a folder on the Windows operating system;
+        /// <see langword="false" /> otherwise.
         /// </returns>
         bool IsValidFolderPath(string pathname);
     }
