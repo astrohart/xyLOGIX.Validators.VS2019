@@ -573,15 +573,15 @@ This method has no parameters.
 
 ##### Summary
 
-Validates that the specified `pathname` is of a valid format
-on the Windows operating system.
+Validates that the specified folder `pathname` is of
+a valid format on the Windows operating system.
 
 ##### Returns
 
 `true` depending whether the specified
 `pathname` contains text whose format is valid for a
-filesystem pathname on the Windows operating system; `false`
-otherwise.
+filesystem pathname of a folder on the Windows operating system;
+`false` otherwise.
 
 ##### Parameters
 
