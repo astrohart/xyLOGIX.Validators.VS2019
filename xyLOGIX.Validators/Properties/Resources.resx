@@ -147,4 +147,7 @@
   <data name="Error_UUID_CannotBeZeroGUID" xml:space="preserve">
       <value>The UUID passed cannot be equal to the Zero GUID.  We take this to mean the corresponding entity has not been involved in a transaction; however, this value cannot be used for a REST API request.</value>
   </data>
+  <data name="Regex_FolderPathname" xml:space="preserve">
+      <value>^(?&lt;quoted&gt;")?(?&lt;path&gt;(\\{2}[^\\/:*?"&lt;&gt;|]+\\[^/:*?"&lt;&gt;|]+|[a-zA-Z]:\\(?:[^\\/:*?"&lt;&gt;|]+\\)*[^\\/:*?"&lt;&gt;|]*))\\?(?(quoted)"|)$</value>
+  </data>
 </root>

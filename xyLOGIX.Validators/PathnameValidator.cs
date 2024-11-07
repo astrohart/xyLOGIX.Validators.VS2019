@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
+using xyLOGIX.Validators.Properties;
 
 namespace xyLOGIX.Validators
 {
@@ -26,8 +27,7 @@ namespace xyLOGIX.Validators
         /// and excludes reserved device names.
         /// </remarks>
         [ExplicitlySynchronized] private static readonly Regex Path = new Regex(
-            @"^(?<quoted>"")?(?<path>(\\{2}[^\\/:*?""<>|]+\\[^/:*?""<>|]+|[a-zA-Z]:\\(?:[^\\/:*?""<>|]+\\)*[^\\/:*?""<>|]*))\\?(?(quoted)""|)$",
-            RegexOptions.Compiled
+            Resources.Regex_FolderPathname, RegexOptions.Compiled
         );
 
         /// <summary>
@@ -107,7 +107,6 @@ namespace xyLOGIX.Validators
 
                 result = false;
             }
-
 
             return true;
         }

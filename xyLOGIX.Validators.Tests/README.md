@@ -7,6 +7,7 @@
   - [CorrectFolderPathname](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathname 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathname')
   - [CorrectFolderPathnameWithQuotes](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathnameWithQuotes 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathnameWithQuotes')
   - [PathnameValidator](#P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator 'xyLOGIX.Validators.Tests.PathnameValidatorTests.PathnameValidator')
+  - [IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_InvalidPaths_ReturnsFalse(System.String)')
   - [Test_CorrectPathname_IsValidated()](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-Test_CorrectPathname_IsValidated 'xyLOGIX.Validators.Tests.PathnameValidatorTests.Test_CorrectPathname_IsValidated')
 - [Resources](#T-xyLOGIX-Validators-Tests-Properties-Resources 'xyLOGIX.Validators.Tests.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Tests-Properties-Resources-Culture 'xyLOGIX.Validators.Tests.Properties.Resources.Culture')
@@ -57,12 +58,45 @@ A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&
 Gets a reference to an instance of an object that implements the
 [IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
 
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String-'></a>
+### IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath) `method`
+
+##### Summary
+
+Tests the
+[IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath')
+method to ensure it returns `false` when provided with
+pathnames that are incorrectly formatted for Windows operating system
+requirements.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invalidPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing an invalid pathname intended for testing. Examples include names
+with restricted characters such as `*`, `?`, `|`, or reserved
+device names. |
+
+##### Remarks
+
+This unit test is designed to validate that the method correctly
+rejects paths containing prohibited characters, malformed formats, or reserved
+device names.
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath')
+
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-Test_CorrectPathname_IsValidated'></a>
 ### Test_CorrectPathname_IsValidated() `method`
 
 ##### Summary
 
-TODO: Add unit test documentation here
+Asserts that the
+[IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath')
+method returns `true` when provided with a correctly-formatted
+folder pathname as input.
 
 ##### Parameters
 

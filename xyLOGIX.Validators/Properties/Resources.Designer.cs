@@ -149,5 +149,14 @@ namespace xyLOGIX.Validators.Properties {
                 return ResourceManager.GetString("Error_WebAddress_IsBlank", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^(?&lt;quoted&gt;&quot;)?(?&lt;path&gt;(\\{2}[^\\/:*?&quot;&lt;&gt;|]+\\[^/:*?&quot;&lt;&gt;|]+|[a-zA-Z]:\\(?:[^\\/:*?&quot;&lt;&gt;|]+\\)*[^\\/:*?&quot;&lt;&gt;|]*))\\?(?(quoted)&quot;|)$.
+        /// </summary>
+        public static string Regex_FolderPathname {
+            get {
+                return ResourceManager.GetString("Regex_FolderPathname", resourceCulture);
+            }
+        }
     }
 }
