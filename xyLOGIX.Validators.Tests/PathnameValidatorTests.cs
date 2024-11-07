@@ -50,6 +50,27 @@ namespace xyLOGIX.Validators.Tests
                 PathnameValidator.IsValidFolderPath(CorrectFolderPathname)
             );
 
+        /// <summary>
+        /// Tests the
+        /// <see
+        ///     cref="M:xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath" />
+        /// method to ensure it returns <see langword="false" /> when provided with
+        /// pathnames that are incorrectly formatted for Windows operating system
+        /// requirements.
+        /// </summary>
+        /// <remarks>
+        /// This unit test is designed to validate that the method correctly
+        /// rejects paths containing prohibited characters, malformed formats, or reserved
+        /// device names.
+        /// </remarks>
+        /// <param name="invalidPath">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing an invalid pathname intended for testing. Examples include names
+        /// with restricted characters such as <c>*</c>, <c>?</c>, <c>|</c>, or reserved
+        /// device names.
+        /// </param>
+        /// <seealso
+        ///     cref="M:xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath" />
         [Test,
          TestCase(
              "C:\\folder\\sub*folder",
