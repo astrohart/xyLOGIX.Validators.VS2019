@@ -96,7 +96,7 @@ namespace xyLOGIX.Validators
                     if (string.IsNullOrWhiteSpace(segment)) continue;
                     if (!IsReservedDeviceName(segment)) continue;
 
-                    result = true;
+                    result = false;
                     break;
                 }
             }

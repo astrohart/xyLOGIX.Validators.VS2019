@@ -59,6 +59,7 @@
   - [Error_UUID_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_UUID_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_UUID_InvalidFormat')
   - [Error_WebAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_InvalidFormat')
   - [Error_WebAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_IsBlank')
+  - [Regex_FolderPathname](#P-xyLOGIX-Validators-Properties-Resources-Regex_FolderPathname 'xyLOGIX.Validators.Properties.Resources.Regex_FolderPathname')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
 - [TCPPortValidator](#T-xyLOGIX-Validators-TCPPortValidator 'xyLOGIX.Validators.TCPPortValidator')
   - [#ctor()](#M-xyLOGIX-Validators-TCPPortValidator-#ctor 'xyLOGIX.Validators.TCPPortValidator.#ctor')
@@ -767,6 +768,13 @@ Looks up a localized string similar to The value of the 'webAddress' parameter i
 ##### Summary
 
 Looks up a localized string similar to The 'webAddress' parameter was passed a blank value as its argument.  This is not valid, as the 'webAddress' is a required value.  Stopping..
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Regex_FolderPathname'></a>
+### Regex_FolderPathname `property`
+
+##### Summary
+
+Looks up a localized string similar to ^(?<quoted>")?(?<path>(\\{2}[^\\/:*?"<>|]+\\[^/:*?"<>|]+|[a-zA-Z]:\\(?:[^\\/:*?"<>|]+\\)*[^\\/:*?"<>|]*))\\?(?(quoted)"|)$.
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
