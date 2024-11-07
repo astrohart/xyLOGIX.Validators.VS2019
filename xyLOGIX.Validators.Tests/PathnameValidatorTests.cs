@@ -42,7 +42,11 @@ namespace xyLOGIX.Validators.Tests
         } = GetPathnameValidator.SoleInstance();
 
         /// <summary>
-        /// TODO: Add unit test documentation here
+        /// Asserts that the
+        /// <see
+        ///     cref="M:xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath" />
+        /// method returns <see langword="true" /> when provided with a correctly-formatted
+        /// folder pathname as input.
         /// </summary>
         [Test]
         public void Test_CorrectPathname_IsValidated()
