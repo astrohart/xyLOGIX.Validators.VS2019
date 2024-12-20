@@ -13,7 +13,7 @@ namespace xyLOGIX.Validators.Factories
         where TObject : class
     {
         /*
-         * TODO: Derive a child class from this one that is a Singleton for the desired object type.  Name the Singleton instance property 'For' for semantic consistency.
+         * TODO: Derive a child class from this one that is a Singleton for the desired component type.  Name the Singleton instance property 'For' for semantic consistency.
          */
 
         /// <summary>
