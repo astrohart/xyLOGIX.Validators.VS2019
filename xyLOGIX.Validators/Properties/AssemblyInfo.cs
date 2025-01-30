@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Provides objects and functionality for the validation of data and complex type(s) in a standardized fashion.  This particular class library contains the concrete type(s) defined by the component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Validators")]
+[assembly: AssemblyProduct("xyLOGIX Data Validation Support Library")]
 [assembly:
     AssemblyCopyright(
         "Copyright © 2020-25 by xyLOGIX, LLC.  All rights reserved."
