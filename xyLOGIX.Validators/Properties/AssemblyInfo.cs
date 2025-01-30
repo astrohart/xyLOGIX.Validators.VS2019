@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xyLOGIX Support Library for xyLOGIX.Validators")]
-[assembly: AssemblyDescription("Provides objects and functionality for ")]
+[assembly: AssemblyDescription("Provides objects and functionality for the validation of data and complex type(s) in a standardized fashion.  This particular class library contains the concrete type(s) defined by the component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
 [assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Validators")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020-24 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2020-25 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(

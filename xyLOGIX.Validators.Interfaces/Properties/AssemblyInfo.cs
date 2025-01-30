@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
     )]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020-24 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2020-25 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(
