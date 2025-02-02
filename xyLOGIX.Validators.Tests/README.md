@@ -7,7 +7,10 @@
   - [CorrectFolderPathname](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathname 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathname')
   - [CorrectFolderPathnameWithQuotes](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathnameWithQuotes 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathnameWithQuotes')
   - [PathnameValidator](#P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator 'xyLOGIX.Validators.Tests.PathnameValidatorTests.PathnameValidator')
+  - [IsValidFilePath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_InvalidPaths_ReturnsFalse(System.String)')
+  - [IsValidFilePath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_ValidPaths_ReturnsTrue(System.String)')
   - [IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_InvalidPaths_ReturnsFalse(System.String)')
+  - [IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ReservedDeviceNames_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(System.String)')
   - [IsValidFolderPath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ValidPaths_ReturnsTrue(System.String)')
   - [Test_CorrectPathname_IsValidated()](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-Test_CorrectPathname_IsValidated 'xyLOGIX.Validators.Tests.PathnameValidatorTests.Test_CorrectPathname_IsValidated')
 - [Resources](#T-xyLOGIX-Validators-Tests-Properties-Resources 'xyLOGIX.Validators.Tests.Properties.Resources')
@@ -59,6 +62,50 @@ A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&
 Gets a reference to an instance of an object that implements the
 [IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
 
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_InvalidPaths_ReturnsFalse-System-String-'></a>
+### IsValidFilePath_InvalidPaths_ReturnsFalse(invalidPath) `method`
+
+##### Summary
+
+Tests the [IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)') method
+to ensure it returns `false` when provided with
+invalid file pathnames.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invalidPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing an invalid pathname
+intended for testing. Examples include file paths with trailing backslashes,
+paths with forward slashes, files with reserved names, folder root paths,
+empty paths, and whitespace-only paths. |
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)')
+
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_ValidPaths_ReturnsTrue-System-String-'></a>
+### IsValidFilePath_ValidPaths_ReturnsTrue(validPath) `method`
+
+##### Summary
+
+Tests the [IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)') method
+to ensure it returns `true` when provided with
+valid file pathnames.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| validPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a valid pathname
+intended for testing.
+Examples include valid file paths, hidden files, UNC file paths, files with
+trailing dots, and files with no extension. |
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)')
+
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String-'></a>
 ### IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath) `method`
 
@@ -88,6 +135,28 @@ device names.
 ##### See Also
 
 - [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath')
+
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ReservedDeviceNames_ReturnsFalse-System-String-'></a>
+### IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(invalidPath) `method`
+
+##### Summary
+
+Tests the [IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)') method
+to ensure it returns `false` when provided with pathnames that
+are reserved device names, such as `PRN`, `AUX`, `LPT1`, or
+`COM3`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invalidPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing an invalid pathname that includes reserved device names such as
+`PRN`, `AUX`, `LPT1`, or `COM3`. |
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)')
 
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ValidPaths_ReturnsTrue-System-String-'></a>
 ### IsValidFolderPath_ValidPaths_ReturnsTrue(validPath) `method`
