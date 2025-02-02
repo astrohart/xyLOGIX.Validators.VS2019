@@ -209,11 +209,6 @@ namespace xyLOGIX.Validators
                         return false; // right away fail the validation
                 }
 
-                // ✅ NEW FIX: Also check the last segment (file name) for reserved names.
-                var lastSegment = pathSegments[pathSegments.Length - 1]; // Get last path component (filename or last folder)
-                if (IsReservedDeviceName(lastSegment))
-                    return false;
-
                 // If we got this far, then assume that the specified pathname is of a valid format.
 
                 result = true;
