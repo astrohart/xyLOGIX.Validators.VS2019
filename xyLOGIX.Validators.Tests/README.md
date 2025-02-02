@@ -5,7 +5,6 @@
 
 - [PathnameValidatorTests](#T-xyLOGIX-Validators-Tests-PathnameValidatorTests 'xyLOGIX.Validators.Tests.PathnameValidatorTests')
   - [CorrectFolderPathname](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathname 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathname')
-  - [CorrectFolderPathnameWithQuotes](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathnameWithQuotes 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathnameWithQuotes')
   - [PathnameValidator](#P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator 'xyLOGIX.Validators.Tests.PathnameValidatorTests.PathnameValidator')
   - [IsValidFilePath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_InvalidPaths_ReturnsFalse(System.String)')
   - [IsValidFilePath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_ValidPaths_ReturnsTrue(System.String)')
@@ -46,15 +45,6 @@ Provides unit tests for the methods, properties, and events of the
 ##### Summary
 
 A properly-formatted pathname on the Windows filesystem.
-
-<a name='F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathnameWithQuotes'></a>
-### CorrectFolderPathnameWithQuotes `constants`
-
-##### Summary
-
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as
-[CorrectFolderPathname](#F-xyLOGIX-Validators-Tests-PathnameValidatorTests-CorrectFolderPathname 'xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathname')
-, but surrounded by quotation marks.
 
 <a name='P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator'></a>
 ### PathnameValidator `property`
