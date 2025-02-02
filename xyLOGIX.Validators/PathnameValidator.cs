@@ -124,7 +124,8 @@ namespace xyLOGIX.Validators
         /// <see langword="false" />.
         /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted file pathname; <see langword="false" /> otherwise.
         /// </returns>
         public bool IsValidFilePath([NotLogged] string pathname)
             => IsValidPath(pathname, false);
