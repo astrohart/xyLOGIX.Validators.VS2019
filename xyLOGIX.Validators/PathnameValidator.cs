@@ -1,11 +1,12 @@
 ﻿using Alphaleonis.Win32.Filesystem;
-using Microsoft.Win32;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions;
+using xyLOGIX.Validators.Actions;
+using xyLOGIX.Validators.Constants;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
 
@@ -110,38 +111,6 @@ namespace xyLOGIX.Validators
             => IsValidPath(pathname, true);
 
         /// <summary>
-        /// Determines if the long path support is enabled in the system.
-        /// </summary>
-        /// <remarks>
-        /// This method checks the Windows registry to determine if the long path support
-        /// is enabled.
-        /// If the registry check fails, it assumes the legacy behavior (long path support
-        /// is disabled).
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if long path support is enabled; otherwise,
-        /// <see langword="false" />.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        private static bool IsLongPathSupportEnabled()
-        {
-            try
-            {
-                using (var key = Registry.LocalMachine.OpenSubKey(
-                           @"SYSTEM\CurrentControlSet\Control\FileSystem"
-                       ))
-                {
-                    return key?.GetValue("LongPathsEnabled")
-                              ?.Equals(1) == true;
-                }
-            }
-            catch
-            {
-                return false; // Assume legacy behavior if registry check fails
-            }
-        }
-
-        /// <summary>
         /// Checks if the specified <paramref name="segment" /> is a reserved device name.
         /// </summary>
         /// <param name="segment">
@@ -215,7 +184,9 @@ namespace xyLOGIX.Validators
                     return result;
 
                 // ✅ NEW FIX: Enforce MAX_PATH limits
-                var maxPathLength = IsLongPathSupportEnabled() ? 32767 : 260;
+                var maxPathLength = Is.LongPathSupportEnabled()
+                    ? MaxPathLength.NTFS
+                    : MaxPathLength.Legacy;
                 if (pathname.Length > maxPathLength)
                     return result; // Immediately fail validation if too long
 
