@@ -1,4 +1,5 @@
 ﻿using Alphaleonis.Win32.Filesystem;
+using Microsoft.Win32;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
@@ -38,16 +39,14 @@ namespace xyLOGIX.Validators
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected PathnameValidator()
-        { }
+        protected PathnameValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface.
         /// </summary>
         public static IPathnameValidator
-            Instance
-        { [DebuggerStepThrough] get; } = new PathnameValidator();
+            Instance { [DebuggerStepThrough] get; } = new PathnameValidator();
 
         /// <summary>
         /// Regex pattern to match valid Windows pathnames.
@@ -109,6 +108,38 @@ namespace xyLOGIX.Validators
         /// </returns>
         public bool IsValidFolderPath([NotLogged] string pathname)
             => IsValidPath(pathname, true);
+
+        /// <summary>
+        /// Determines if the long path support is enabled in the system.
+        /// </summary>
+        /// <remarks>
+        /// This method checks the Windows registry to determine if the long path support
+        /// is enabled.
+        /// If the registry check fails, it assumes the legacy behavior (long path support
+        /// is disabled).
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if long path support is enabled; otherwise,
+        /// <see langword="false" />.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        private static bool IsLongPathSupportEnabled()
+        {
+            try
+            {
+                using (var key = Registry.LocalMachine.OpenSubKey(
+                           @"SYSTEM\CurrentControlSet\Control\FileSystem"
+                       ))
+                {
+                    return key?.GetValue("LongPathsEnabled")
+                              ?.Equals(1) == true;
+                }
+            }
+            catch
+            {
+                return false; // Assume legacy behavior if registry check fails
+            }
+        }
 
         /// <summary>
         /// Checks if the specified <paramref name="segment" /> is a reserved device name.
@@ -183,9 +214,12 @@ namespace xyLOGIX.Validators
                 if (string.IsNullOrWhiteSpace(pathname))
                     return result;
 
-                // Return false if the pathname is not a valid Windows pathname; i.e.,
-                // if allowTrailingBackslash is set to false, and the pathname ends with
-                // one anyway.
+                // ✅ NEW FIX: Enforce MAX_PATH limits
+                var maxPathLength = IsLongPathSupportEnabled() ? 32767 : 260;
+                if (pathname.Length > maxPathLength)
+                    return result; // Immediately fail validation if too long
+
+                // ✅ Allow paths ending in ".", "..", or " " (Command Prompt allows these)
                 if (!allowTrailingBackslash && pathname.EndsWith("\\"))
                     return result;
 
@@ -195,8 +229,7 @@ namespace xyLOGIX.Validators
                     return
                         result; // Failed to match file or folder pathname regex.
 
-                // Check for reserved device names in each
-                // '\'-delineated pathname segment
+                // Check for reserved device names in each '\'-delineated pathname segment
                 var pathSegments = pathname.Split('\\');
 
                 if (pathSegments == null) return result;
@@ -206,16 +239,15 @@ namespace xyLOGIX.Validators
                 {
                     if (string.IsNullOrWhiteSpace(segment)) continue;
                     if (IsReservedDeviceName(segment))
-                        return false; // right away fail the validation
+                        return false; // Immediately fail validation
                 }
 
-                // If we got this far, then assume that the specified pathname is of a valid format.
-
+                // ✅ If we got here, the pathname is valid per Windows behavior
                 result = true;
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
+                // Dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
                 result = false;

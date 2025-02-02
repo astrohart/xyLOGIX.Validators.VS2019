@@ -1,4 +1,5 @@
 ﻿using Alphaleonis.Win32.Filesystem;
+using Microsoft.Win32;
 using NUnit.Framework;
 using System;
 using System.Diagnostics;
@@ -22,6 +23,37 @@ namespace xyLOGIX.Validators.Tests
             Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
             @"source\repos\astrohart\xyLOGIX.Validators.2019"
         );
+
+        private static bool IsLongPathSupportEnabled()
+        {
+            try
+            {
+                using (var key = Registry.LocalMachine.OpenSubKey(
+                           @"SYSTEM\CurrentControlSet\Control\FileSystem"
+                       ))
+                {
+                    return key?.GetValue("LongPathsEnabled")
+                              ?.Equals(1) == true;
+                }
+            }
+            catch
+            {
+                return false; // Assume legacy behavior if registry check fails
+            }
+        }
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
+        /// to ensure it returns <see langword="false" /> when provided with a folder path
+        /// that exceeds the maximum path length allowed by the Windows operating system.
+        /// </summary>
+        [Test]
+        public void IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse()
+        {
+            var longPath = "C:\\" + new string('A', 260) + "\\";
+
+            Assert.That(!PathnameValidator.IsValidFolderPath(longPath));
+        }
 
         /// <summary>
         /// A <see cref="T:System.String" /> that is the same as
@@ -224,5 +256,29 @@ namespace xyLOGIX.Validators.Tests
             string invalidPath
         )
             => Assert.That(!PathnameValidator.IsValidFilePath(invalidPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
+        /// to ensure it returns <see langword="true" /> when provided with pathnames that
+        /// end with a space or period, as Windows allows these.
+        /// </summary>
+        /// <param name="validPath">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing a valid pathname that ends with a space or period.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFolderPath" />
+        [Test,
+         TestCase(
+             "C:\\folder\\ ",
+             Description = "Path ending with space (Windows allows)"
+         ),
+         TestCase(
+             "C:\\folder\\.",
+             Description = "Path ending with period (Windows allows)"
+         )]
+        public void IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(
+            string validPath
+        )
+            => Assert.That(PathnameValidator.IsValidFolderPath(validPath));
     }
 }

@@ -9,7 +9,9 @@
   - [PathnameValidator](#P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator 'xyLOGIX.Validators.Tests.PathnameValidatorTests.PathnameValidator')
   - [IsValidFilePath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_InvalidPaths_ReturnsFalse(System.String)')
   - [IsValidFilePath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_ValidPaths_ReturnsTrue(System.String)')
+  - [IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse()](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse')
   - [IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_InvalidPaths_ReturnsFalse(System.String)')
+  - [IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(System.String)')
   - [IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ReservedDeviceNames_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(System.String)')
   - [IsValidFolderPath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ValidPaths_ReturnsTrue(System.String)')
   - [Test_CorrectPathname_IsValidated()](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-Test_CorrectPathname_IsValidated 'xyLOGIX.Validators.Tests.PathnameValidatorTests.Test_CorrectPathname_IsValidated')
@@ -106,6 +108,19 @@ trailing dots, and files with no extension. |
 
 - [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)')
 
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse'></a>
+### IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse() `method`
+
+##### Summary
+
+Tests the [IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)') method
+to ensure it returns `false` when provided with a folder path
+that exceeds the maximum path length allowed by the Windows operating system.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String-'></a>
 ### IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath) `method`
 
@@ -135,6 +150,26 @@ device names.
 ##### See Also
 
 - [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath')
+
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue-System-String-'></a>
+### IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(validPath) `method`
+
+##### Summary
+
+Tests the [IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)') method
+to ensure it returns `true` when provided with pathnames that
+end with a space or period, as Windows allows these.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| validPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing a valid pathname that ends with a space or period. |
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)')
 
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ReservedDeviceNames_ReturnsFalse-System-String-'></a>
 ### IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(invalidPath) `method`

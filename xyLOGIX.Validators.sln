@@ -34,9 +34,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Collections.Synchro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Tests", "xyLOGIX.Validators.Tests\xyLOGIX.Validators.Tests.csproj", "{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Tests.Logging", "..\xyLOGIX.Tests.Logging.VS2019\xyLOGIX.Tests.Logging\xyLOGIX.Tests.Logging.csproj", "{52243153-1A0D-409A-91A8-638DBD7CF23F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Tests.Logging", "..\xyLOGIX.Tests.Logging.VS2019\xyLOGIX.Tests.Logging\xyLOGIX.Tests.Logging.csproj", "{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Core.Assemblies.Info", "..\xyLOGIX.Core.Assemblies.Info.VS2019\xyLOGIX.Core.Assemblies.Info\xyLOGIX.Core.Assemblies.Info.csproj", "{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Actions", "xyLOGIX.Validators.Actions\xyLOGIX.Validators.Actions.csproj", "{211A5F2E-5CB5-43B1-B43D-C19952E339DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,14 +152,14 @@ Global
 		{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}.Release|x64.Build.0 = Release|x64
 		{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}.Release|x86.ActiveCfg = Release|x86
 		{DB0381F2-D7F0-4C63-9A98-F44BE746BF19}.Release|x86.Build.0 = Release|x86
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x64.ActiveCfg = Debug|x64
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x64.Build.0 = Debug|x64
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x86.ActiveCfg = Debug|x86
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x86.Build.0 = Debug|x86
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x64.ActiveCfg = Release|x64
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x64.Build.0 = Release|x64
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x86.ActiveCfg = Release|x86
-		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x86.Build.0 = Release|x86
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Debug|x64.ActiveCfg = Debug|x64
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Debug|x64.Build.0 = Debug|x64
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Debug|x86.ActiveCfg = Debug|x86
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Debug|x86.Build.0 = Debug|x86
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Release|x64.ActiveCfg = Release|x64
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Release|x64.Build.0 = Release|x64
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Release|x86.ActiveCfg = Release|x86
+		{24CEEAB1-6BB4-4823-A17E-AC193A9E05CA}.Release|x86.Build.0 = Release|x86
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Debug|x64.ActiveCfg = Debug|x64
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Debug|x64.Build.0 = Debug|x64
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Debug|x86.ActiveCfg = Debug|x86
@@ -166,6 +168,14 @@ Global
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x64.Build.0 = Release|x64
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x86.ActiveCfg = Release|x86
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x86.Build.0 = Release|x86
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Debug|x64.ActiveCfg = Debug|x64
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Debug|x64.Build.0 = Debug|x64
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Debug|x86.ActiveCfg = Debug|x86
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Debug|x86.Build.0 = Debug|x86
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Release|x64.ActiveCfg = Release|x64
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Release|x64.Build.0 = Release|x64
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Release|x86.ActiveCfg = Release|x86
+		{211A5F2E-5CB5-43B1-B43D-C19952E339DC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
