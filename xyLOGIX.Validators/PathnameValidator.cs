@@ -126,7 +126,8 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the specified <paramref name="segment" />
         /// is a reserved device name; <see langword="false" /> otherwise.
         /// </returns>
-        private static bool IsReservedDeviceName([NotLogged] string segment)
+        [Log(AttributeExclude = true)]
+        private static bool IsReservedDeviceName(string segment)
         {
             var result = false;
 
