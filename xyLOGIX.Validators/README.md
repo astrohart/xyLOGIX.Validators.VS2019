@@ -36,12 +36,14 @@
   - [Validate()](#M-xyLOGIX-Validators-ObjectValidatorBase`1-Validate 'xyLOGIX.Validators.ObjectValidatorBase`1.Validate')
 - [PathnameValidator](#T-xyLOGIX-Validators-PathnameValidator 'xyLOGIX.Validators.PathnameValidator')
   - [#ctor()](#M-xyLOGIX-Validators-PathnameValidator-#ctor 'xyLOGIX.Validators.PathnameValidator.#ctor')
-  - [Path](#F-xyLOGIX-Validators-PathnameValidator-Path 'xyLOGIX.Validators.PathnameValidator.Path')
   - [ReservedDeviceNames](#F-xyLOGIX-Validators-PathnameValidator-ReservedDeviceNames 'xyLOGIX.Validators.PathnameValidator.ReservedDeviceNames')
   - [Instance](#P-xyLOGIX-Validators-PathnameValidator-Instance 'xyLOGIX.Validators.PathnameValidator.Instance')
+  - [PathPattern](#P-xyLOGIX-Validators-PathnameValidator-PathPattern 'xyLOGIX.Validators.PathnameValidator.PathPattern')
   - [#cctor()](#M-xyLOGIX-Validators-PathnameValidator-#cctor 'xyLOGIX.Validators.PathnameValidator.#cctor')
   - [IsReservedDeviceName(segment)](#M-xyLOGIX-Validators-PathnameValidator-IsReservedDeviceName-System-String- 'xyLOGIX.Validators.PathnameValidator.IsReservedDeviceName(System.String)')
+  - [IsValidFilePath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFilePath(System.String)')
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPath(System.String)')
+  - [IsValidPath(pathname,allowTrailingBackslash)](#M-xyLOGIX-Validators-PathnameValidator-IsValidPath-System-String,System-Boolean- 'xyLOGIX.Validators.PathnameValidator.IsValidPath(System.String,System.Boolean)')
 - [RF3339TimestampFormatValidator](#T-xyLOGIX-Validators-RF3339TimestampFormatValidator 'xyLOGIX.Validators.RF3339TimestampFormatValidator')
   - [#ctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-RF3339TimestampFormatValidator-Instance 'xyLOGIX.Validators.RF3339TimestampFormatValidator.Instance')
@@ -60,6 +62,7 @@
   - [Error_WebAddress_InvalidFormat](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_InvalidFormat 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_InvalidFormat')
   - [Error_WebAddress_IsBlank](#P-xyLOGIX-Validators-Properties-Resources-Error_WebAddress_IsBlank 'xyLOGIX.Validators.Properties.Resources.Error_WebAddress_IsBlank')
   - [Regex_FolderPathname](#P-xyLOGIX-Validators-Properties-Resources-Regex_FolderPathname 'xyLOGIX.Validators.Properties.Resources.Regex_FolderPathname')
+  - [Regex_PathnameValidator_PathPattern](#P-xyLOGIX-Validators-Properties-Resources-Regex_PathnameValidator_PathPattern 'xyLOGIX.Validators.Properties.Resources.Regex_PathnameValidator_PathPattern')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
 - [TCPPortValidator](#T-xyLOGIX-Validators-TCPPortValidator 'xyLOGIX.Validators.TCPPortValidator')
   - [#ctor()](#M-xyLOGIX-Validators-TCPPortValidator-#ctor 'xyLOGIX.Validators.TCPPortValidator.#ctor')
@@ -537,20 +540,6 @@ Empty, protected constructor to prohibit direct allocation of this class.
 
 This constructor has no parameters.
 
-<a name='F-xyLOGIX-Validators-PathnameValidator-Path'></a>
-### Path `constants`
-
-##### Summary
-
-Regex pattern to match valid Windows pathnames.
-This pattern supports both drive-letter paths and UNC pathnames.
-
-##### Remarks
-
-This regex allows an optional trailing backslash, checks for illegal
-characters,
-and excludes reserved device names.
-
 <a name='F-xyLOGIX-Validators-PathnameValidator-ReservedDeviceNames'></a>
 ### ReservedDeviceNames `constants`
 
@@ -566,6 +555,21 @@ segment.
 
 Gets a reference to the one and only instance of the object that implements the
 [IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
+
+<a name='P-xyLOGIX-Validators-PathnameValidator-PathPattern'></a>
+### PathPattern `property`
+
+##### Summary
+
+Regex pattern to match valid Windows pathnames.
+
+##### Remarks
+
+Supports both drive-letter paths and UNC pathnames.
+
+
+
+Allows folder and file names that start with a dot (`.`).
 
 <a name='M-xyLOGIX-Validators-PathnameValidator-#cctor'></a>
 ### #cctor() `method`
@@ -587,35 +591,110 @@ Checks if the specified `segment` is a reserved device name.
 
 ##### Returns
 
-`true` if the `segment` is a reserved device
-name; `false` otherwise.
+`true` if the specified `segment`
+is a reserved device name; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| segment | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A path segment to check. |
+| segment | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the pathname segment to
+check. |
+
+##### Remarks
+
+If the value of the `segment` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFilePath-System-String-'></a>
+### IsValidFilePath(pathname) `method`
+
+##### Summary
+
+Validates that the specified file `pathname` is of a valid
+format on the Windows operating system.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+Disallows trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String-'></a>
 ### IsValidFolderPath(pathname) `method`
 
 ##### Summary
 
-Validates that the specified folder `pathname` is of
-a valid format on the Windows operating system.
+Validates that the specified folder `pathname` is of a valid
+format on the Windows operating system.
 
 ##### Returns
 
-`true` if the specified `pathname`
-contains text whose format is valid for a filesystem pathname of a folder
-on the Windows operating system; `false` otherwise.
+`true` if the specified `pathname` is a
+properly-formatted folder pathname; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the data that is to be examined. |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+This method allows the value of the `pathname` parameter to
+have trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsValidPath-System-String,System-Boolean-'></a>
+### IsValidPath(pathname,allowTrailingBackslash) `method`
+
+##### Summary
+
+Validates that the specified `pathname` is of
+a valid format on the Windows operating system.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+| allowTrailingBackslash | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Required.) `true` to allow the specified
+`pathname` to end with a trailing backslash;
+`false` otherwise. |
+
+##### Remarks
+
+Generally, the pathnames of folders are allowed to end with a trailing
+backslash; however, the pathnames of file(s) are not.
 
 <a name='T-xyLOGIX-Validators-RF3339TimestampFormatValidator'></a>
 ## RF3339TimestampFormatValidator `type`
@@ -775,6 +854,13 @@ Looks up a localized string similar to The 'webAddress' parameter was passed a b
 ##### Summary
 
 Looks up a localized string similar to ^(?<quoted>")?(?<path>(\\{2}[^\\/:*?"<>|]+\\[^/:*?"<>|]+|[a-zA-Z]:\\(?:[^\\/:*?"<>|]+\\)*[^\\/:*?"<>|]*))\\?(?(quoted)"|)$.
+
+<a name='P-xyLOGIX-Validators-Properties-Resources-Regex_PathnameValidator_PathPattern'></a>
+### Regex_PathnameValidator_PathPattern `property`
+
+##### Summary
+
+Looks up a localized string similar to ^(?:[a-zA-Z]:\\|\\\\[^\\/:*?"<>|]+\\[^\\/:*?"<>|]+\\?)(?:[^\\/:*?"<>|]+\\?)*$.
 
 <a name='P-xyLOGIX-Validators-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`
