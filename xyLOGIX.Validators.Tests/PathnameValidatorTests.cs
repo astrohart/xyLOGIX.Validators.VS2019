@@ -148,6 +148,25 @@ namespace xyLOGIX.Validators.Tests
 
         /// <summary>
         /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
+        /// to ensure it returns <see langword="false" /> when provided with
+        /// drive letters only, such as <c>C:</c> or <c>D:</c>.
+        /// </summary>
+        /// <param name="invalidPath">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing an invalid pathname that includes drive letters only.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFolderPath" />
+        [Test, TestCase("C:", Description = "Drive letter without backslash"),
+         TestCase(
+             "D:", Description = "Alternate drive letter without backslash"
+         )]
+        public void IsValidFolderPath_DriveLetterOnly_ReturnsFalse(
+            string invalidPath
+        )
+            => Assert.That(!PathnameValidator.IsValidFolderPath(invalidPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
         /// to ensure it returns <see langword="false" /> when provided with pathnames that
         /// are reserved device names, such as <c>PRN</c>, <c>AUX</c>, <c>LPT1</c>, or
         /// <c>COM3</c>.
