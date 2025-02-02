@@ -1,11 +1,12 @@
 ﻿using Alphaleonis.Win32.Filesystem;
-using Microsoft.Win32;
 using NUnit.Framework;
 using System;
 using System.Diagnostics;
 using xyLOGIX.Tests.Logging;
+using xyLOGIX.Validators.Constants;
 using xyLOGIX.Validators.Factories;
 using xyLOGIX.Validators.Interfaces;
+using Is = xyLOGIX.Validators.Actions.Is;
 
 namespace xyLOGIX.Validators.Tests
 {
@@ -24,24 +25,6 @@ namespace xyLOGIX.Validators.Tests
             @"source\repos\astrohart\xyLOGIX.Validators.2019"
         );
 
-        private static bool IsLongPathSupportEnabled()
-        {
-            try
-            {
-                using (var key = Registry.LocalMachine.OpenSubKey(
-                           @"SYSTEM\CurrentControlSet\Control\FileSystem"
-                       ))
-                {
-                    return key?.GetValue("LongPathsEnabled")
-                              ?.Equals(1) == true;
-                }
-            }
-            catch
-            {
-                return false; // Assume legacy behavior if registry check fails
-            }
-        }
-
         /// <summary>
         /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
         /// to ensure it returns <see langword="false" /> when provided with a folder path
@@ -50,19 +33,17 @@ namespace xyLOGIX.Validators.Tests
         [Test]
         public void IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse()
         {
-            var longPath = "C:\\" + new string('A', 260) + "\\";
+            // Determine max allowed path length based on system settings
+            var maxPathLength = Is.LongPathSupportEnabled()
+                ? MaxPathLength.NTFS
+                : MaxPathLength.Legacy;
 
+            // Generate a path that exceeds the current limit
+            var longPath = @"C:\" + new string('A', maxPathLength + 1) + @"\";
+
+            // Assert that it is invalid
             Assert.That(!PathnameValidator.IsValidFolderPath(longPath));
         }
-
-        /// <summary>
-        /// A <see cref="T:System.String" /> that is the same as
-        /// <see
-        ///     cref="F:xyLOGIX.Validators.Tests.PathnameValidatorTests.CorrectFolderPathname" />
-        /// , but surrounded by quotation marks.
-        /// </summary>
-        private static readonly string CorrectFolderPathnameWithQuotes =
-            $"\"{CorrectFolderPathname}\"";
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
