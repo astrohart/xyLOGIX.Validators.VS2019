@@ -17,18 +17,6 @@ namespace xyLOGIX.Validators
     public class PathnameValidator : IPathnameValidator
     {
         /// <summary>
-        /// Regex pattern to match valid Windows pathnames.
-        /// </summary>
-        /// <remarks>
-        /// Supports both drive-letter paths and UNC pathnames.
-        /// <para />
-        /// Allows folder and file names that start with a dot (<c>.</c>).
-        /// </remarks>
-        private static readonly Regex PathPattern = new Regex(
-            Resources.Regex_PathnameValidator_PathPattern, RegexOptions.Compiled
-        );
-
-        /// <summary>
         /// Array of reserved Windows device names that are not allowed in any path
         /// segment.
         /// </summary>
@@ -43,22 +31,43 @@ namespace xyLOGIX.Validators
         /// Gets a reference to the singleton instance of the validator.
         /// </summary>
         public static IPathnameValidator
-            Instance
-        { [DebuggerStepThrough] get; } = new PathnameValidator();
+            Instance { [DebuggerStepThrough] get; } = new PathnameValidator();
 
         /// <summary>
-        /// Validates that the specified file <paramref name="pathname" /> is of
-        /// a valid format on the Windows operating system.
-        /// Disallows trailing backslashes.
+        /// Regex pattern to match valid Windows pathnames.
         /// </summary>
-        public bool IsValidFilePath(string pathname)
-            => IsValidPath(pathname, false);
+        /// <remarks>
+        /// Supports both drive-letter paths and UNC pathnames.
+        /// <para />
+        /// Allows folder and file names that start with a dot (<c>.</c>).
+        /// </remarks>
+        private static Regex PathPattern { [DebuggerStepThrough] get; } =
+            new Regex(
+                Resources.Regex_PathnameValidator_PathPattern,
+                RegexOptions.Compiled
+            );
 
         /// <summary>
-        /// Validates that the specified folder <paramref name="pathname" /> is of
-        /// a valid format on the Windows operating system.
-        /// Allows trailing backslashes.
+        /// Validates that the specified folder <paramref name="pathname" /> is of a valid
+        /// format on the Windows operating system.
         /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// This method allows the value of the <paramref name="pathname" /> parameter to
+        /// have trailing backslashes.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted folder pathname; <see langword="false" /> otherwise.
+        /// </returns>
         public bool IsValidFolderPath([NotLogged] string pathname)
             => IsValidPath(pathname, true);
 
@@ -66,8 +75,19 @@ namespace xyLOGIX.Validators
         /// Checks if the specified <paramref name="segment" /> is a reserved device name.
         /// </summary>
         /// <param name="segment">
-        /// (Required.) A <see cref="T:System.String" /> containing the pathname segment to check.
+        /// (Required.) A <see cref="T:System.String" /> containing the pathname segment to
+        /// check.
         /// </param>
+        /// <remarks>
+        /// If the value of the <paramref name="segment" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="segment" />
+        /// is a reserved device name; <see langword="false" /> otherwise.
+        /// </returns>
         private static bool IsReservedDeviceName([NotLogged] string segment)
         {
             var result = false;
@@ -88,40 +108,96 @@ namespace xyLOGIX.Validators
         }
 
         /// <summary>
+        /// Validates that the specified file <paramref name="pathname" /> is of a valid
+        /// format on the Windows operating system.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// Disallows trailing backslashes.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        public bool IsValidFilePath([NotLogged] string pathname)
+            => IsValidPath(pathname, false);
+
+        /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of
         /// a valid format on the Windows operating system.
         /// </summary>
-        private bool IsValidPath(string pathname, bool allowTrailingBackslash)
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <param name="allowTrailingBackslash">
+        /// (Required.) <see langword="true" /> to allow the specified
+        /// <paramref name="pathname" /> to end with a trailing backslash;
+        /// <see langword="false" /> otherwise.
+        /// </param>
+        /// <remarks>
+        /// Generally, the pathnames of folders are allowed to end with a trailing
+        /// backslash; however, the pathnames of file(s) are not.
+        /// </remarks>
+        private bool IsValidPath(
+            [NotLogged] string pathname,
+            bool allowTrailingBackslash
+        )
         {
             var result = false;
 
             try
             {
+                // Return false if the pathname is null, blank, or empty
                 if (string.IsNullOrWhiteSpace(pathname))
                     return result;
 
+                // Return false if the pathname is not a valid Windows pathname; i.e.,
+                // if allowTrailingBackslash is set to false, and the pathname ends with
+                // one anyway.
                 if (!allowTrailingBackslash && pathname.EndsWith("\\"))
                     return result;
 
+                // Match the input against the PathPattern regex
                 var match = PathPattern.Match(pathname);
                 if (!match.Success)
-                    return result;
+                    return
+                        result; // Failed to match file or folder pathname regex.
 
-                // Check for reserved device names in each segment
+                // Check for reserved device names in each
+                // '\'-delineated pathname segment
                 var pathSegments = pathname.Split('\\');
+
+                if (pathSegments == null) return result;
+                if (pathSegments.Length <= 0) return result;
+
                 foreach (var segment in pathSegments)
                 {
                     if (string.IsNullOrWhiteSpace(segment)) continue;
-                    if (IsReservedDeviceName(segment)) return false;
+                    if (IsReservedDeviceName(segment))
+                        return false; // right away fail the validation
                 }
+
+                // If we got this far, then assume that the specified pathname is of a valid format.
 
                 result = true;
             }
             catch (Exception ex)
             {
+                // dump all the exception info to the log
                 DebugUtils.LogException(ex);
+
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"PathnameValidator.IsValidPath: Result = {result}"
+            );
 
             return result;
         }
