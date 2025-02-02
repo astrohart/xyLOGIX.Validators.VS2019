@@ -3,6 +3,9 @@
 
 ## Contents
 
+- [MaxPathLength](#T-xyLOGIX-Validators-Constants-MaxPathLength 'xyLOGIX.Validators.Constants.MaxPathLength')
+  - [Legacy](#F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy 'xyLOGIX.Validators.Constants.MaxPathLength.Legacy')
+  - [NTFS](#F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS 'xyLOGIX.Validators.Constants.MaxPathLength.NTFS')
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
   - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
@@ -15,6 +18,34 @@
   - [Regex_RFC3339_Timestamp](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_RFC3339_Timestamp 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_RFC3339_Timestamp')
   - [Regex_WebAddress](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_WebAddress 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_WebAddress')
   - [ResourceManager](#P-xyLOGIX-Validators-Constants-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Constants.Properties.Resources.ResourceManager')
+
+<a name='T-xyLOGIX-Validators-Constants-MaxPathLength'></a>
+## MaxPathLength `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Constants
+
+##### Summary
+
+Value(s) for the length(s) of pathname(s) that are considered to be the maximum
+length(s).
+
+<a name='F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy'></a>
+### Legacy `constants`
+
+##### Summary
+
+Maximum length of a pathname in the Windows operating system according to the
+legacy value of `MAX_PATH`.
+
+<a name='F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS'></a>
+### NTFS `constants`
+
+##### Summary
+
+Maximum length of a pathname in the Windows operating system according to the
+NTFS value.
 
 <a name='T-xyLOGIX-Validators-Constants-Regexes'></a>
 ## Regexes `type`
