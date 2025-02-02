@@ -150,4 +150,7 @@
   <data name="Regex_FolderPathname" xml:space="preserve">
       <value>^(?&lt;quoted&gt;")?(?&lt;path&gt;(\\{2}[^\\/:*?"&lt;&gt;|]+\\[^/:*?"&lt;&gt;|]+|[a-zA-Z]:\\(?:[^\\/:*?"&lt;&gt;|]+\\)*[^\\/:*?"&lt;&gt;|]*))\\?(?(quoted)"|)$</value>
   </data>
+  <data name="Regex_PathnameValidator_PathPattern" xml:space="preserve">
+      <value>^(?:[a-zA-Z]:\\|\\\\[^\\/:*?"&lt;&gt;|]+\\[^\\/:*?"&lt;&gt;|]+\\?)(?:[^\\/:*?"&lt;&gt;|]+\\?)*$</value>
+  </data>
 </root>

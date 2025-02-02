@@ -158,5 +158,14 @@ namespace xyLOGIX.Validators.Properties {
                 return ResourceManager.GetString("Regex_FolderPathname", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^(?:[a-zA-Z]:\\|\\\\[^\\/:*?&quot;&lt;&gt;|]+\\[^\\/:*?&quot;&lt;&gt;|]+\\?)(?:[^\\/:*?&quot;&lt;&gt;|]+\\?)*$.
+        /// </summary>
+        public static string Regex_PathnameValidator_PathPattern {
+            get {
+                return ResourceManager.GetString("Regex_PathnameValidator_PathPattern", resourceCulture);
+            }
+        }
     }
 }
