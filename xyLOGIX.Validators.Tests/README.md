@@ -8,6 +8,7 @@
   - [PathnameValidator](#P-xyLOGIX-Validators-Tests-PathnameValidatorTests-PathnameValidator 'xyLOGIX.Validators.Tests.PathnameValidatorTests.PathnameValidator')
   - [IsValidFilePath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_InvalidPaths_ReturnsFalse(System.String)')
   - [IsValidFilePath_ValidPaths_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFilePath_ValidPaths_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFilePath_ValidPaths_ReturnsTrue(System.String)')
+  - [IsValidFolderPath_DriveLetterOnly_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_DriveLetterOnly_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_DriveLetterOnly_ReturnsFalse(System.String)')
   - [IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse()](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse')
   - [IsValidFolderPath_InvalidPaths_ReturnsFalse(invalidPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_InvalidPaths_ReturnsFalse-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_InvalidPaths_ReturnsFalse(System.String)')
   - [IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(validPath)](#M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue-System-String- 'xyLOGIX.Validators.Tests.PathnameValidatorTests.IsValidFolderPath_PathsEndingWithSpaceOrPeriod_ReturnsTrue(System.String)')
@@ -97,6 +98,26 @@ trailing dots, and files with no extension. |
 ##### See Also
 
 - [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)')
+
+<a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_DriveLetterOnly_ReturnsFalse-System-String-'></a>
+### IsValidFolderPath_DriveLetterOnly_ReturnsFalse(invalidPath) `method`
+
+##### Summary
+
+Tests the [IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)') method
+to ensure it returns `false` when provided with
+drive letters only, such as `C:` or `D:`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invalidPath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing an invalid pathname that includes drive letters only. |
+
+##### See Also
+
+- [xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)')
 
 <a name='M-xyLOGIX-Validators-Tests-PathnameValidatorTests-IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse'></a>
 ### IsValidFolderPath_ExceedsMaxPathLength_ReturnsFalse() `method`
