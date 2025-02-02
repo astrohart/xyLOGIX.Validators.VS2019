@@ -1,10 +1,8 @@
 ﻿using PostSharp.Patterns.Diagnostics;
-using PostSharp.Patterns.Threading;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
-using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
 
@@ -19,15 +17,14 @@ namespace xyLOGIX.Validators
     {
         /// <summary>
         /// Regex pattern to match valid Windows pathnames.
-        /// This pattern supports both drive-letter paths and UNC pathnames.
         /// </summary>
         /// <remarks>
-        /// This regex allows an optional trailing backslash, checks for illegal
-        /// characters,
-        /// and excludes reserved device names.
+        /// Supports both drive-letter paths and UNC pathnames.
+        /// <para />
+        /// Allows folder and file names that start with a dot (<c>.</c>).
         /// </remarks>
-        [ExplicitlySynchronized] private static readonly Regex Path = new Regex(
-            Resources.Regex_FolderPathname, RegexOptions.Compiled
+        private static readonly Regex PathPattern = new Regex(
+            Resources.Regex_PathnameValidator_PathPattern, RegexOptions.Compiled
         );
 
         /// <summary>
@@ -42,38 +39,63 @@ namespace xyLOGIX.Validators
         };
 
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this class.
+        /// Gets a reference to the singleton instance of the validator.
         /// </summary>
-        [Log(AttributeExclude = true)]
-        static PathnameValidator() { }
-
-        /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this class.
-        /// </summary>
-        [Log(AttributeExclude = true)]
-        protected PathnameValidator() { }
-
-        /// <summary>
-        /// Gets a reference to the one and only instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface.
-        /// </summary>
-        public static IPathnameValidator
-            Instance { [DebuggerStepThrough] get; } = new PathnameValidator();
+        public static IPathnameValidator Instance {
+            [DebuggerStepThrough] get; } =
+            new PathnameValidator();
 
         /// <summary>
         /// Validates that the specified folder <paramref name="pathname" /> is of
         /// a valid format on the Windows operating system.
+        /// Allows trailing backslashes.
         /// </summary>
-        /// <param name="pathname">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the data that is to be examined.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="pathname" />
-        /// contains text whose format is valid for a filesystem pathname of a folder
-        /// on the Windows operating system; <see langword="false" /> otherwise.
-        /// </returns>
-        public bool IsValidFolderPath(string pathname)
+        public bool IsValidFolderPath([NotLogged] string pathname)
+            => IsValidPath(pathname, true);
+
+        /// <summary>
+        /// Checks if the specified <paramref name="segment" /> is a reserved device name.
+        /// </summary>
+        private static bool IsReservedDeviceName([NotLogged] string segment)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(segment)) return result;
+
+                result = segment.EqualsAnyOf()
+
+                foreach (var reservedName in ReservedDeviceNames)
+                {
+                    if (segment.Equals(
+                            reservedName, StringComparison.OrdinalIgnoreCase
+                        ))
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Validates that the specified file <paramref name="pathname" /> is of
+        /// a valid format on the Windows operating system.
+        /// Disallows trailing backslashes.
+        /// </summary>
+        public bool IsValidFilePath(string pathname)
+            => IsValidPath(pathname, false);
+
+        /// <summary>
+        /// Validates that the specified <paramref name="pathname" /> is of
+        /// a valid format on the Windows operating system.
+        /// </summary>
+        private bool IsValidPath(string pathname, bool allowTrailingBackslash)
         {
             var result = false;
 
@@ -82,70 +104,26 @@ namespace xyLOGIX.Validators
                 if (string.IsNullOrWhiteSpace(pathname))
                     return result;
 
-                var match = Path.Match(pathname);
-                if (match == null) return result;
-                result = match.Success;
-                if (!result) return result;
+                if (!allowTrailingBackslash && pathname.EndsWith("\\"))
+                    return result;
+
+                var match = PathPattern.Match(pathname);
+                if (!match.Success)
+                    return result;
 
                 // Check for reserved device names in each segment
-                var pathWithoutQuotes = match.Groups["path"].Value;
-                var pathSegments = pathWithoutQuotes.Split('\\');
-
+                var pathSegments = pathname.Split('\\');
                 foreach (var segment in pathSegments)
                 {
                     if (string.IsNullOrWhiteSpace(segment)) continue;
-                    if (!IsReservedDeviceName(segment)) continue;
-
-                    result = false;
-                    break;
+                    if (IsReservedDeviceName(segment)) return false;
                 }
+
+                result = true;
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
                 DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Checks if the specified <paramref name="segment" /> is a reserved device name.
-        /// </summary>
-        /// <param name="segment">A path segment to check.</param>
-        /// <returns>
-        /// <see langword="true" /> if the <paramref name="segment" /> is a reserved device
-        /// name; <see langword="false" /> otherwise.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        private static bool IsReservedDeviceName(string segment)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(segment)) return result;
-                if (!segment.IsAlphaNumericUppercase()) return result;
-
-                foreach (var reservedName in ReservedDeviceNames)
-                {
-                    if (string.IsNullOrWhiteSpace(reservedName)) continue;
-                    if (!segment.Equals(
-                            reservedName, StringComparison.Ordinal
-                        ))
-                        continue;
-
-                    result = true;
-                    break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
                 result = false;
             }
 
