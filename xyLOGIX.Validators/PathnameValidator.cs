@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿using Alphaleonis.Win32.Filesystem;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -135,7 +136,9 @@ namespace xyLOGIX.Validators
             {
                 if (string.IsNullOrWhiteSpace(segment)) return result;
 
-                result = segment.EqualsAnyOfNoCase(ReservedDeviceNames);
+                result = segment.EqualsAnyOfNoCase(ReservedDeviceNames) || Path
+                    .GetFileNameWithoutExtension(segment)
+                    .EqualsAnyOfNoCase(ReservedDeviceNames);
             }
             catch (Exception ex)
             {
@@ -205,6 +208,11 @@ namespace xyLOGIX.Validators
                     if (IsReservedDeviceName(segment))
                         return false; // right away fail the validation
                 }
+
+                // ✅ NEW FIX: Also check the last segment (file name) for reserved names.
+                var lastSegment = pathSegments[pathSegments.Length - 1]; // Get last path component (filename or last folder)
+                if (IsReservedDeviceName(lastSegment))
+                    return false;
 
                 // If we got this far, then assume that the specified pathname is of a valid format.
 
