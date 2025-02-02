@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
 
@@ -41,9 +42,17 @@ namespace xyLOGIX.Validators
         /// <summary>
         /// Gets a reference to the singleton instance of the validator.
         /// </summary>
-        public static IPathnameValidator Instance {
-            [DebuggerStepThrough] get; } =
-            new PathnameValidator();
+        public static IPathnameValidator
+            Instance
+        { [DebuggerStepThrough] get; } = new PathnameValidator();
+
+        /// <summary>
+        /// Validates that the specified file <paramref name="pathname" /> is of
+        /// a valid format on the Windows operating system.
+        /// Disallows trailing backslashes.
+        /// </summary>
+        public bool IsValidFilePath(string pathname)
+            => IsValidPath(pathname, false);
 
         /// <summary>
         /// Validates that the specified folder <paramref name="pathname" /> is of
@@ -56,6 +65,9 @@ namespace xyLOGIX.Validators
         /// <summary>
         /// Checks if the specified <paramref name="segment" /> is a reserved device name.
         /// </summary>
+        /// <param name="segment">
+        /// (Required.) A <see cref="T:System.String" /> containing the pathname segment to check.
+        /// </param>
         private static bool IsReservedDeviceName([NotLogged] string segment)
         {
             var result = false;
@@ -64,15 +76,7 @@ namespace xyLOGIX.Validators
             {
                 if (string.IsNullOrWhiteSpace(segment)) return result;
 
-                result = segment.EqualsAnyOf()
-
-                foreach (var reservedName in ReservedDeviceNames)
-                {
-                    if (segment.Equals(
-                            reservedName, StringComparison.OrdinalIgnoreCase
-                        ))
-                        return true;
-                }
+                result = segment.EqualsAnyOfNoCase(ReservedDeviceNames);
             }
             catch (Exception ex)
             {
@@ -82,14 +86,6 @@ namespace xyLOGIX.Validators
 
             return result;
         }
-
-        /// <summary>
-        /// Validates that the specified file <paramref name="pathname" /> is of
-        /// a valid format on the Windows operating system.
-        /// Disallows trailing backslashes.
-        /// </summary>
-        public bool IsValidFilePath(string pathname)
-            => IsValidPath(pathname, false);
 
         /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of
