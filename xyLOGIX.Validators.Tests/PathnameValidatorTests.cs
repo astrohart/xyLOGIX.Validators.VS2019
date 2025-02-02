@@ -111,5 +111,118 @@ namespace xyLOGIX.Validators.Tests
             string invalidPath
         )
             => Assert.That(!PathnameValidator.IsValidFolderPath(invalidPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" />
+        /// method to ensure it returns <see langword="true" /> when provided with
+        /// valid folder pathnames.
+        /// </summary>
+        /// <param name="validPath">
+        /// (Required.) A <see cref="T:System.String" /> containing a valid pathname
+        /// intended for testing.
+        /// Examples include root drive paths, alternate drive paths, UNC paths, and folder
+        /// names starting with a dot.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFolderPath" />
+        [Test, TestCase("C:\\", Description = "Valid root drive path"),
+         TestCase("D:\\", Description = "Valid alternate drive path"),
+         TestCase("\\\\server\\share\\", Description = "Valid UNC path"),
+         TestCase(
+             "C:\\.config\\", Description = "Valid folder starting with dot"
+         )]
+        public void IsValidFolderPath_ValidPaths_ReturnsTrue(string validPath)
+            => Assert.That(PathnameValidator.IsValidFolderPath(validPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFolderPath" /> method
+        /// to ensure it returns <see langword="false" /> when provided with pathnames that
+        /// are reserved device names, such as <c>PRN</c>, <c>AUX</c>, <c>LPT1</c>, or
+        /// <c>COM3</c>.
+        /// </summary>
+        /// <param name="invalidPath">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing an invalid pathname that includes reserved device names such as
+        /// <c>PRN</c>, <c>AUX</c>, <c>LPT1</c>, or <c>COM3</c>.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFolderPath" />
+        [Test,
+         TestCase(
+             "C:\\folder\\PRN\\", Description = "Path with reserved name 'PRN'"
+         ),
+         TestCase(
+             "C:\\folder\\AUX\\", Description = "Path with reserved name 'AUX'"
+         ),
+         TestCase(
+             "C:\\folder\\LPT1\\",
+             Description = "Path with reserved name 'LPT1'"
+         ),
+         TestCase(
+             "C:\\folder\\COM3\\",
+             Description = "Path with reserved name 'COM3'"
+         )]
+        public void IsValidFolderPath_ReservedDeviceNames_ReturnsFalse(
+            string invalidPath
+        )
+            => Assert.That(!PathnameValidator.IsValidFolderPath(invalidPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFilePath" /> method
+        /// to ensure it returns <see langword="true" /> when provided with
+        /// valid file pathnames.
+        /// </summary>
+        /// <param name="validPath">
+        /// (Required.) A <see cref="T:System.String" /> containing a valid pathname
+        /// intended for testing.
+        /// Examples include valid file paths, hidden files, UNC file paths, files with
+        /// trailing dots, and files with no extension.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFilePath" />
+        [Test,
+         TestCase("C:\\folder\\file.txt", Description = "Valid file path"),
+         TestCase("C:\\folder\\.config", Description = "Valid hidden file"),
+         TestCase(
+             "\\\\server\\share\\file.log", Description = "Valid UNC file path"
+         ),
+         TestCase(
+             "C:\\folder\\file.", Description = "Valid file with trailing dot"
+         ),
+         TestCase(
+             "C:\\folder\\file", Description = "Valid file with no extension"
+         )]
+        public void IsValidFilePath_ValidPaths_ReturnsTrue(string validPath)
+            => Assert.That(PathnameValidator.IsValidFilePath(validPath));
+
+        /// <summary>
+        /// Tests the <see cref="IPathnameValidator.IsValidFilePath" /> method
+        /// to ensure it returns <see langword="false" /> when provided with
+        /// invalid file pathnames.
+        /// </summary>
+        /// <param name="invalidPath">
+        /// (Required.) A <see cref="T:System.String" /> containing an invalid pathname
+        /// intended for testing. Examples include file paths with trailing backslashes,
+        /// paths with forward slashes, files with reserved names, folder root paths,
+        /// empty paths, and whitespace-only paths.
+        /// </param>
+        /// <seealso cref="IPathnameValidator.IsValidFilePath" />
+        [Test,
+         TestCase(
+             "C:\\folder\\file.txt\\",
+             Description = "File path with trailing backslash"
+         ),
+         TestCase(
+             "C:/folder/file.txt",
+             Description = "File path with forward slashes"
+         ),
+         TestCase(
+             "C:\\folder\\AUX.txt",
+             Description = "File with reserved name 'AUX'"
+         ),
+         TestCase("C:\\", Description = "Folder root path in file validation"),
+         TestCase("", Description = "Empty path"),
+         TestCase("   ", Description = "Whitespace-only path")]
+        public void IsValidFilePath_InvalidPaths_ReturnsFalse(
+            string invalidPath
+        )
+            => Assert.That(!PathnameValidator.IsValidFilePath(invalidPath));
     }
 }
