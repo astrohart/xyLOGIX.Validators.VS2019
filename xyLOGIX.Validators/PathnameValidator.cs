@@ -123,6 +123,9 @@ namespace xyLOGIX.Validators
         /// <see cref="T:System.String" />, then this method returns
         /// <see langword="false" />.
         /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// </returns>
         public bool IsValidFilePath([NotLogged] string pathname)
             => IsValidPath(pathname, false);
 
@@ -143,6 +146,10 @@ namespace xyLOGIX.Validators
         /// Generally, the pathnames of folders are allowed to end with a trailing
         /// backslash; however, the pathnames of file(s) are not.
         /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted pathname; <see langword="false" /> otherwise.
+        /// </returns>
         private bool IsValidPath(
             [NotLogged] string pathname,
             bool allowTrailingBackslash
