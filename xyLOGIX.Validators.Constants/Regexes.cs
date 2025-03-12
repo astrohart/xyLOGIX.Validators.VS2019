@@ -11,6 +11,12 @@ namespace xyLOGIX.Validators.Constants
     {
         /// <summary>
         /// A <see cref="T:System.String" /> that contains a regular expression used to
+        /// validate a string that is in Pascal case.
+        /// </summary>
+        public const string PascalCasePattern = @"^[A-Z][a-zA-Z0-9_]*$";
+
+        /// <summary>
+        /// A <see cref="T:System.String" /> that contains a regular expression used to
         /// validate a three-part version string, i.e., <c>0.2.5</c>.
         /// </summary>
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
