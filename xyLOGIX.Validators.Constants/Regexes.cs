@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using xyLOGIX.Validators.Constants.Properties;
 
 namespace xyLOGIX.Validators.Constants
@@ -20,6 +21,12 @@ namespace xyLOGIX.Validators.Constants
         /// validate a three-part version string, i.e., <c>0.2.5</c>.
         /// </summary>
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
+
+        /// <summary>
+        /// The regex pattern used to validate method parameter names.
+        /// </summary>
+        public static readonly Regex ValidMethodParameterNamePattern =
+            new Regex("^@?[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled);
 
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only

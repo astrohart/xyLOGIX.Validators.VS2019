@@ -123,6 +123,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReservedCSharpKeywords.cs" />
     <None Include="key.snk" />
     <Compile Include="MaxPathLength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
