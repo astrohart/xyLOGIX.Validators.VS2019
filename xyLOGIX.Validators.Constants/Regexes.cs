@@ -23,6 +23,13 @@ namespace xyLOGIX.Validators.Constants
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
 
         /// <summary>
+        /// Regular expression pattern that ensures a valid class name.
+        /// </summary>
+        public static readonly Regex ValidClassNamePattern = new Regex(
+            @"^[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled
+        );
+
+        /// <summary>
         /// The regex pattern used to validate method parameter names.
         /// </summary>
         public static readonly Regex ValidMethodParameterNamePattern =
