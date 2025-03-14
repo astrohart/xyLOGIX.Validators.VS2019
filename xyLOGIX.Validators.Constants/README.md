@@ -7,6 +7,7 @@
   - [Legacy](#F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy 'xyLOGIX.Validators.Constants.MaxPathLength.Legacy')
   - [NTFS](#F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS 'xyLOGIX.Validators.Constants.MaxPathLength.NTFS')
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
+  - [PascalCasePattern](#F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern 'xyLOGIX.Validators.Constants.Regexes.PascalCasePattern')
   - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
@@ -57,6 +58,14 @@ xyLOGIX.Validators.Constants
 ##### Summary
 
 Values for regular expressions to be utilized when pattern-matching.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern'></a>
+### PascalCasePattern `constants`
+
+##### Summary
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
+validate a string that is in Pascal case.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion'></a>
 ### ThreePartVersion `constants`
