@@ -1,4 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using System;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Validators.Constants
 {
@@ -42,5 +44,52 @@ namespace xyLOGIX.Validators.Constants
         /// </remarks>
         [Log(AttributeExclude = true)]
         static ReservedCSharpKeywords() { }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> exactly matches a
+        /// reserved C# 7.3 keyword in the
+        /// <see
+        ///     cref="F:xyLOGIX.Validators.Constants.ReservedCSharpKeywords.ForIdentifiers" />
+        /// collection.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// examined.
+        /// </param>
+        /// <remarks>
+        /// If the argument of the <paramref name="value" /> parameter is
+        /// <see langword="null" />, blank, or the <see cref="F:System.String.Empty" />
+        /// value, then this method returns <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// matches a reserved C# 7.3 keyword; otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool Contains([NotLogged] string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                foreach (var element in ForIdentifiers)
+                {
+                    if (!value.Equals(element)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
     }
 }
