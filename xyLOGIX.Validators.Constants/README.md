@@ -10,6 +10,7 @@
   - [PascalCasePattern](#F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern 'xyLOGIX.Validators.Constants.Regexes.PascalCasePattern')
   - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
   - [ValidClassNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidClassNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidClassNamePattern')
+  - [ValidEnumNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidEnumNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidEnumNamePattern')
   - [ValidMethodParameterNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidMethodParameterNamePattern')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
@@ -86,7 +87,14 @@ validate a three-part version string, i.e., `0.2.5`.
 
 ##### Summary
 
-Regular expression pattern that ensures a valid class name.
+Regular expression pattern that ensures a valid C# `class` name.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-ValidEnumNamePattern'></a>
+### ValidEnumNamePattern `constants`
+
+##### Summary
+
+Regular expression pattern that ensures a valid C# `enum` name.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern'></a>
 ### ValidMethodParameterNamePattern `constants`
