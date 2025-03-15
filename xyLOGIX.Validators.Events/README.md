@@ -9,8 +9,11 @@
 - [ValidationFailedEventArgs](#T-xyLOGIX-Validators-Events-ValidationFailedEventArgs 'xyLOGIX.Validators.Events.ValidationFailedEventArgs')
   - [#ctor(errorMessage)](#M-xyLOGIX-Validators-Events-ValidationFailedEventArgs-#ctor-System-String- 'xyLOGIX.Validators.Events.ValidationFailedEventArgs.#ctor(System.String)')
   - [ErrorMessage](#P-xyLOGIX-Validators-Events-ValidationFailedEventArgs-ErrorMessage 'xyLOGIX.Validators.Events.ValidationFailedEventArgs.ErrorMessage')
+  - [#cctor()](#M-xyLOGIX-Validators-Events-ValidationFailedEventArgs-#cctor 'xyLOGIX.Validators.Events.ValidationFailedEventArgs.#cctor')
 - [ValidationFailedEventHandler](#T-xyLOGIX-Validators-Events-ValidationFailedEventHandler 'xyLOGIX.Validators.Events.ValidationFailedEventHandler')
 - [ValidationSucceededEventArgs](#T-xyLOGIX-Validators-Events-ValidationSucceededEventArgs 'xyLOGIX.Validators.Events.ValidationSucceededEventArgs')
+  - [#ctor()](#M-xyLOGIX-Validators-Events-ValidationSucceededEventArgs-#ctor 'xyLOGIX.Validators.Events.ValidationSucceededEventArgs.#ctor')
+  - [#cctor()](#M-xyLOGIX-Validators-Events-ValidationSucceededEventArgs-#cctor 'xyLOGIX.Validators.Events.ValidationSucceededEventArgs.#cctor')
 - [ValidationSucceededEventHandler](#T-xyLOGIX-Validators-Events-ValidationSucceededEventHandler 'xyLOGIX.Validators.Events.ValidationSucceededEventHandler')
 
 <a name='T-xyLOGIX-Validators-Events-Properties-Resources'></a>
@@ -78,6 +81,29 @@ be generated. |
 
 Gets a string explaining why the validation failed.
 
+<a name='M-xyLOGIX-Validators-Events-ValidationFailedEventArgs-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [ValidationFailedEventArgs](#T-xyLOGIX-Validators-Events-ValidationFailedEventArgs 'xyLOGIX.Validators.Events.ValidationFailedEventArgs')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
 <a name='T-xyLOGIX-Validators-Events-ValidationFailedEventHandler'></a>
 ## ValidationFailedEventHandler `type`
 
@@ -111,6 +137,37 @@ xyLOGIX.Validators.Events
 ##### Summary
 
 Provides information for ValidationSucceeded event handlers.
+
+<a name='M-xyLOGIX-Validators-Events-ValidationSucceededEventArgs-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Creates a new instance of
+[ValidationSucceededEventArgs](#T-xyLOGIX-Validators-Events-ValidationSucceededEventArgs 'xyLOGIX.Validators.Events.ValidationSucceededEventArgs') and
+returns a reference to it.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-xyLOGIX-Validators-Events-ValidationSucceededEventArgs-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [ValidationSucceededEventArgs](#T-xyLOGIX-Validators-Events-ValidationSucceededEventArgs 'xyLOGIX.Validators.Events.ValidationSucceededEventArgs')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
 
 <a name='T-xyLOGIX-Validators-Events-ValidationSucceededEventHandler'></a>
 ## ValidationSucceededEventHandler `type`
