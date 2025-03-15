@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
+using System.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
 
@@ -21,7 +22,7 @@ namespace xyLOGIX.Validators.Events
         /// (Required.) String containing the error message to
         /// be generated.
         /// </param>
-        public ValidationFailedEventArgs(string errorMessage)
+        public ValidationFailedEventArgs([NotLogged] string errorMessage)
             => ErrorMessage = errorMessage;
 
         /// <summary> Gets a string explaining why the validation failed. </summary>
