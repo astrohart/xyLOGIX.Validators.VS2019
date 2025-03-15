@@ -9,6 +9,7 @@
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
   - [PascalCasePattern](#F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern 'xyLOGIX.Validators.Constants.Regexes.PascalCasePattern')
   - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
+  - [ValidClassNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidClassNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidClassNamePattern')
   - [ValidMethodParameterNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidMethodParameterNamePattern')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
@@ -17,6 +18,7 @@
 - [ReservedCSharpKeywords](#T-xyLOGIX-Validators-Constants-ReservedCSharpKeywords 'xyLOGIX.Validators.Constants.ReservedCSharpKeywords')
   - [ForIdentifiers](#F-xyLOGIX-Validators-Constants-ReservedCSharpKeywords-ForIdentifiers 'xyLOGIX.Validators.Constants.ReservedCSharpKeywords.ForIdentifiers')
   - [#cctor()](#M-xyLOGIX-Validators-Constants-ReservedCSharpKeywords-#cctor 'xyLOGIX.Validators.Constants.ReservedCSharpKeywords.#cctor')
+  - [Contains(value)](#M-xyLOGIX-Validators-Constants-ReservedCSharpKeywords-Contains-System-String- 'xyLOGIX.Validators.Constants.ReservedCSharpKeywords.Contains(System.String)')
 - [Resources](#T-xyLOGIX-Validators-Constants-Properties-Resources 'xyLOGIX.Validators.Constants.Properties.Resources')
   - [Culture](#P-xyLOGIX-Validators-Constants-Properties-Resources-Culture 'xyLOGIX.Validators.Constants.Properties.Resources.Culture')
   - [Regex_EmailAddress](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_EmailAddress 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_EmailAddress')
@@ -78,6 +80,13 @@ validate a string that is in Pascal case.
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a regular expression used to
 validate a three-part version string, i.e., `0.2.5`.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-ValidClassNamePattern'></a>
+### ValidClassNamePattern `constants`
+
+##### Summary
+
+Regular expression pattern that ensures a valid class name.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern'></a>
 ### ValidMethodParameterNamePattern `constants`
@@ -173,6 +182,34 @@ created or before any static members are referenced.
 
 We've decorated this constructor with the `[Log(AttributeExclude = true)]`
 attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Validators-Constants-ReservedCSharpKeywords-Contains-System-String-'></a>
+### Contains(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` exactly matches a
+reserved C# 7.3 keyword in the
+[ForIdentifiers](#F-xyLOGIX-Validators-Constants-ReservedCSharpKeywords-ForIdentifiers 'xyLOGIX.Validators.Constants.ReservedCSharpKeywords.ForIdentifiers')
+collection.
+
+##### Returns
+
+`true` if the specified `value`
+matches a reserved C# 7.3 keyword; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+examined. |
+
+##### Remarks
+
+If the argument of the `value` parameter is
+`null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value, then this method returns `false`.
 
 <a name='T-xyLOGIX-Validators-Constants-Properties-Resources'></a>
 ## Resources `type`
