@@ -11,6 +11,35 @@ namespace xyLOGIX.Validators.Constants
     public static class Regexes
     {
         /// <summary>
+        /// A regular expression pattern that matches a period (<c>.</c>) followed
+        /// by one or more whitespace characters, except when the whitespace is immediately
+        /// followed by a <c>&lt;para /&gt;</c> tag.
+        /// <para />
+        /// This is used to ensure paragraph breaks are correctly inserted in XML
+        /// documentation comments.
+        /// </summary>
+        public const string InsertXmlParaBreaksPattern = @"\.\s+(?!<para\s*/>)";
+
+        /// <summary>
+        /// A regular expression pattern that matches all newline variations
+        /// (<c>\r\n</c>, <c>\n</c>, and <c>\r</c>) to facilitate normalization of line
+        /// breaks in text processing.
+        /// </summary>
+        public const string NormalizeLineBreaksPattern = @"\r\n?|\n";
+
+        /// <summary>
+        /// A regular expression pattern that matches a <c>&lt;para /&gt;</c> tag with
+        /// any surrounding whitespace, ensuring that paragraph breaks in XML documentation
+        /// comments are properly formatted.
+        /// </summary>
+        /// <remarks>
+        /// This pattern is used to normalize paragraph breaks by removing unnecessary
+        /// leading and trailing whitespace around <c>&lt;para /&gt;</c> tags, ensuring
+        /// that each appears on its own line.
+        /// </remarks>
+        public const string NormalizeXmlParaBreaksPattern = @"\s*<para\s*/>\s*";
+
+        /// <summary>
         /// A <see cref="T:System.String" /> that contains a regular expression used to
         /// validate a string that is in Pascal case.
         /// </summary>
@@ -23,14 +52,26 @@ namespace xyLOGIX.Validators.Constants
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
 
         /// <summary>
-        /// Regular expression pattern that ensures a valid C# <see langword="class" /> name.
+        /// A regular expression pattern that tokenizes text for XML documentation comment
+        /// formatting,
+        /// ensuring that words, spaces, and self-closing XML tags such as <c>&lt;para /&gt;</c>
+        /// remain intact
+        /// as distinct tokens.
+        /// </summary>
+        public const string XmlDocCommentTokenizationPattern =
+            @"<para\s*/>|[^\s<]+|<[^<>]+>";
+
+        /// <summary>
+        /// Regular expression pattern that ensures a valid C# <see langword="class" />
+        /// name.
         /// </summary>
         public static readonly Regex ValidClassNamePattern = new Regex(
             @"^[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled
         );
 
         /// <summary>
-        /// Regular expression pattern that ensures a valid C# <see langword="enum" /> name.
+        /// Regular expression pattern that ensures a valid C# <see langword="enum" />
+        /// name.
         /// </summary>
         public static readonly Regex ValidEnumNamePattern = new Regex(
             @"^[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled
