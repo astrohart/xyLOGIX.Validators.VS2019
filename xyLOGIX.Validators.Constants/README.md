@@ -7,11 +7,15 @@
   - [Legacy](#F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy 'xyLOGIX.Validators.Constants.MaxPathLength.Legacy')
   - [NTFS](#F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS 'xyLOGIX.Validators.Constants.MaxPathLength.NTFS')
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
+  - [InsertXmlParaBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-InsertXmlParaBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.InsertXmlParaBreaksPattern')
+  - [NormalizeLineBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-NormalizeLineBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.NormalizeLineBreaksPattern')
+  - [NormalizeXmlParaBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-NormalizeXmlParaBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.NormalizeXmlParaBreaksPattern')
   - [PascalCasePattern](#F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern 'xyLOGIX.Validators.Constants.Regexes.PascalCasePattern')
   - [ThreePartVersion](#F-xyLOGIX-Validators-Constants-Regexes-ThreePartVersion 'xyLOGIX.Validators.Constants.Regexes.ThreePartVersion')
   - [ValidClassNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidClassNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidClassNamePattern')
   - [ValidEnumNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidEnumNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidEnumNamePattern')
   - [ValidMethodParameterNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidMethodParameterNamePattern')
+  - [XmlDocCommentTokenizationPattern](#F-xyLOGIX-Validators-Constants-Regexes-XmlDocCommentTokenizationPattern 'xyLOGIX.Validators.Constants.Regexes.XmlDocCommentTokenizationPattern')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
   - [WebAddress](#P-xyLOGIX-Validators-Constants-Regexes-WebAddress 'xyLOGIX.Validators.Constants.Regexes.WebAddress')
@@ -66,6 +70,44 @@ xyLOGIX.Validators.Constants
 
 Values for regular expressions to be utilized when pattern-matching.
 
+<a name='F-xyLOGIX-Validators-Constants-Regexes-InsertXmlParaBreaksPattern'></a>
+### InsertXmlParaBreaksPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches a period (`.`) followed
+by one or more whitespace characters, except when the whitespace is immediately
+followed by a `<para />` tag.
+
+
+
+This is used to ensure paragraph breaks are correctly inserted in XML
+documentation comments.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-NormalizeLineBreaksPattern'></a>
+### NormalizeLineBreaksPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches all newline variations
+(`\r\n`, `\n`, and `\r`) to facilitate normalization of line
+breaks in text processing.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-NormalizeXmlParaBreaksPattern'></a>
+### NormalizeXmlParaBreaksPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches a `<para />` tag with
+any surrounding whitespace, ensuring that paragraph breaks in XML documentation
+comments are properly formatted.
+
+##### Remarks
+
+This pattern is used to normalize paragraph breaks by removing unnecessary
+leading and trailing whitespace around `<para />` tags, ensuring
+that each appears on its own line.
+
 <a name='F-xyLOGIX-Validators-Constants-Regexes-PascalCasePattern'></a>
 ### PascalCasePattern `constants`
 
@@ -87,14 +129,16 @@ validate a three-part version string, i.e., `0.2.5`.
 
 ##### Summary
 
-Regular expression pattern that ensures a valid C# `class` name.
+Regular expression pattern that ensures a valid C# `class`
+name.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-ValidEnumNamePattern'></a>
 ### ValidEnumNamePattern `constants`
 
 ##### Summary
 
-Regular expression pattern that ensures a valid C# `enum` name.
+Regular expression pattern that ensures a valid C# `enum`
+name.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern'></a>
 ### ValidMethodParameterNamePattern `constants`
@@ -102,6 +146,17 @@ Regular expression pattern that ensures a valid C# `enum` name.
 ##### Summary
 
 The regex pattern used to validate method parameter names.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-XmlDocCommentTokenizationPattern'></a>
+### XmlDocCommentTokenizationPattern `constants`
+
+##### Summary
+
+A regular expression pattern that tokenizes text for XML documentation comment
+formatting,
+ensuring that words, spaces, and self-closing XML tags such as `<para />`
+remain intact
+as distinct tokens.
 
 <a name='P-xyLOGIX-Validators-Constants-Regexes-EmailAddress'></a>
 ### EmailAddress `property`
