@@ -11,6 +11,42 @@ namespace xyLOGIX.Validators.Constants
     public static class Regexes
     {
         /// <summary>
+        /// A regular expression pattern that matches an entire string consisting only of
+        /// uppercase letters.
+        /// This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
+        /// that appear as
+        /// standalone words without any lowercase letters.
+        /// <para>
+        /// This pattern ensures that the input string contains only uppercase letters from
+        /// A to Z
+        /// and does not include numbers, spaces, or lowercase characters.
+        /// </para>
+        /// </summary>
+        public const string AcronymPattern = @"^[A-Z]+$";
+
+        /// <summary>
+        /// A regular expression pattern that matches words in an initial-caps formatted
+        /// string.
+        /// This pattern identifies:
+        /// <list type="bullet">
+        ///     <item>
+        ///         <description>All-uppercase acronyms (e.g., "NASA", "AI", "RADAR").</description>
+        ///     </item>
+        ///     <item>
+        ///         <description>
+        ///         Capitalized words that follow PascalCase or CamelCase
+        ///         conventions (e.g., "Research", "Lab").
+        ///         </description>
+        ///     </item>
+        /// </list>
+        /// The matched words can be used to transform an initial-caps string into a
+        /// space-separated phrase
+        /// while preserving acronyms.
+        /// </summary>
+        public const string InitialCapsWordPattern =
+            @"[A-Z]+(?![a-z])|[A-Z][a-z]*";
+
+        /// <summary>
         /// A regular expression pattern that matches a period (<c>.</c>) followed
         /// by one or more whitespace characters, except when the whitespace is immediately
         /// followed by a <c>&lt;para /&gt;</c> tag.
@@ -52,16 +88,6 @@ namespace xyLOGIX.Validators.Constants
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
 
         /// <summary>
-        /// A regular expression pattern that tokenizes text for XML documentation comment
-        /// formatting,
-        /// ensuring that words, spaces, and self-closing XML tags such as <c>&lt;para /&gt;</c>
-        /// remain intact
-        /// as distinct tokens.
-        /// </summary>
-        public const string XmlDocCommentTokenizationPattern =
-            @"<para\s*/>|[^\s<]+|<[^<>]+>";
-
-        /// <summary>
         /// Regular expression pattern that ensures a valid C# <see langword="class" />
         /// name.
         /// </summary>
@@ -82,6 +108,17 @@ namespace xyLOGIX.Validators.Constants
         /// </summary>
         public static readonly Regex ValidMethodParameterNamePattern =
             new Regex("^@?[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled);
+
+        /// <summary>
+        /// A regular expression pattern that tokenizes text for XML documentation comment
+        /// formatting,
+        /// ensuring that words, spaces, and self-closing XML tags such as
+        /// <c>&lt;para /&gt;</c>
+        /// remain intact
+        /// as distinct tokens.
+        /// </summary>
+        public const string XmlDocCommentTokenizationPattern =
+            @"<para\s*/>|[^\s<]+|<[^<>]+>";
 
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only

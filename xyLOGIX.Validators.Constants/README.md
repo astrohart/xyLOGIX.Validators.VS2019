@@ -7,6 +7,8 @@
   - [Legacy](#F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy 'xyLOGIX.Validators.Constants.MaxPathLength.Legacy')
   - [NTFS](#F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS 'xyLOGIX.Validators.Constants.MaxPathLength.NTFS')
 - [Regexes](#T-xyLOGIX-Validators-Constants-Regexes 'xyLOGIX.Validators.Constants.Regexes')
+  - [AcronymPattern](#F-xyLOGIX-Validators-Constants-Regexes-AcronymPattern 'xyLOGIX.Validators.Constants.Regexes.AcronymPattern')
+  - [InitialCapsWordPattern](#F-xyLOGIX-Validators-Constants-Regexes-InitialCapsWordPattern 'xyLOGIX.Validators.Constants.Regexes.InitialCapsWordPattern')
   - [InsertXmlParaBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-InsertXmlParaBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.InsertXmlParaBreaksPattern')
   - [NormalizeLineBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-NormalizeLineBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.NormalizeLineBreaksPattern')
   - [NormalizeXmlParaBreaksPattern](#F-xyLOGIX-Validators-Constants-Regexes-NormalizeXmlParaBreaksPattern 'xyLOGIX.Validators.Constants.Regexes.NormalizeXmlParaBreaksPattern')
@@ -69,6 +71,34 @@ xyLOGIX.Validators.Constants
 ##### Summary
 
 Values for regular expressions to be utilized when pattern-matching.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-AcronymPattern'></a>
+### AcronymPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches an entire string consisting only of
+uppercase letters.
+This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
+that appear as
+standalone words without any lowercase letters.
+
+This pattern ensures that the input string contains only uppercase letters from
+A to Z
+and does not include numbers, spaces, or lowercase characters.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-InitialCapsWordPattern'></a>
+### InitialCapsWordPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches words in an initial-caps formatted
+string.
+This pattern identifies:
+
+The matched words can be used to transform an initial-caps string into a
+space-separated phrase
+while preserving acronyms.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-InsertXmlParaBreaksPattern'></a>
 ### InsertXmlParaBreaksPattern `constants`
@@ -154,7 +184,8 @@ The regex pattern used to validate method parameter names.
 
 A regular expression pattern that tokenizes text for XML documentation comment
 formatting,
-ensuring that words, spaces, and self-closing XML tags such as `<para />`
+ensuring that words, spaces, and self-closing XML tags such as
+`<para />`
 remain intact
 as distinct tokens.
 
