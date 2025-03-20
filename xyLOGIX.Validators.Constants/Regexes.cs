@@ -110,6 +110,14 @@ namespace xyLOGIX.Validators.Constants
             new Regex("^@?[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled);
 
         /// <summary>
+        /// Regular expression pattern that ensures a valid C#
+        /// <see langword="namespace" /> name.
+        /// </summary>
+        public static readonly Regex ValidNamespaceNamePattern = new Regex(
+            @"^[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled
+        );
+
+        /// <summary>
         /// A regular expression pattern that tokenizes text for XML documentation comment
         /// formatting,
         /// ensuring that words, spaces, and self-closing XML tags such as
