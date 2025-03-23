@@ -17,6 +17,7 @@
   - [ValidClassNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidClassNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidClassNamePattern')
   - [ValidEnumNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidEnumNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidEnumNamePattern')
   - [ValidMethodParameterNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidMethodParameterNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidMethodParameterNamePattern')
+  - [ValidNamespaceNamePattern](#F-xyLOGIX-Validators-Constants-Regexes-ValidNamespaceNamePattern 'xyLOGIX.Validators.Constants.Regexes.ValidNamespaceNamePattern')
   - [XmlDocCommentTokenizationPattern](#F-xyLOGIX-Validators-Constants-Regexes-XmlDocCommentTokenizationPattern 'xyLOGIX.Validators.Constants.Regexes.XmlDocCommentTokenizationPattern')
   - [EmailAddress](#P-xyLOGIX-Validators-Constants-Regexes-EmailAddress 'xyLOGIX.Validators.Constants.Regexes.EmailAddress')
   - [RFC3339Timestamp](#P-xyLOGIX-Validators-Constants-Regexes-RFC3339Timestamp 'xyLOGIX.Validators.Constants.Regexes.RFC3339Timestamp')
@@ -176,6 +177,14 @@ name.
 ##### Summary
 
 The regex pattern used to validate method parameter names.
+
+<a name='F-xyLOGIX-Validators-Constants-Regexes-ValidNamespaceNamePattern'></a>
+### ValidNamespaceNamePattern `constants`
+
+##### Summary
+
+Regular expression pattern that ensures a valid C#
+`namespace` name.
 
 <a name='F-xyLOGIX-Validators-Constants-Regexes-XmlDocCommentTokenizationPattern'></a>
 ### XmlDocCommentTokenizationPattern `constants`
