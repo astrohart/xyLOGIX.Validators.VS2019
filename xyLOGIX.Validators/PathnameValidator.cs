@@ -207,7 +207,7 @@ namespace xyLOGIX.Validators
                     : MaxPathLength.Legacy;
                 if (pathname.Length > maxPathLength)
                 {
-                    DebugUtils.WriteLine(DebugLevel.Error, $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for t.");
+                    DebugUtils.WriteLine(DebugLevel.Error, $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for the {Determine.TheFileSystemTypeInUse().AsString()} file system.");
 
                     return result; // Immediately fail validation if too long
                 }
