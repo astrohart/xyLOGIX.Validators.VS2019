@@ -181,14 +181,37 @@ namespace xyLOGIX.Validators
             {
                 // Return false if the pathname is null, blank, or empty
                 if (string.IsNullOrWhiteSpace(pathname))
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The pathname is null, blank, or empty."
+                    );
+
                     return result;
+                }
+
+                // The pathname must be an absolute path.
+                if (!pathname.IsAbsolutePath())
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        $"*** ERROR *** The pathname, '{pathname}', is not an absolute path."
+                    );
+
+                    return result;
+                }
 
                 // ✅ NEW FIX: Enforce MAX_PATH limits
                 var maxPathLength = Is.LongPathSupportEnabled()
                     ? MaxPathLength.NTFS
                     : MaxPathLength.Legacy;
                 if (pathname.Length > maxPathLength)
+                {
+                    DebugUtils.WriteLine(DebugLevel.Error, $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for t.");
+
                     return result; // Immediately fail validation if too long
+                }
+            
 
                 // ✅ Allow paths ending in ".", "..", or " " (Command Prompt allows these)
                 if (!allowTrailingBackslash && pathname.EndsWith("\\"))
