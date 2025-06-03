@@ -127,6 +127,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSystemType.cs" />
     <Compile Include="ReservedCSharpKeywords.cs" />
     <None Include="key.snk" />
     <Compile Include="MaxPathLength.cs" />
