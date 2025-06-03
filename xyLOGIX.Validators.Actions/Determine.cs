@@ -42,17 +42,13 @@ namespace xyLOGIX.Validators.Actions
         /// the method returns
         /// <see cref="F:xyLOGIX.Validators.Constants.FileSystemType.Unknown" />.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static FileSystemType TheFileSystemTypeInUse()
         {
             var result = FileSystemType.Unknown;
 
             try
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** INFO: Attempting to determine the type of file system that is currently in use..."
-                );
-
                 result = Is.LongPathSupportEnabled()
                     ? FileSystemType.NTFS
                     : FileSystemType.Legacy;
@@ -64,11 +60,6 @@ namespace xyLOGIX.Validators.Actions
 
                 result = FileSystemType.Unknown;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"Determine.TheFileSystemTypeInUse: Result = '{result}'"
-            );
 
             return result;
         }
