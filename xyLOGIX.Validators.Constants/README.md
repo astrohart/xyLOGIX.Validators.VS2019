@@ -3,6 +3,10 @@
 
 ## Contents
 
+- [FileSystemType](#T-xyLOGIX-Validators-Constants-FileSystemType 'xyLOGIX.Validators.Constants.FileSystemType')
+  - [Legacy](#F-xyLOGIX-Validators-Constants-FileSystemType-Legacy 'xyLOGIX.Validators.Constants.FileSystemType.Legacy')
+  - [NTFS](#F-xyLOGIX-Validators-Constants-FileSystemType-NTFS 'xyLOGIX.Validators.Constants.FileSystemType.NTFS')
+  - [Unknown](#F-xyLOGIX-Validators-Constants-FileSystemType-Unknown 'xyLOGIX.Validators.Constants.FileSystemType.Unknown')
 - [MaxPathLength](#T-xyLOGIX-Validators-Constants-MaxPathLength 'xyLOGIX.Validators.Constants.MaxPathLength')
   - [Legacy](#F-xyLOGIX-Validators-Constants-MaxPathLength-Legacy 'xyLOGIX.Validators.Constants.MaxPathLength.Legacy')
   - [NTFS](#F-xyLOGIX-Validators-Constants-MaxPathLength-NTFS 'xyLOGIX.Validators.Constants.MaxPathLength.NTFS')
@@ -31,6 +35,40 @@
   - [Regex_RFC3339_Timestamp](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_RFC3339_Timestamp 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_RFC3339_Timestamp')
   - [Regex_WebAddress](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_WebAddress 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_WebAddress')
   - [ResourceManager](#P-xyLOGIX-Validators-Constants-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Constants.Properties.Resources.ResourceManager')
+
+<a name='T-xyLOGIX-Validators-Constants-FileSystemType'></a>
+## FileSystemType `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Constants
+
+##### Summary
+
+Value(s) that indicate the type of file system that is present (e.g., NTFS,
+FAT32, etc.).
+
+<a name='F-xyLOGIX-Validators-Constants-FileSystemType-Legacy'></a>
+### Legacy `constants`
+
+##### Summary
+
+A file system that is formatted using the `FAT32` or other legacy file
+system format.
+
+<a name='F-xyLOGIX-Validators-Constants-FileSystemType-NTFS'></a>
+### NTFS `constants`
+
+##### Summary
+
+A file system that is formatted using the `NTFS` file system format.
+
+<a name='F-xyLOGIX-Validators-Constants-FileSystemType-Unknown'></a>
+### Unknown `constants`
+
+##### Summary
+
+Unknown file system type.
 
 <a name='T-xyLOGIX-Validators-Constants-MaxPathLength'></a>
 ## MaxPathLength `type`
