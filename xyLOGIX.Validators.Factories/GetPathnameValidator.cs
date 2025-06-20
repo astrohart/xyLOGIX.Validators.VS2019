@@ -10,20 +10,9 @@ namespace xyLOGIX.Validators.Factories
     /// Provides access to the one and only instance of the object that implements the
     /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class GetPathnameValidator
     {
-        /// <summary>
-        /// Initializes static data or performs actions that need to be performed
-        /// once only for the
-        /// <see cref="T:xyLOGIX.Validators.Factories.GetPathnameValidator" /> class.
-        /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance
-        /// being created or before any static members are referenced.
-        /// </remarks>
-        [Log(AttributeExclude = true)]
-        static GetPathnameValidator() { }
-
         /// <summary>
         /// Obtains access to the sole instance of the object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IPathnameValidator" /> interface,
