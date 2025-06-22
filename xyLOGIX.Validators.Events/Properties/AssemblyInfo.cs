@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
     AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Validators.Events")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020-25 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2021-25 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(
