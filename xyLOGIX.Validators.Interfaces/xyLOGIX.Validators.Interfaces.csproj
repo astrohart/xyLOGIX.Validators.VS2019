@@ -7,7 +7,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{9491B224-3C9A-4DA8-ACC3-50EE379EB555}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -111,7 +112,9 @@
       <HintPath>..\packages\PostSharp.Patterns.Threading.Redist.2024.1.6\lib\net45\PostSharp.Patterns.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
