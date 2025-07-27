@@ -119,6 +119,7 @@
     <Compile Include="DnsHostnameValidator.cs" />
     <Compile Include="PathnameValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
+    <Compile Include="SolutionPathnameValidator.cs" />
     <Compile Include="TCPPortValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
     <Compile Include="VersionStringValidator.cs" />
@@ -159,6 +160,10 @@
     <ProjectReference Include="..\..\xyLOGIX.Core.Extensions.VS2019\xyLOGIX.Core.Extensions\xyLOGIX.Core.Extensions.csproj">
       <Project>{5528D7FB-B88B-4E9D-9BBD-B6B6B893666A}</Project>
       <Name>xyLOGIX.Core.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xyLOGIX.Core.Files.VS2019\xyLOGIX.Core.Files\xyLOGIX.Core.Files.csproj">
+      <Project>{4BACCE79-0960-4445-975E-DB92F5A555A4}</Project>
+      <Name>xyLOGIX.Core.Files</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Validators.Actions\xyLOGIX.Validators.Actions.csproj">
       <Project>{211A5F2E-5CB5-43B1-B43D-C19952E339DC}</Project>
