@@ -56,8 +56,6 @@ namespace xyLOGIX.Validators
         /// pathname that is to be examined.
         /// </param>
         /// <remarks>
-        /// Disallows trailing backslashes.
-        /// <para />
         /// If the value of the <paramref name="pathname" /> parameter is the
         /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
         /// <see cref="T:System.String" />, then this method returns
