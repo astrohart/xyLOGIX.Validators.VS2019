@@ -3,6 +3,7 @@ using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Files.Actions;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
