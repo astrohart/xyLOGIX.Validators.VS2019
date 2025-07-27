@@ -122,6 +122,7 @@
     <Compile Include="GetEmailAddressValidator.cs" />
     <Compile Include="GetPathnameValidator.cs" />
     <Compile Include="GetRF3339TimestampFormatValidator.cs" />
+    <Compile Include="GetSolutionPathnameValidator.cs" />
     <Compile Include="GetTCPPortValidator.cs" />
     <Compile Include="GetUUIDValidator.cs" />
     <Compile Include="GetVersionStringValidator.cs" />
