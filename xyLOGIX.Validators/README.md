@@ -64,6 +64,12 @@
   - [Regex_FolderPathname](#P-xyLOGIX-Validators-Properties-Resources-Regex_FolderPathname 'xyLOGIX.Validators.Properties.Resources.Regex_FolderPathname')
   - [Regex_PathnameValidator_PathPattern](#P-xyLOGIX-Validators-Properties-Resources-Regex_PathnameValidator_PathPattern 'xyLOGIX.Validators.Properties.Resources.Regex_PathnameValidator_PathPattern')
   - [ResourceManager](#P-xyLOGIX-Validators-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Properties.Resources.ResourceManager')
+- [SolutionPathnameValidator](#T-xyLOGIX-Validators-SolutionPathnameValidator 'xyLOGIX.Validators.SolutionPathnameValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-SolutionPathnameValidator-#ctor 'xyLOGIX.Validators.SolutionPathnameValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-SolutionPathnameValidator-Instance 'xyLOGIX.Validators.SolutionPathnameValidator.Instance')
+  - [ThePathnameValidator](#P-xyLOGIX-Validators-SolutionPathnameValidator-ThePathnameValidator 'xyLOGIX.Validators.SolutionPathnameValidator.ThePathnameValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-SolutionPathnameValidator-#cctor 'xyLOGIX.Validators.SolutionPathnameValidator.#cctor')
+  - [IsValid(pathname)](#M-xyLOGIX-Validators-SolutionPathnameValidator-IsValid-System-String- 'xyLOGIX.Validators.SolutionPathnameValidator.IsValid(System.String)')
 - [TCPPortValidator](#T-xyLOGIX-Validators-TCPPortValidator 'xyLOGIX.Validators.TCPPortValidator')
   - [#ctor()](#M-xyLOGIX-Validators-TCPPortValidator-#ctor 'xyLOGIX.Validators.TCPPortValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-TCPPortValidator-Instance 'xyLOGIX.Validators.TCPPortValidator.Instance')
@@ -868,6 +874,85 @@ Looks up a localized string similar to ^(?:[a-zA-Z]:\\|\\\\[^\\/:*?"<>|]+\\[^\\/
 ##### Summary
 
 Returns the cached ResourceManager instance used by this class.
+
+<a name='T-xyLOGIX-Validators-SolutionPathnameValidator'></a>
+## SolutionPathnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')(s) that purport to contain the
+fully-qualified pathname of a Visual Studio Solution (`*.sln`) file.
+
+<a name='M-xyLOGIX-Validators-SolutionPathnameValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-SolutionPathnameValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
+interface.
+
+<a name='P-xyLOGIX-Validators-SolutionPathnameValidator-ThePathnameValidator'></a>
+### ThePathnameValidator `property`
+
+##### Summary
+
+Gets a reference to an instance of an object that implements the
+[IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
+
+<a name='M-xyLOGIX-Validators-SolutionPathnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-SolutionPathnameValidator-IsValid-System-String-'></a>
+### IsValid(pathname) `method`
+
+##### Summary
+
+Validates that the specified Visual Studio Solution (`*.sln`)
+`pathname` is of a valid format on the Windows operating
+system, and that it is a valid pathname of a Visual Studio Solution (
+`*.sln`) file.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
 
 <a name='T-xyLOGIX-Validators-TCPPortValidator'></a>
 ## TCPPortValidator `type`
