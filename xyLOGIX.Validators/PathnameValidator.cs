@@ -190,16 +190,30 @@ namespace xyLOGIX.Validators
                     return result;
                 }
 
-                // The pathname must be an absolute path.
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "PathnameValidator.IsValidPath: Checking whether the 'pathname' parameter contains a string that is an absolute pathname..."
+                );
+
                 if (!pathname.IsAbsolutePath())
                 {
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        $"*** ERROR *** The pathname, '{pathname}', is not an absolute path."
+                        "PathnameValidator.IsValidPath: The 'pathname' parameter does not contain an absolute pathname.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"PathnameValidator.IsValidPath: Result = {result}"
                     );
 
                     return result;
                 }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The 'pathname' parameter contains an absolute pathname.  Proceeding..."
+                );
 
                 // ✅ NEW FIX: Enforce MAX_PATH limits
                 var maxPathLength = Is.LongPathSupportEnabled()
@@ -207,11 +221,14 @@ namespace xyLOGIX.Validators
                     : MaxPathLength.Legacy;
                 if (pathname.Length > maxPathLength)
                 {
-                    DebugUtils.WriteLine(DebugLevel.Error, $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for the {Determine.TheFileSystemTypeInUse().AsString()} file system.");
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for the {Determine.TheFileSystemTypeInUse().AsString()} file system."
+                    );
 
                     return result; // Immediately fail validation if too long
                 }
-            
+
 
                 // ✅ Allow paths ending in ".", "..", or " " (Command Prompt allows these)
                 if (!allowTrailingBackslash && pathname.EndsWith("\\"))
