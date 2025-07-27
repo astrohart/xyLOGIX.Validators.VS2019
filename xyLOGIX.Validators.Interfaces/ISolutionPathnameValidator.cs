@@ -3,9 +3,9 @@
 namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
-    /// Defines the publicly-exposed events, methods and properties of object(s) that
-    /// validate the format of <see cref="T:System.String" /> values that purport to
-    /// contain pathnames..
+    /// Defines the publicly-exposed events, methods and properties of an object that
+    /// validates <see cref="T:System.String" />(s) that purport to contain the
+    /// fully-qualified pathname of a Visual Studio Solution (<c>*.sln</c>) file(s).
     /// </summary>
     public interface ISolutionPathnameValidator : IDataValidator
     {
