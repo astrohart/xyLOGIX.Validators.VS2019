@@ -20,6 +20,9 @@
 - [GetRF3339TimestampFormatValidator](#T-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-#cctor 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.SoleInstance')
+- [GetSolutionPathnameValidator](#T-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-#cctor 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator.SoleInstance')
 - [GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetTCPPortValidator-#cctor 'xyLOGIX.Validators.Factories.GetTCPPortValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetTCPPortValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetTCPPortValidator.SoleInstance')
@@ -313,6 +316,57 @@ interface, and returns a reference to it.
 
 Reference to the one, and only, instance of the object that implements the
 [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
+interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator'></a>
+## GetSolutionPathnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the
+[GetSolutionPathnameValidator](#T-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
 interface.
 
 ##### Parameters
