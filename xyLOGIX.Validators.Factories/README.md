@@ -17,6 +17,9 @@
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetEmailAddressValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetEmailAddressValidator.SoleInstance')
 - [GetPathnameValidator](#T-xyLOGIX-Validators-Factories-GetPathnameValidator 'xyLOGIX.Validators.Factories.GetPathnameValidator')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetPathnameValidator.SoleInstance')
+- [GetProjectPathnameValidator](#T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-#cctor 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator.SoleInstance')
 - [GetRF3339TimestampFormatValidator](#T-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-#cctor 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.SoleInstance')
@@ -266,6 +269,57 @@ and returns a reference to it.
 
 Reference to the one, and only, instance of the object that implements the
 [IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator'></a>
+## GetProjectPathnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the
+[GetProjectPathnameValidator](#T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
+interface.
 
 ##### Parameters
 
