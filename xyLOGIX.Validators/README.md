@@ -44,6 +44,12 @@
   - [IsValidFilePath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFilePath(System.String)')
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPath(System.String)')
   - [IsValidPath(pathname,allowTrailingBackslash)](#M-xyLOGIX-Validators-PathnameValidator-IsValidPath-System-String,System-Boolean- 'xyLOGIX.Validators.PathnameValidator.IsValidPath(System.String,System.Boolean)')
+- [ProjectPathnameValidator](#T-xyLOGIX-Validators-ProjectPathnameValidator 'xyLOGIX.Validators.ProjectPathnameValidator')
+  - [#ctor()](#M-xyLOGIX-Validators-ProjectPathnameValidator-#ctor 'xyLOGIX.Validators.ProjectPathnameValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Validators-ProjectPathnameValidator-Instance 'xyLOGIX.Validators.ProjectPathnameValidator.Instance')
+  - [ThePathnameValidator](#P-xyLOGIX-Validators-ProjectPathnameValidator-ThePathnameValidator 'xyLOGIX.Validators.ProjectPathnameValidator.ThePathnameValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-ProjectPathnameValidator-#cctor 'xyLOGIX.Validators.ProjectPathnameValidator.#cctor')
+  - [IsValid(pathname)](#M-xyLOGIX-Validators-ProjectPathnameValidator-IsValid-System-String- 'xyLOGIX.Validators.ProjectPathnameValidator.IsValid(System.String)')
 - [RF3339TimestampFormatValidator](#T-xyLOGIX-Validators-RF3339TimestampFormatValidator 'xyLOGIX.Validators.RF3339TimestampFormatValidator')
   - [#ctor()](#M-xyLOGIX-Validators-RF3339TimestampFormatValidator-#ctor 'xyLOGIX.Validators.RF3339TimestampFormatValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-RF3339TimestampFormatValidator-Instance 'xyLOGIX.Validators.RF3339TimestampFormatValidator.Instance')
@@ -701,6 +707,88 @@ pathname that is to be examined. |
 
 Generally, the pathnames of folders are allowed to end with a trailing
 backslash; however, the pathnames of file(s) are not.
+
+<a name='T-xyLOGIX-Validators-ProjectPathnameValidator'></a>
+## ProjectPathnameValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators
+
+##### Summary
+
+Validates the fully-qualified pathname(s) of project (`*.*proj`) file(s)
+that are utilized within modern version(s) of the Visual Studio IDE.
+
+<a name='M-xyLOGIX-Validators-ProjectPathnameValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Validators-ProjectPathnameValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
+interface.
+
+<a name='P-xyLOGIX-Validators-ProjectPathnameValidator-ThePathnameValidator'></a>
+### ThePathnameValidator `property`
+
+##### Summary
+
+Gets a reference to an instance of an object that implements the
+[IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator') interface.
+
+<a name='M-xyLOGIX-Validators-ProjectPathnameValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Validators-ProjectPathnameValidator-IsValid-System-String-'></a>
+### IsValid(pathname) `method`
+
+##### Summary
+
+Validates that the specified project (`*.*proj`) file
+`pathname` is of a valid format on the Windows operating
+system, and that it is a valid pathname of a project (`*.*proj`) file.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+Disallows trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
 
 <a name='T-xyLOGIX-Validators-RF3339TimestampFormatValidator'></a>
 ## RF3339TimestampFormatValidator `type`
