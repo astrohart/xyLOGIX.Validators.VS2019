@@ -3,7 +3,6 @@ using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using xyLOGIX.Core.Debug;
-using xyLOGIX.Files.Actions;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -135,33 +134,6 @@ namespace xyLOGIX.Validators
                     $"SolutionPathnameValidator.IsValid: *** SUCCESS *** The file having the pathname, '{pathname}', has the filename extension, '.sln'.  Proceeding..."
                 );
 
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    $"SolutionPathnameValidator.IsValid *** INFO: Checking whether the file having pathname, '{pathname}', exists on the file system..."
-                );
-
-                // Check whether a file having pathname, 'pathname', exists on the file system.
-                // If it does not, then write an error message to the log file, and then terminate
-                // the execution of this method, returning the default return value.
-                if (!Does.FileExist(pathname))
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        $"SolutionPathnameValidator.IsValid: *** ERROR *** The system could not locate the file having pathname, '{pathname}', on the file system.  Stopping..."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"*** SolutionPathnameValidator.IsValid: Result = {result}"
-                    );
-
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    $"SolutionPathnameValidator.IsValid: *** SUCCESS *** The file having pathname, '{pathname}', was found on the file system.  Proceeding..."
-                );
 
                 /*
                  * If we made it this far with no Exception(s) getting caught, then
