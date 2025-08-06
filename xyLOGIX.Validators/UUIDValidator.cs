@@ -21,10 +21,10 @@ namespace xyLOGIX.Validators
         static UUIDValidator() { }
 
         /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this class.
+        /// Empty, private constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected UUIDValidator() { }
+        private UUIDValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the

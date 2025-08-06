@@ -20,10 +20,10 @@ namespace xyLOGIX.Validators
         static SolutionPathnameValidator() { }
 
         /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this class.
+        /// Empty, private constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected SolutionPathnameValidator() { }
+        private SolutionPathnameValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
