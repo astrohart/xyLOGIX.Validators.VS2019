@@ -116,7 +116,7 @@ or cryptocurrency.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -191,7 +191,7 @@ Runs rules on date ranges to verify that they are valid.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -265,7 +265,7 @@ TCP or UDP connection to a remote host.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -363,7 +363,7 @@ Validates the format of strings containing a universally-unique identifier
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -980,7 +980,7 @@ fully-qualified pathname of a Visual Studio Solution (`*.sln`) file.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1162,7 +1162,7 @@ Validates the format of strings containing a universally-unique identifier
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1231,7 +1231,7 @@ Validates the format of software version strings.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1302,7 +1302,7 @@ Validates the format of strings containing a universally-unique identifier
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, private constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
