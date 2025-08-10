@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿using Alphaleonis.Win32.Filesystem;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using xyLOGIX.Core.Debug;
@@ -105,50 +106,20 @@ namespace xyLOGIX.Validators
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "ProjectPathnameValidator.IsValid *** INFO: Checking whether the value of the parameter, 'pathname', is blank..."
-                );
-
-                // Check whether the value of the parameter, 'pathname', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
-                if (string.IsNullOrWhiteSpace(pathname))
-                {
-                    // The parameter, 'pathname' was either passed a null value, or it is blank.  This is not desirable.
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "ProjectPathnameValidator.IsValid: The parameter, 'pathname', was either passed a null value, or it is blank. Stopping..."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"ProjectPathnameValidator.IsValid: Result = {result}"
-                    );
-
-                    // stop.
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** SUCCESS *** The parameter 'pathname', is not blank.  Proceeding..."
-                );
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
                     "*** ProjectPathnameValidator.IsValid: Checking whether the pathname ends with the phrase, 'proj'..."
                 );
 
                 // Check to see whether the pathname ends with the phrase, 'proj'.
                 // If this is not the case, then write an error message to the log file,
                 // and then terminate the execution of this method.
-                if (!pathname.EndsWith(
+                if (!Path.GetExtension(pathname).EndsWith(
                         "proj", StringComparison.OrdinalIgnoreCase
                     ))
                 {
-                    // The pathname does NOT end with 'proj'.  This is not desirable.
+                    // The filename extension of the project pathname does NOT end with 'proj'.  This is not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        "*** ERROR *** The pathname does NOT end with 'proj'.  Stopping..."
+                        $"*** ERROR *** The filename extension of the project pathname, '{pathname}', does NOT end with 'proj'.  Stopping..."
                     );
 
                     DebugUtils.WriteLine(
@@ -162,9 +133,9 @@ namespace xyLOGIX.Validators
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "ProjectPathnameValidator.IsValid: *** SUCCESS *** The pathname ends with the phrase, 'proj'.  Proceeding..."
+                    $"ProjectPathnameValidator.IsValid: *** SUCCESS *** The filename extension of the project pathname, '{pathname}', ends with the phrase, 'proj'.  Proceeding..."
                 );
-
+                
                 /*
                  * If we made it this far with no Exception(s) getting caught, then
                  * assume that the operation(s) succeeded.
