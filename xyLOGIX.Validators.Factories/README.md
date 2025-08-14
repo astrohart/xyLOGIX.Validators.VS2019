@@ -18,13 +18,11 @@
 - [GetPathnameValidator](#T-xyLOGIX-Validators-Factories-GetPathnameValidator 'xyLOGIX.Validators.Factories.GetPathnameValidator')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetPathnameValidator.SoleInstance')
 - [GetProjectPathnameValidator](#T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator')
-  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-#cctor 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator.SoleInstance')
 - [GetRF3339TimestampFormatValidator](#T-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-#cctor 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetRF3339TimestampFormatValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetRF3339TimestampFormatValidator.SoleInstance')
 - [GetSolutionPathnameValidator](#T-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator')
-  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-#cctor 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator.SoleInstance')
 - [GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetTCPPortValidator-#cctor 'xyLOGIX.Validators.Factories.GetTCPPortValidator.#cctor')
@@ -287,25 +285,6 @@ Provides access to the one and only instance of the object that implements the
 [IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
 interface.
 
-<a name='M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed
-once only for the
-[GetProjectPathnameValidator](#T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator')
-class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance
-being created or before any static members are referenced.
-
 <a name='M-xyLOGIX-Validators-Factories-GetProjectPathnameValidator-SoleInstance'></a>
 ### SoleInstance() `method`
 
@@ -388,25 +367,6 @@ xyLOGIX.Validators.Factories
 Provides access to the one and only instance of the object that implements the
 [ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
 interface.
-
-<a name='M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed
-once only for the
-[GetSolutionPathnameValidator](#T-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator 'xyLOGIX.Validators.Factories.GetSolutionPathnameValidator')
-class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance
-being created or before any static members are referenced.
 
 <a name='M-xyLOGIX-Validators-Factories-GetSolutionPathnameValidator-SoleInstance'></a>
 ### SoleInstance() `method`
