@@ -15,7 +15,7 @@ namespace xyLOGIX.Validators
     public class UUIDValidator : IUUIDValidator
     {
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static UUIDValidator() { }

@@ -24,7 +24,7 @@ namespace xyLOGIX.Validators
             @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
 
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static DnsHostnameValidator() { }

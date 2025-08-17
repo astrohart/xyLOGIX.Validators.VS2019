@@ -16,7 +16,7 @@ namespace xyLOGIX.Validators
         RF3339TimestampFormatValidator : IRFC3339TimestampFormatValidator
     {
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static RF3339TimestampFormatValidator() { }
