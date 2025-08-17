@@ -546,7 +546,7 @@ system.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -725,7 +725,7 @@ that are utilized within modern version(s) of the Visual Studio IDE.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -807,7 +807,7 @@ valid UTC `RFC 3339` timestamps.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1059,7 +1059,7 @@ TCP port numbers.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
