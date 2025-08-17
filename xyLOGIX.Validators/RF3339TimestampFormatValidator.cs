@@ -25,7 +25,6 @@ namespace xyLOGIX.Validators
         /// Empty, <see langword="private" /> constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        [Log(AttributeExclude = true)]
         private RF3339TimestampFormatValidator() { }
 
         /// <summary>
