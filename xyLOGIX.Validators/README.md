@@ -136,7 +136,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -211,7 +211,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -302,7 +302,7 @@ expression.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -383,7 +383,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -588,7 +588,7 @@ Allows folder and file names that start with a dot (`.`).
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -753,7 +753,7 @@ Gets a reference to an instance of an object that implements the
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -827,7 +827,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1008,7 +1008,7 @@ Gets a reference to an instance of an object that implements the
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1078,7 +1078,7 @@ Gets a reference to the one and only instance of the object that implements the
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1182,7 +1182,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1251,7 +1251,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
@@ -1322,7 +1322,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 
