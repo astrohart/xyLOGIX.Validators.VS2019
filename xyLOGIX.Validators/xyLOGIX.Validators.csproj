@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="AssetSymbolValidator.cs" />
     <Compile Include="DnsHostnameValidator.cs" />
+    <Compile Include="FileWildcardValidator.cs" />
     <Compile Include="PathnameValidator.cs" />
     <Compile Include="ProjectPathnameValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
