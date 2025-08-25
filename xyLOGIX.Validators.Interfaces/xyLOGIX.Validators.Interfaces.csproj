@@ -125,6 +125,7 @@
     <Compile Include="IDateRangeValidator.cs" />
     <Compile Include="IDnsHostnameValidator.cs" />
     <Compile Include="IEmailAddressValidator.cs" />
+    <Compile Include="IFileWildcardValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
     <Compile Include="IPathnameValidator.cs" />
     <Compile Include="IProjectPathnameValidator.cs" />
