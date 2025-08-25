@@ -7,6 +7,7 @@ namespace xyLOGIX.Validators.Actions
     /// Exposes static method(s) that return <c>bool</c> values indicating whether a
     /// given data element is of a certain type or has a certain value
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class Is
     {
         /// <summary>
