@@ -17,6 +17,7 @@ namespace xyLOGIX.Validators
     /// supposed to contain valid filesystem pathnames for the Windows operating
     /// system.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public class PathnameValidator : IPathnameValidator
     {
         /// <summary>
@@ -180,54 +181,15 @@ namespace xyLOGIX.Validators
             try
             {
                 // Return false if the pathname is null, blank, or empty
-                if (string.IsNullOrWhiteSpace(pathname))
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "*** ERROR *** The pathname is null, blank, or empty."
-                    );
+                if (string.IsNullOrWhiteSpace(pathname)) return result;
+                if (!pathname.IsAbsolutePath()) return result;
 
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "PathnameValidator.IsValidPath: Checking whether the 'pathname' parameter contains a string that is an absolute pathname..."
-                );
-
-                if (!pathname.IsAbsolutePath())
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "PathnameValidator.IsValidPath: The 'pathname' parameter does not contain an absolute pathname.  Stopping..."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"PathnameValidator.IsValidPath: Result = {result}"
-                    );
-
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** SUCCESS *** The 'pathname' parameter contains an absolute pathname.  Proceeding..."
-                );
 
                 // ✅ NEW FIX: Enforce MAX_PATH limits
                 var maxPathLength = Is.LongPathSupportEnabled()
                     ? MaxPathLength.NTFS
                     : MaxPathLength.Legacy;
-                if (pathname.Length > maxPathLength)
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        $"*** ERROR *** The pathname, '{pathname}', exceeds the maximum length of {maxPathLength} characters for the {Determine.TheFileSystemTypeInUse().AsString()} file system."
-                    );
-
-                    return result; // Immediately fail validation if too long
-                }
+                if (pathname.Length > maxPathLength) return result;
 
 
                 // ✅ Allow paths ending in ".", "..", or " " (Command Prompt allows these)
@@ -263,11 +225,6 @@ namespace xyLOGIX.Validators
 
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"PathnameValidator.IsValidPath: Result = {result}"
-            );
 
             return result;
         }
