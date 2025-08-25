@@ -15,6 +15,9 @@
 - [GetEmailAddressValidator](#T-xyLOGIX-Validators-Factories-GetEmailAddressValidator 'xyLOGIX.Validators.Factories.GetEmailAddressValidator')
   - [#cctor()](#M-xyLOGIX-Validators-Factories-GetEmailAddressValidator-#cctor 'xyLOGIX.Validators.Factories.GetEmailAddressValidator.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetEmailAddressValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetEmailAddressValidator.SoleInstance')
+- [GetFileWildcardValidator](#T-xyLOGIX-Validators-Factories-GetFileWildcardValidator 'xyLOGIX.Validators.Factories.GetFileWildcardValidator')
+  - [#cctor()](#M-xyLOGIX-Validators-Factories-GetFileWildcardValidator-#cctor 'xyLOGIX.Validators.Factories.GetFileWildcardValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetFileWildcardValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetFileWildcardValidator.SoleInstance')
 - [GetPathnameValidator](#T-xyLOGIX-Validators-Factories-GetPathnameValidator 'xyLOGIX.Validators.Factories.GetPathnameValidator')
   - [SoleInstance()](#M-xyLOGIX-Validators-Factories-GetPathnameValidator-SoleInstance 'xyLOGIX.Validators.Factories.GetPathnameValidator.SoleInstance')
 - [GetProjectPathnameValidator](#T-xyLOGIX-Validators-Factories-GetProjectPathnameValidator 'xyLOGIX.Validators.Factories.GetProjectPathnameValidator')
@@ -236,6 +239,61 @@ interface, and returns a reference to it.
 
 Reference to the one, and only, instance of the object that implements the
 [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
+interface.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Validators-Factories-GetFileWildcardValidator'></a>
+## GetFileWildcardValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Factories
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[IFileWildcardValidator](#T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator')
+interface.
+
+<a name='M-xyLOGIX-Validators-Factories-GetFileWildcardValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[GetFileWildcardValidator](#T-xyLOGIX-Validators-Factories-GetFileWildcardValidator 'xyLOGIX.Validators.Factories.GetFileWildcardValidator') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Validators-Factories-GetFileWildcardValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[IFileWildcardValidator](#T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[IFileWildcardValidator](#T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator')
 interface.
 
 ##### Parameters
