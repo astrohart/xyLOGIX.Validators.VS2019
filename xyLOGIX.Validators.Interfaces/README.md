@@ -12,6 +12,9 @@
   - [IsValid(host)](#M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator.IsValid(System.String)')
 - [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
   - [IsValid(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValid(System.String)')
+- [IFileWildcardValidator](#T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator')
+  - [IsValid(pattern)](#M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator.IsValid(System.String)')
+  - [TryValidate(pattern,error)](#M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-TryValidate-System-String,System-String@- 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator.TryValidate(System.String,System.String@)')
 - [IObjectValidator](#T-xyLOGIX-Validators-Interfaces-IObjectValidator 'xyLOGIX.Validators.Interfaces.IObjectValidator')
   - [ErrorMessage](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-ErrorMessage 'xyLOGIX.Validators.Interfaces.IObjectValidator.ErrorMessage')
   - [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
@@ -201,6 +204,61 @@ a valid format; `false` otherwise.
 | ---- | ---- | ----------- |
 | emailAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
 universally-unique identifier whose format is to be checked. |
+
+<a name='T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator'></a>
+## IFileWildcardValidator `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Interfaces
+
+##### Summary
+
+Defines a service that validates whether a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') is a correctly formatted Windows filename
+wildcard (glob) pattern.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-IsValid-System-String-'></a>
+### IsValid(pattern) `method`
+
+##### Summary
+
+Determines whether the specified `pattern` is a
+valid Windows filename wildcard (glob) pattern.
+
+##### Returns
+
+`true` if the value is a valid wildcard pattern;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pattern | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the wildcard
+pattern to validate. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-TryValidate-System-String,System-String@-'></a>
+### TryValidate(pattern,error) `method`
+
+##### Summary
+
+Attempts to validate the specified `pattern` and, if
+invalid, returns a concise reason.
+
+##### Returns
+
+`true` if the value is a valid wildcard pattern;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pattern | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the wildcard
+pattern to validate. |
+| error | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | On return, receives a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+describing why validation failed, or an empty string if validation succeeded. |
 
 <a name='T-xyLOGIX-Validators-Interfaces-IObjectValidator'></a>
 ## IObjectValidator `type`
