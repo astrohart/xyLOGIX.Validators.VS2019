@@ -817,7 +817,8 @@ that are utilized within modern version(s) of the Visual Studio IDE.
 
 ##### Summary
 
-Empty, `private` constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -845,7 +846,8 @@ Gets a reference to an instance of an object that implements the
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
