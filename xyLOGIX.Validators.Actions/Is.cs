@@ -248,6 +248,7 @@ namespace xyLOGIX.Validators.Actions
         /// <see langword="true" /> if the specified <paramref name="pathname" />
         /// has a supported filename extension; <see langword="false" /> otherwise.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool HasValidExtensionNoLogging(
             [NotLogged] string pathname
         )
@@ -274,10 +275,6 @@ namespace xyLOGIX.Validators.Actions
 
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug, $"Is.HasValidExtension: Result = {result}"
-            );
 
             return result;
         }
