@@ -35,6 +35,9 @@
   - [Regex_RFC3339_Timestamp](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_RFC3339_Timestamp 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_RFC3339_Timestamp')
   - [Regex_WebAddress](#P-xyLOGIX-Validators-Constants-Properties-Resources-Regex_WebAddress 'xyLOGIX.Validators.Constants.Properties.Resources.Regex_WebAddress')
   - [ResourceManager](#P-xyLOGIX-Validators-Constants-Properties-Resources-ResourceManager 'xyLOGIX.Validators.Constants.Properties.Resources.ResourceManager')
+- [SupportedProjectFilenameExtensions](#T-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions 'xyLOGIX.Validators.Constants.SupportedProjectFilenameExtensions')
+  - [Extensions](#F-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions-Extensions 'xyLOGIX.Validators.Constants.SupportedProjectFilenameExtensions.Extensions')
+  - [#cctor()](#M-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions-#cctor 'xyLOGIX.Validators.Constants.SupportedProjectFilenameExtensions.#cctor')
 
 <a name='T-xyLOGIX-Validators-Constants-FileSystemType'></a>
 ## FileSystemType `type`
@@ -368,3 +371,46 @@ Looks up a localized string similar to ^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,
 ##### Summary
 
 Returns the cached ResourceManager instance used by this class.
+
+<a name='T-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions'></a>
+## SupportedProjectFilenameExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Validators.Constants
+
+##### Summary
+
+Value(s) for the filename extension(s) of the project (`*.*proj`) file(s)
+that are supported by modern version(s) of the Visual Studio IDE.
+
+<a name='F-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions-Extensions'></a>
+### Extensions `constants`
+
+##### Summary
+
+Gets the list of valid project filename extensions.
+
+<a name='M-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[SupportedProjectFilenameExtensions](#T-SupportedProjectFilenameExtensions 'SupportedProjectFilenameExtensions')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
