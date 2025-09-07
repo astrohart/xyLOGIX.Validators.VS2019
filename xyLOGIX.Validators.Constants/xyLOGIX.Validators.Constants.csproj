@@ -126,7 +126,7 @@
   <ItemGroup>
     <Compile Include="FileSystemType.cs" />
     <Compile Include="ReservedCSharpKeywords.cs" />
-    <Compile Include="ValidProjectFilenameExtensions.cs" />
+    <Compile Include="SupportedProjectFilenameExtensions.cs" />
     <None Include="key.snk" />
     <Compile Include="MaxPathLength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

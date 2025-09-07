@@ -6,7 +6,7 @@ namespace xyLOGIX.Validators.Constants
     /// Value(s) for the filename extension(s) of the project (<c>*.*proj</c>) file(s)
     /// that are supported by modern version(s) of the Visual Studio IDE.
     /// </summary>
-    public static class ValidProjectFilenameExtensions
+    public static class SupportedProjectFilenameExtensions
     {
         /// <summary>
         /// Gets the list of valid project filename extensions.
@@ -19,7 +19,7 @@ namespace xyLOGIX.Validators.Constants
         /// <summary>
         /// Initializes <see langword="static" /> data or performs actions that
         /// need to be performed once only for the
-        /// <see cref="T:xyLOGIX.Validators.Constants.ValidProjectFilenameExtensions" />
+        /// <see cref="T:SupportedProjectFilenameExtensions" />
         /// class.
         /// </summary>
         /// <remarks>
@@ -30,6 +30,6 @@ namespace xyLOGIX.Validators.Constants
         /// attribute in order to simplify the logging output.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        static ValidProjectFilenameExtensions() { }
+        static SupportedProjectFilenameExtensions() { }
     }
 }
