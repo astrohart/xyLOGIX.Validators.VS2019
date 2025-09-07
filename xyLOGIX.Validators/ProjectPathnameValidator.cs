@@ -15,17 +15,18 @@ namespace xyLOGIX.Validators
     public class ProjectPathnameValidator : IProjectPathnameValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static ProjectPathnameValidator() { }
 
         /// <summary>
-        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        private ProjectPathnameValidator()
-        { }
+        private ProjectPathnameValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
@@ -34,8 +35,7 @@ namespace xyLOGIX.Validators
         /// </summary>
         public static IProjectPathnameValidator Instance
         {
-            [DebuggerStepThrough]
-            get;
+            [DebuggerStepThrough] get;
         } = new ProjectPathnameValidator();
 
         /// <summary>
@@ -44,8 +44,7 @@ namespace xyLOGIX.Validators
         /// </summary>
         private static IPathnameValidator ThePathnameValidator
         {
-            [DebuggerStepThrough]
-            get;
+            [DebuggerStepThrough] get;
         } = PathnameValidator.Instance;
 
         /// <summary>
@@ -113,9 +112,8 @@ namespace xyLOGIX.Validators
                 // Check to see whether the pathname ends with the phrase, 'proj'.
                 // If this is not the case, then write an error message to the log file,
                 // and then terminate the execution of this method.
-                if (!Path.GetExtension(pathname).EndsWith(
-                        "proj", StringComparison.OrdinalIgnoreCase
-                    ))
+                if (!Path.GetExtension(pathname)
+                         .EndsWith("proj", StringComparison.OrdinalIgnoreCase))
                 {
                     // The filename extension of the project pathname does NOT end with 'proj'.  This is not desirable.
                     DebugUtils.WriteLine(
@@ -154,7 +152,8 @@ namespace xyLOGIX.Validators
                     );
 
                     DebugUtils.WriteLine(
-                        DebugLevel.Debug, $"*** ProjectPathnameValidator.IsValid: Result = {result}"
+                        DebugLevel.Debug,
+                        $"*** ProjectPathnameValidator.IsValid: Result = {result}"
                     );
 
                     // stop.
