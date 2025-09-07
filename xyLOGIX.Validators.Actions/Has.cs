@@ -47,7 +47,7 @@ namespace xyLOGIX.Validators.Actions
         /// <see langword="true" /> if the specified <paramref name="pathname" />
         /// has a supported filename extension; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool ValidExtension([NotLogged] string pathname)
+        public static bool SupportedProjectPathnameExtension([NotLogged] string pathname)
         {
             var result = false;
 
@@ -55,7 +55,7 @@ namespace xyLOGIX.Validators.Actions
             {
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension *** INFO: Checking whether the value of the parameter, 'pathname', is blank..."
+                    "Has.SupportedProjectPathnameExtension *** INFO: Checking whether the value of the parameter, 'pathname', is blank..."
                 );
 
                 // Check whether the value of the parameter, 'pathname', is blank.
@@ -66,12 +66,12 @@ namespace xyLOGIX.Validators.Actions
                     // The parameter, 'pathname' was either passed a null value, or it is blank.  This is not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        "Has.ValidExtension: *** ERROR *** The parameter, 'pathname', was either passed a null value, or it is blank. Stopping..."
+                        "Has.SupportedProjectPathnameExtension: *** ERROR *** The parameter, 'pathname', was either passed a null value, or it is blank. Stopping..."
                     );
 
                     DebugUtils.WriteLine(
                         DebugLevel.Debug,
-                        $"Has.ValidExtension: Result = {result}"
+                        $"Has.SupportedProjectPathnameExtension: Result = {result}"
                     );
 
                     // stop.
@@ -85,23 +85,23 @@ namespace xyLOGIX.Validators.Actions
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension: Checking whether the field, 'ValidProjectFilenameExtensions.Extensions', has a null reference for a value..."
+                    "Has.SupportedProjectPathnameExtension: Checking whether the field, 'SupportedProjectFilenameExtensions.Extensions', has a null reference for a value..."
                 );
 
-                // Check to see if the required field, ValidProjectFilenameExtensions.Extensions, is null. If it is, then send an
+                // Check to see if the required field, SupportedProjectFilenameExtensions.Extensions, is null. If it is, then send an
                 // error to the log file and then quit, returning the default value of the result
                 // variable.
-                if (ValidProjectFilenameExtensions.Extensions == null)
+                if (SupportedProjectFilenameExtensions.Extensions == null)
                 {
-                    // the field ValidProjectFilenameExtensions.Extensions is required.
+                    // the field SupportedProjectFilenameExtensions.Extensions is required.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        "Has.ValidExtension: *** ERROR *** The field, 'ValidProjectFilenameExtensions.Extensions', has a null reference.  Stopping..."
+                        "Has.SupportedProjectPathnameExtension: *** ERROR *** The field, 'SupportedProjectFilenameExtensions.Extensions', has a null reference.  Stopping..."
                     );
 
                     DebugUtils.WriteLine(
                         DebugLevel.Debug,
-                        $"*** Has.ValidExtension: Result = {result}"
+                        $"*** Has.SupportedProjectPathnameExtension: Result = {result}"
                     );
 
                     // stop.
@@ -110,28 +110,28 @@ namespace xyLOGIX.Validators.Actions
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension: *** SUCCESS *** The field, 'ValidProjectFilenameExtensions.Extensions', has a valid object reference for its value.  Proceeding..."
+                    "Has.SupportedProjectPathnameExtension: *** SUCCESS *** The field, 'SupportedProjectFilenameExtensions.Extensions', has a valid object reference for its value.  Proceeding..."
                 );
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension *** INFO: Checking whether the array, 'ValidProjectFilenameExtensions.Extensions', has greater than zero elements..."
+                    "Has.SupportedProjectPathnameExtension *** INFO: Checking whether the array, 'SupportedProjectFilenameExtensions.Extensions', has greater than zero elements..."
                 );
 
-                // Check whether the array, 'ValidProjectFilenameExtensions.Extensions', has greater than zero elements.  If it is empty,
+                // Check whether the array, 'SupportedProjectFilenameExtensions.Extensions', has greater than zero elements.  If it is empty,
                 // then write an error message to the log file, and then terminate the execution of this method.
                 // It is preferred for the array to have greater than zero elements.
-                if (ValidProjectFilenameExtensions.Extensions.Length <= 0)
+                if (SupportedProjectFilenameExtensions.Extensions.Length <= 0)
                 {
-                    // The array, 'ValidProjectFilenameExtensions.Extensions', has zero elements, and we can't proceed if this is so.
+                    // The array, 'SupportedProjectFilenameExtensions.Extensions', has zero elements, and we can't proceed if this is so.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        "Has.ValidExtension *** ERROR *** The array, 'ValidProjectFilenameExtensions.Extensions', has zero elements.  Stopping..."
+                        "Has.SupportedProjectPathnameExtension *** ERROR *** The array, 'SupportedProjectFilenameExtensions.Extensions', has zero elements.  Stopping..."
                     );
 
                     DebugUtils.WriteLine(
                         DebugLevel.Debug,
-                        $"*** Has.ValidExtension: Result = {result}"
+                        $"*** Has.SupportedProjectPathnameExtension: Result = {result}"
                     );
 
                     // stop.
@@ -140,19 +140,19 @@ namespace xyLOGIX.Validators.Actions
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"Has.ValidExtension *** SUCCESS *** {ValidProjectFilenameExtensions.Extensions.Length} element(s) were found in the 'ValidProjectFilenameExtensions.Extensions' array.  Proceeding..."
+                    $"Has.SupportedProjectPathnameExtension *** SUCCESS *** {SupportedProjectFilenameExtensions.Extensions.Length} element(s) were found in the 'SupportedProjectFilenameExtensions.Extensions' array.  Proceeding..."
                 );
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension: Checking whether the file, whose fully-qualified pathname is specified by the parameter, 'pathname', exists..."
+                    "Has.SupportedProjectPathnameExtension: Checking whether the file, whose fully-qualified pathname is specified by the parameter, 'pathname', exists..."
                 );
 
                 var pathnameExtension = Path.GetExtension(pathname);
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension: Checking whether the variable, 'pathnameExtension', has a null reference for a value, or is blank..."
+                    "Has.SupportedProjectPathnameExtension: Checking whether the variable, 'pathnameExtension', has a null reference for a value, or is blank..."
                 );
 
                 // Check to see if the required variable, 'pathnameExtension', is null or blank. If it is,
@@ -163,13 +163,13 @@ namespace xyLOGIX.Validators.Actions
                     // the variable pathnameExtension is required.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
-                        "Has.ValidExtension: *** ERROR *** The variable, 'pathnameExtension', has a null reference or is blank.  Stopping..."
+                        "Has.SupportedProjectPathnameExtension: *** ERROR *** The variable, 'pathnameExtension', has a null reference or is blank.  Stopping..."
                     );
 
                     // log the result
                     DebugUtils.WriteLine(
                         DebugLevel.Debug,
-                        $"Has.ValidExtension: Result = {result}"
+                        $"Has.SupportedProjectPathnameExtension: Result = {result}"
                     );
 
                     // stop.
@@ -178,16 +178,16 @@ namespace xyLOGIX.Validators.Actions
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"Has.ValidExtension: *** SUCCESS *** {pathnameExtension.Length} B of data appear to be present in the variable, 'pathnameExtension'.  Proceeding..."
+                    $"Has.SupportedProjectPathnameExtension: *** SUCCESS *** {pathnameExtension.Length} B of data appear to be present in the variable, 'pathnameExtension'.  Proceeding..."
                 );
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    "Has.ValidExtension: Checking whether the file extension, specified by the variable, 'pathnameExtension', is in the list of supported project filename extensions..."
+                    "Has.SupportedProjectPathnameExtension: Checking whether the file extension, specified by the variable, 'pathnameExtension', is in the list of supported project filename extensions..."
                 );
 
                 result = pathnameExtension.EqualsAnyOfNoCase(
-                    ValidProjectFilenameExtensions.Extensions
+                    SupportedProjectFilenameExtensions.Extensions
                 );
 
                 DebugUtils.WriteLine(
@@ -206,7 +206,7 @@ namespace xyLOGIX.Validators.Actions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug, $"Has.ValidExtension: Result = {result}"
+                DebugLevel.Debug, $"Has.SupportedProjectPathnameExtension: Result = {result}"
             );
 
             return result;
@@ -232,7 +232,7 @@ namespace xyLOGIX.Validators.Actions
         /// It does not check to see if the file actually exists on disk.
         /// <para />
         /// This method works in identically the same fashion as the
-        /// <see cref="Has.ValidExtension(string)" /> method, except it avoids writing to
+        /// <see cref="SupportedProjectPathnameExtension" /> method, except it avoids writing to
         /// the log file whenever possible.
         /// <para />
         /// This overload should be utilized when the application needs to make this
@@ -244,21 +244,21 @@ namespace xyLOGIX.Validators.Actions
         /// has a supported filename extension; <see langword="false" /> otherwise.
         /// </returns>
         [Log(AttributeExclude = true)]
-        public static bool ValidExtensionNoLogging([NotLogged] string pathname)
+        public static bool SupportedExtensionNoLogging([NotLogged] string pathname)
         {
             var result = false;
 
             try
             {
                 if (string.IsNullOrWhiteSpace(pathname)) return result;
-                if (ValidProjectFilenameExtensions.Extensions == null)
+                if (SupportedProjectFilenameExtensions.Extensions == null)
                     return result;
-                if (ValidProjectFilenameExtensions.Extensions.Length <= 0)
+                if (SupportedProjectFilenameExtensions.Extensions.Length <= 0)
                     return result;
                 var pathnameExtension = Path.GetExtension(pathname);
                 if (string.IsNullOrWhiteSpace(pathnameExtension)) return result;
                 result = pathnameExtension.EqualsAnyOfNoCase(
-                    ValidProjectFilenameExtensions.Extensions
+                    SupportedProjectFilenameExtensions.Extensions
                 );
             }
             catch (Exception ex)
