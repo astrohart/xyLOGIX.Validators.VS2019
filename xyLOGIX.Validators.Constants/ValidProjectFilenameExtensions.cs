@@ -1,7 +1,4 @@
-﻿using Alphaleonis.Win32.Filesystem;
-using PostSharp.Patterns.Diagnostics;
-using System;
-using System.Linq;
+﻿using PostSharp.Patterns.Diagnostics;
 
 namespace xyLOGIX.Validators.Constants
 {
@@ -9,7 +6,7 @@ namespace xyLOGIX.Validators.Constants
     /// Value(s) for the filename extension(s) of the project (<c>*.*proj</c>) file(s)
     /// that are supported by modern version(s) of the Visual Studio IDE.
     /// </summary>
-    public class ValidProjectFilenameExtensions
+    public static class ValidProjectFilenameExtensions
     {
         /// <summary>
         /// Gets the list of valid project filename extensions.
@@ -18,5 +15,21 @@ namespace xyLOGIX.Validators.Constants
         {
             "*.csproj", "*.vbproj", "*.fsproj"
         };
+
+        /// <summary>
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Validators.Constants.ValidProjectFilenameExtensions" />
+        /// class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any <see langword="static" /> members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static ValidProjectFilenameExtensions() { }
     }
 }
