@@ -137,6 +137,35 @@ namespace xyLOGIX.Validators
                     $"ProjectPathnameValidator.IsValid: *** SUCCESS *** The filename extension of the project pathname, '{pathname}', ends with the phrase, 'proj'.  Proceeding..."
                 );
 
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"*** ProjectPathnameValidator.IsValid: Checking whether the path, '{pathname}', has a supported filename extension..."
+                );
+
+                // Check to see whether the specified project pathname as a supported extension.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!Has.SupportedProjectPathnameExtension(pathname))
+                {
+                    // The specified project pathname does NOT have a supported extension.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        $"*** ERROR *** The path, '{pathname}', does NOT have a supported extension.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug, $"*** ProjectPathnameValidator.IsValid: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"ProjectPathnameValidator.IsValid: *** SUCCESS *** The path, '{pathname}', as a supported extension.  Proceeding..."
+                );
+
                 /*
                  * If we made it this far with no Exception(s) getting caught, then
                  * assume that the operation(s) succeeded.
