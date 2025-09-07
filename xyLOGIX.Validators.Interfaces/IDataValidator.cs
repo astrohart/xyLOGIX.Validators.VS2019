@@ -1,6 +1,4 @@
-﻿using PostSharp.Patterns.Threading;
-
-namespace xyLOGIX.Validators.Interfaces
+﻿namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
     /// Defines the publicly-exposed methods and properties that are in common to all
