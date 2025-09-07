@@ -3,7 +3,7 @@
 namespace xyLOGIX.Validators.Constants
 {
     /// <summary>
-    /// Value(s) for the filename extension(s) of the project (<c>*.*proj</c>) file(s)
+    /// Value(s) for the filename extension(s) of the project (<c>.*proj</c>) file(s)
     /// that are supported by modern version(s) of the Visual Studio IDE.
     /// </summary>
     public static class SupportedProjectFilenameExtensions
@@ -13,7 +13,7 @@ namespace xyLOGIX.Validators.Constants
         /// </summary>
         public static readonly string[] Extensions =
         {
-            "*.csproj", "*.vbproj", "*.fsproj"
+            ".csproj", ".vbproj", ".fsproj"
         };
 
         /// <summary>
