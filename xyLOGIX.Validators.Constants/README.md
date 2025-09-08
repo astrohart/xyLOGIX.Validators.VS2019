@@ -381,7 +381,7 @@ xyLOGIX.Validators.Constants
 
 ##### Summary
 
-Value(s) for the filename extension(s) of the project (`*.*proj`) file(s)
+Value(s) for the filename extension(s) of the project (`.*proj`) file(s)
 that are supported by modern version(s) of the Visual Studio IDE.
 
 <a name='F-xyLOGIX-Validators-Constants-SupportedProjectFilenameExtensions-Extensions'></a>
