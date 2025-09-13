@@ -32,5 +32,31 @@ namespace xyLOGIX.Validators.Interfaces
         /// properly-formatted file pathname; <see langword="false" /> otherwise.
         /// </returns>
         bool IsValid([NotLogged] string pathname);
+
+        /// <summary>
+        /// Validates that the specified Visual Studio Solution (<c>*.sln</c>)
+        /// <paramref name="pathname" /> is of a valid format on the Windows operating
+        /// system, and that it is a valid pathname of a Visual Studio Solution (
+        /// <c>*.sln</c>) file.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// This overload silently validates the specified <paramref name="pathname" />.
+        /// <para />
+        /// No logging is performed.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// </returns>
+        bool IsValidSilent([NotLogged] string pathname);
     }
 }
