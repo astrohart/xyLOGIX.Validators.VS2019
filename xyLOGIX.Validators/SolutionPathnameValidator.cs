@@ -196,8 +196,7 @@ namespace xyLOGIX.Validators
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
+                //Ignored.
 
                 result = false;
             }
