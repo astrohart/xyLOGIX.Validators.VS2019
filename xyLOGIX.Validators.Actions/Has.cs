@@ -42,12 +42,77 @@ namespace xyLOGIX.Validators.Actions
         /// otherwise a properly-formatted pathname.
         /// <para />
         /// It does not check to see if the file actually exists on disk.
+        /// <para />
+        /// This method works in identically the same fashion as the
+        /// <see cref="SupportedProjectPathnameExtension" /> method, except it avoids
+        /// writing to
+        /// the log file whenever possible.
+        /// <para />
+        /// This overload should be utilized when the application needs to make this
+        /// determination as part of a <c>UPDATE_COMMAND_UI</c> handler or otherwise the
+        /// application knows that this method is going to be called very frequently.
         /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="pathname" />
         /// has a supported filename extension; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool SupportedProjectPathnameExtension([NotLogged] string pathname)
+        [Log(AttributeExclude = true)]
+        public static bool SupportedExtensionNoLogging(
+            [NotLogged] string pathname
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(pathname)) return result;
+                if (SupportedProjectFilenameExtensions.Extensions == null)
+                    return result;
+                if (SupportedProjectFilenameExtensions.Extensions.Length <= 0)
+                    return result;
+                var pathnameExtension = Path.GetExtension(pathname);
+                if (string.IsNullOrWhiteSpace(pathnameExtension)) return result;
+                result = pathnameExtension.EqualsAnyOfNoCase(
+                    SupportedProjectFilenameExtensions.Extensions
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified project (<c>*.*proj</c>) file
+        /// <paramref name="pathname" /> has a supported filename extension.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the fully-qualified pathname of the file whose filename extension is
+        /// to be examined.
+        /// </param>
+        /// <remarks>
+        /// This method returns <see langword="false" /> if a blank,
+        /// <see langword="null" />, or the <see cref="F:System.String.Empty" /> value is
+        /// passed to the <paramref name="pathname" /> parameter.
+        /// <para />
+        /// This method assumes that the value of the <paramref name="pathname" /> is
+        /// otherwise a properly-formatted pathname.
+        /// <para />
+        /// It does not check to see if the file actually exists on disk.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" />
+        /// has a supported filename extension; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool SupportedProjectPathnameExtension(
+            [NotLogged] string pathname
+        )
         {
             var result = false;
 
@@ -206,7 +271,8 @@ namespace xyLOGIX.Validators.Actions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug, $"Has.SupportedProjectPathnameExtension: Result = {result}"
+                DebugLevel.Debug,
+                $"Has.SupportedProjectPathnameExtension: Result = {result}"
             );
 
             return result;
@@ -222,6 +288,8 @@ namespace xyLOGIX.Validators.Actions
         /// to be examined.
         /// </param>
         /// <remarks>
+        /// This overload refrains from any logging.
+        /// <para />
         /// This method returns <see langword="false" /> if a blank,
         /// <see langword="null" />, or the <see cref="F:System.String.Empty" /> value is
         /// passed to the <paramref name="pathname" /> parameter.
@@ -230,33 +298,33 @@ namespace xyLOGIX.Validators.Actions
         /// otherwise a properly-formatted pathname.
         /// <para />
         /// It does not check to see if the file actually exists on disk.
-        /// <para />
-        /// This method works in identically the same fashion as the
-        /// <see cref="SupportedProjectPathnameExtension" /> method, except it avoids writing to
-        /// the log file whenever possible.
-        /// <para />
-        /// This overload should be utilized when the application needs to make this
-        /// determination as part of a <c>UPDATE_COMMAND_UI</c> handler or otherwise the
-        /// application knows that this method is going to be called very frequently.
         /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="pathname" />
         /// has a supported filename extension; <see langword="false" /> otherwise.
         /// </returns>
-        [Log(AttributeExclude = true)]
-        public static bool SupportedExtensionNoLogging([NotLogged] string pathname)
+        public static bool SupportedProjectPathnameExtensionSilent(
+            [NotLogged] string pathname
+        )
         {
             var result = false;
 
             try
             {
-                if (string.IsNullOrWhiteSpace(pathname)) return result;
+                if (string.IsNullOrWhiteSpace(pathname))
+                    return result;
+
                 if (SupportedProjectFilenameExtensions.Extensions == null)
                     return result;
+
                 if (SupportedProjectFilenameExtensions.Extensions.Length <= 0)
                     return result;
+
                 var pathnameExtension = Path.GetExtension(pathname);
-                if (string.IsNullOrWhiteSpace(pathnameExtension)) return result;
+
+                if (string.IsNullOrWhiteSpace(pathnameExtension))
+                    return result;
+
                 result = pathnameExtension.EqualsAnyOfNoCase(
                     SupportedProjectFilenameExtensions.Extensions
                 );
