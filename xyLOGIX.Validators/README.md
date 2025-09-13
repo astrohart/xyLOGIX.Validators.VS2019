@@ -82,6 +82,7 @@
   - [ThePathnameValidator](#P-xyLOGIX-Validators-SolutionPathnameValidator-ThePathnameValidator 'xyLOGIX.Validators.SolutionPathnameValidator.ThePathnameValidator')
   - [#cctor()](#M-xyLOGIX-Validators-SolutionPathnameValidator-#cctor 'xyLOGIX.Validators.SolutionPathnameValidator.#cctor')
   - [IsValid(pathname)](#M-xyLOGIX-Validators-SolutionPathnameValidator-IsValid-System-String- 'xyLOGIX.Validators.SolutionPathnameValidator.IsValid(System.String)')
+  - [IsValidSilent(pathname)](#M-xyLOGIX-Validators-SolutionPathnameValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.SolutionPathnameValidator.IsValidSilent(System.String)')
 - [TCPPortValidator](#T-xyLOGIX-Validators-TCPPortValidator 'xyLOGIX.Validators.TCPPortValidator')
   - [#ctor()](#M-xyLOGIX-Validators-TCPPortValidator-#ctor 'xyLOGIX.Validators.TCPPortValidator.#ctor')
   - [Instance](#P-xyLOGIX-Validators-TCPPortValidator-Instance 'xyLOGIX.Validators.TCPPortValidator.Instance')
@@ -1102,7 +1103,8 @@ Gets a reference to an instance of an object that implements the
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1131,6 +1133,42 @@ properly-formatted file pathname; `false` otherwise.
 pathname that is to be examined. |
 
 ##### Remarks
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Validators-SolutionPathnameValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(pathname) `method`
+
+##### Summary
+
+Validates that the specified Visual Studio Solution (`*.sln`)
+`pathname` is of a valid format on the Windows operating
+system, and that it is a valid pathname of a Visual Studio Solution (
+`*.sln`) file.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+This overload silently validates the specified `pathname`.
+
+
+
+No logging is performed.
+
+
 
 If the value of the `pathname` parameter is the
 `null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
