@@ -14,7 +14,8 @@ namespace xyLOGIX.Validators
     public class SolutionPathnameValidator : ISolutionPathnameValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static SolutionPathnameValidator() { }
@@ -106,14 +107,14 @@ namespace xyLOGIX.Validators
                 );
 
                 // Check whether a file having the path, 'pathname', has the filename extension,
-                // '.sln'. If it does not, then write an error message to the log file, and 
+                // '.sln'. If it does not, then write an error message to the log file, and
                 // then terminate the execution of this method, returning the default return
                 // value.
                 if (!".sln".Equals(
                         Path.GetExtension(pathname.ToLowerInvariant())
                     ))
                 {
-                    // The file having the pathname, '{pathname}', does NOT have the filename 
+                    // The file having the pathname, '{pathname}', does NOT have the filename
                     // extension of '.sln'.  This is not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
@@ -134,7 +135,6 @@ namespace xyLOGIX.Validators
                     $"SolutionPathnameValidator.IsValid: *** SUCCESS *** The file having the pathname, '{pathname}', has the filename extension, '.sln'.  Proceeding..."
                 );
 
-
                 /*
                  * If we made it this far with no Exception(s) getting caught, then
                  * assume that the operation(s) succeeded.
@@ -154,6 +154,53 @@ namespace xyLOGIX.Validators
                 DebugLevel.Debug,
                 $"SolutionPathnameValidator.IsValid: Result = {result}"
             );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Validates that the specified Visual Studio Solution (<c>*.sln</c>)
+        /// <paramref name="pathname" /> is of a valid format on the Windows operating
+        /// system, and that it is a valid pathname of a Visual Studio Solution (
+        /// <c>*.sln</c>) file.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// This overload silently validates the specified <paramref name="pathname" />.
+        /// <para />
+        /// No logging is performed.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// </returns>
+        public bool IsValidSilent([NotLogged] string pathname)
+        {
+            var result = false;
+
+            try
+            {
+                if (!ThePathnameValidator.IsValidFilePath(pathname))
+                    return result;
+                result = ".sln".Equals(
+                    Path.GetExtension(pathname.ToLowerInvariant())
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
 
             return result;
         }
