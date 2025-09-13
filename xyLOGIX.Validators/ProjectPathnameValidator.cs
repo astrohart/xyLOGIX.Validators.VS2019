@@ -187,5 +187,59 @@ namespace xyLOGIX.Validators
 
             return result;
         }
+
+        /// <summary>
+        /// Validates that the specified project (<c>*.*proj</c>) file
+        /// <paramref name="pathname" /> is of a valid format on the Windows operating
+        /// system, and that it is a valid pathname of a project (<c>*.*proj</c>) file.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// This overload refrains from any logging.
+        /// <para />
+        /// Disallows trailing backslashes.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// </returns>
+        public bool IsValidSilent([NotLogged] string pathname)
+        {
+            var result = false;
+
+            try
+            {
+                if (!ThePathnameValidator.IsValidFilePath(pathname))
+                    return result;
+                if (!Path.GetExtension(pathname)
+                         .EndsWith("proj", StringComparison.OrdinalIgnoreCase))
+                    return result;
+                if (!Has.SupportedProjectPathnameExtensionSilent(pathname))
+                    return result;
+
+                /*
+                 * If we made it this far with no Exception(s) getting caught, then
+                 * assume that the operation(s) succeeded.
+                 */
+
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                //Ignored.
+
+                result = false;
+            }
+
+            return result;
+        }
     }
 }
