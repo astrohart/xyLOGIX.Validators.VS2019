@@ -24,6 +24,7 @@
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)')
 - [IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
   - [IsValid(pathname)](#M-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator.IsValid(System.String)')
+  - [IsValidSilent(pathname)](#M-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator.IsValidSilent(System.String)')
 - [IRFC3339TimestampFormatValidator](#T-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator')
   - [IsValid(value)](#M-xyLOGIX-Validators-Interfaces-IRFC3339TimestampFormatValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator.IsValid(System.String)')
 - [ISolutionPathnameValidator](#T-xyLOGIX-Validators-Interfaces-ISolutionPathnameValidator 'xyLOGIX.Validators.Interfaces.ISolutionPathnameValidator')
@@ -418,6 +419,41 @@ properly-formatted file pathname; `false` otherwise.
 pathname that is to be examined. |
 
 ##### Remarks
+
+Disallows trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(pathname) `method`
+
+##### Summary
+
+Validates that the specified project (`*.*proj`) file
+`pathname` is of a valid format on the Windows operating
+system, and that it is a valid pathname of a project (`*.*proj`) file.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+This overload refrains from any logging.
+
+
 
 Disallows trailing backslashes.
 
