@@ -232,7 +232,7 @@ namespace xyLOGIX.Validators
 
                 result = true;
             }
-            catch (Exception ex)
+            catch
             {
                 //Ignored.
 
