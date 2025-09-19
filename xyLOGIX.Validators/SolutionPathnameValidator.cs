@@ -194,7 +194,7 @@ namespace xyLOGIX.Validators
                     Path.GetExtension(pathname.ToLowerInvariant())
                 );
             }
-            catch (Exception ex)
+            catch
             {
                 //Ignored.
 
