@@ -1,4 +1,5 @@
-﻿namespace xyLOGIX.Validators.Events
+﻿using PostSharp.Patterns.Diagnostics;
+namespace xyLOGIX.Validators.Events
 {
     /// <summary> Represents a handler for a ValidationFailed event. </summary>
     /// <param name="sender">
