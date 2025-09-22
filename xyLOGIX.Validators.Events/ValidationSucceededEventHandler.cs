@@ -15,7 +15,7 @@
     /// handle the ValidationSucceeded event.
     /// </remarks>
     public delegate void ValidationSucceededEventHandler(
-        object sender,
-        ValidationSucceededEventArgs e
+        [NotLogged] object sender,
+        [NotLogged] ValidationSucceededEventArgs e
     );
 }
