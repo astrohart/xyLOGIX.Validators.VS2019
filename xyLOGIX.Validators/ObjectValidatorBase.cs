@@ -91,7 +91,7 @@ namespace xyLOGIX.Validators
         /// <see cref="T:xyLOGIX.Validators.Events.ValidationFailedEventArgs" /> that
         /// contains the event data.
         /// </param>
-        protected virtual void OnValidationFailed(ValidationFailedEventArgs e)
+        protected virtual void OnValidationFailed(ValidationFailed[NotLogged] EventArgs e)
         {
             IsValid = false;
             ErrorMessage = e.ErrorMessage;
