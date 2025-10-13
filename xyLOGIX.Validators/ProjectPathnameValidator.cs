@@ -82,7 +82,7 @@ namespace xyLOGIX.Validators
                 // Check to see whether the specified pathname is a properly-formatted file path.
                 // If this is not the case, then write an error message to the log file,
                 // and then terminate the execution of this method.
-                if (!ThePathnameValidator.IsValidFilePath(pathname))
+                if (!ThePathnameValidator.IsValidFilePathSilent(pathname))
                 {
                     // The specified pathname is NOT a properly-formatted file path.  This is not desirable.
                     DebugUtils.WriteLine(
@@ -217,7 +217,7 @@ namespace xyLOGIX.Validators
 
             try
             {
-                if (!ThePathnameValidator.IsValidFilePath(pathname))
+                if (!ThePathnameValidator.IsValidFilePathSilent(pathname))
                     return result;
                 if (!Path.GetExtension(pathname)
                          .EndsWith("proj", StringComparison.OrdinalIgnoreCase))
