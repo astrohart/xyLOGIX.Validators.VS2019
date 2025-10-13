@@ -63,6 +63,11 @@ namespace xyLOGIX.Validators
 
             try
             {
+                /*
+                 * Do NOT ever create logging statements for this method, since it
+                 * is called several times per second by an UPDATE_COMMAND_UI handler.
+                 */
+
                 if (start == default && end == default) return result;
                 if (start != default && end != default && end <= start)
                     return result;
