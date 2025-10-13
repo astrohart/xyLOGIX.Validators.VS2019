@@ -48,7 +48,9 @@
   - [#cctor()](#M-xyLOGIX-Validators-PathnameValidator-#cctor 'xyLOGIX.Validators.PathnameValidator.#cctor')
   - [IsReservedDeviceName(segment)](#M-xyLOGIX-Validators-PathnameValidator-IsReservedDeviceName-System-String- 'xyLOGIX.Validators.PathnameValidator.IsReservedDeviceName(System.String)')
   - [IsValidFilePath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFilePath(System.String)')
+  - [IsValidFilePathSilent(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFilePathSilent-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFilePathSilent(System.String)')
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPath(System.String)')
+  - [IsValidFolderPathSilent(pathname)](#M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPathSilent-System-String- 'xyLOGIX.Validators.PathnameValidator.IsValidFolderPathSilent(System.String)')
   - [IsValidPath(pathname,allowTrailingBackslash)](#M-xyLOGIX-Validators-PathnameValidator-IsValidPath-System-String,System-Boolean- 'xyLOGIX.Validators.PathnameValidator.IsValidPath(System.String,System.Boolean)')
 - [ProjectPathnameValidator](#T-xyLOGIX-Validators-ProjectPathnameValidator 'xyLOGIX.Validators.ProjectPathnameValidator')
   - [#ctor()](#M-xyLOGIX-Validators-ProjectPathnameValidator-#ctor 'xyLOGIX.Validators.ProjectPathnameValidator.#ctor')
@@ -640,7 +642,8 @@ system.
 
 ##### Summary
 
-Empty, `private` constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -682,7 +685,8 @@ Allows folder and file names that start with a dot (`.`).
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -743,8 +747,69 @@ If the value of the `pathname` parameter is the
 `null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
 `false`.
 
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFilePathSilent-System-String-'></a>
+### IsValidFilePathSilent(pathname) `method`
+
+##### Summary
+
+Validates that the specified file `pathname` is of a valid
+format on the Windows operating system.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted file pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+Disallows trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
 <a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPath-System-String-'></a>
 ### IsValidFolderPath(pathname) `method`
+
+##### Summary
+
+Validates that the specified folder `pathname` is of a valid
+format on the Windows operating system.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted folder pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+This method allows the value of the `pathname` parameter to
+have trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Validators-PathnameValidator-IsValidFolderPathSilent-System-String-'></a>
+### IsValidFolderPathSilent(pathname) `method`
 
 ##### Summary
 
