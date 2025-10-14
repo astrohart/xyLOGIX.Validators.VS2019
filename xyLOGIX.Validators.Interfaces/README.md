@@ -20,8 +20,9 @@
   - [IsValid](#P-xyLOGIX-Validators-Interfaces-IObjectValidator-IsValid 'xyLOGIX.Validators.Interfaces.IObjectValidator.IsValid')
   - [Validate()](#M-xyLOGIX-Validators-Interfaces-IObjectValidator-Validate 'xyLOGIX.Validators.Interfaces.IObjectValidator.Validate')
 - [IPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IPathnameValidator 'xyLOGIX.Validators.Interfaces.IPathnameValidator')
-  - [IsValidFilePath(pathname)](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePath(System.String)')
+  - [IsValidFilePathSilent(pathname)](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePathSilent-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFilePathSilent(System.String)')
   - [IsValidFolderPath(pathname)](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPath-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPath(System.String)')
+  - [IsValidFolderPathSilent(pathname)](#M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPathSilent-System-String- 'xyLOGIX.Validators.Interfaces.IPathnameValidator.IsValidFolderPathSilent(System.String)')
 - [IProjectPathnameValidator](#T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator')
   - [IsValid(pathname)](#M-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator.IsValid(System.String)')
   - [IsValidSilent(pathname)](#M-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.Interfaces.IProjectPathnameValidator.IsValidSilent(System.String)')
@@ -331,8 +332,8 @@ Defines the publicly-exposed events, methods and properties of object(s) that
 validate the format of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values that purport to
 contain pathnames..
 
-<a name='M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePath-System-String-'></a>
-### IsValidFilePath(pathname) `method`
+<a name='M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFilePathSilent-System-String-'></a>
+### IsValidFilePathSilent(pathname) `method`
 
 ##### Summary
 
@@ -382,6 +383,37 @@ filesystem pathname of a folder on the Windows operating system;
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the data that is to be examined. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-IPathnameValidator-IsValidFolderPathSilent-System-String-'></a>
+### IsValidFolderPathSilent(pathname) `method`
+
+##### Summary
+
+Validates that the specified folder `pathname` is of a valid
+format on the Windows operating system.
+
+##### Returns
+
+`true` if the specified `pathname` is a
+properly-formatted folder pathname; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname that is to be examined. |
+
+##### Remarks
+
+This method allows the value of the `pathname` parameter to
+have trailing backslashes.
+
+
+
+If the value of the `pathname` parameter is the
+`null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), then this method returns
+`false`.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IProjectPathnameValidator'></a>
 ## IProjectPathnameValidator `type`
