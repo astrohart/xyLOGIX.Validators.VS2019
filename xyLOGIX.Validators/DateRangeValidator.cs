@@ -1,6 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators
@@ -11,7 +12,8 @@ namespace xyLOGIX.Validators
     public class DateRangeValidator : IDateRangeValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static DateRangeValidator() { }
@@ -56,8 +58,124 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the date range is valid;
         /// <see langword="false" /> otheriwse.
         /// </returns>
+        public bool IsValid(
+            [NotLogged] DateTime start,
+            [NotLogged] DateTime end
+        )
+        {
+            var result = false;
+
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DateRangeValidator.IsValid: Checking whether the start or end date is NOT the default value..."
+                );
+
+                // Check to see whether the start or end date is NOT the default value.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (start == default && end == default)
+                {
+                    // The start and end date(s) are both the default value(s).  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The start and end date(s) are both the default value(s).  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** DateRangeValidator.IsValid: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DateRangeValidator.IsValid: *** SUCCESS *** The start or end date is NOT the default value.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DateRangeValidator.IsValid: Checking whether the start and end date(s) are specified but they are in the wrong order..."
+                );
+
+                // Check to see whether the start and end date(s) are specified but they are in the wrong order.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (start != default && end != default && end <= start)
+                {
+                    // The start and end date(s) are specified, but they are either equal or in the wrong order.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The start and end date(s) are specified, but they are either equal or in the wrong order.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** DateRangeValidator.IsValid: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** FYI *** Making sure that the date range is valid..."
+                );
+
+                result = start != default && end != default && end > start;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"DateRangeValidator.IsValid: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Validates that the <paramref name="end" /> and <paramref name="start" /> dates
+        /// passed are not equal, and that <paramref name="end" /> follows
+        /// <paramref name="start" />.
+        /// </summary>
+        /// <param name="start">
+        /// (Required.) A <see cref="T:System.DateTime" /> value that
+        /// indicates the start of the time interval.
+        /// </param>
+        /// <param name="end">
+        /// (Required.) A <see cref="T:System.DateTime" /> value that
+        /// indicates the end of the time interval.
+        /// </param>
+        /// <remarks>
+        /// This method returns <see langword="true" /> if either <paramref name="start" />
+        /// or <paramref name="end" /> are set to the value
+        /// <c>January 1, 0001 at 00:00:00</c>; but they cannot both be set to this value,
+        /// otherwise then the method returns <see langword="false" />.
+        /// <para />
+        /// This method is, itself, not logged; furthermore, it refrains from creating any
+        /// log message(s).
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the date range is valid;
+        /// <see langword="false" /> otheriwse.
+        /// </returns>
         [Log(AttributeExclude = true)]
-        public bool IsValid(DateTime start, DateTime end)
+        public bool IsValidSilent(
+            [NotLogged] DateTime start,
+            [NotLogged] DateTime end
+        )
         {
             var result = false;
 

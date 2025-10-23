@@ -24,7 +24,8 @@ namespace xyLOGIX.Validators
             @"^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+[a-zA-Z]{2,}$";
 
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static DnsHostnameValidator() { }
@@ -70,8 +71,40 @@ namespace xyLOGIX.Validators
 
             try
             {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DnsHostnameValidator.IsValid *** INFO: Checking whether the value of the parameter, 'host', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'host', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(host))
+                {
+                    // The parameter, 'host' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "DnsHostnameValidator.IsValid: *** ERROR *** The parameter, 'host', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"DnsHostnameValidator.IsValid: Result = {result}"
+                    );
+
+                    // stop.
                     return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'host', is not blank.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** FYI *** Attemptinug to parse the hostname as either a IPv4 address or a valid DNS hostname..."
+                );
 
                 result = IPAddress.TryParse(host, out var ip)
                     ? ip.AddressFamily == AddressFamily.InterNetwork
@@ -84,6 +117,11 @@ namespace xyLOGIX.Validators
 
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"DnsHostnameValidator.IsValid: Result = {result}"
+            );
 
             return result;
         }
@@ -105,8 +143,45 @@ namespace xyLOGIX.Validators
 
             try
             {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"*** FYI *** Attempting to ascertain whether the DNS address, '{dnsAddress}', is valid..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "DnsHostnameValidator.IsValidDnsAddress *** INFO: Checking whether the value of the parameter, 'dnsAddress', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'dnsAddress', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(dnsAddress))
+                {
+                    // The parameter, 'dnsAddress' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "DnsHostnameValidator.IsValidDnsAddress: *** ERROR *** The parameter, 'dnsAddress', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"DnsHostnameValidator.IsValidDnsAddress: Result = {result}"
+                    );
+
+                    // stop.
                     return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'dnsAddress', is not blank.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"*** FYI *** Checking whether the specified DNS address, '{dnsAddress}', matches the DNS regular-expression pattern..."
+                );
 
                 result = TheDnsRegex.IsMatch(dnsAddress);
             }
@@ -115,6 +190,80 @@ namespace xyLOGIX.Validators
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"DnsHostnameValidator.IsValidDnsAddress: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Validates whether a given string is a valid DNS address.
+        /// </summary>
+        /// <param name="dnsAddress">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the DNS address to be validated.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the address is valid, otherwise
+        /// <see langword="false" />.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        private static bool IsValidDnsAddressSilent(
+            [NotLogged] string dnsAddress
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(dnsAddress))
+                    return result;
+
+                result = TheDnsRegex.IsMatch(dnsAddress);
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Validates if the given <paramref name="host" /> address is either a valid IPv4
+        /// address or a valid DNS address.
+        /// </summary>
+        /// <param name="host">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// address of the host to be validated.
+        /// </param>
+        /// <remarks>
+        /// This method is not, itself, logged, and refrains from any logging.
+        /// <para />
+        /// If an exception is caught during the execution of this method, it merely
+        /// returns <see langword="false" />.
+        /// </remarks>
+        /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
+        [Log(AttributeExclude = true)]
+        public bool IsValidSilent([NotLogged] string host)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(host)) return result;
+
+                result = IPAddress.TryParse(host, out var ip)
+                    ? AddressFamily.InterNetwork.Equals(ip.AddressFamily)
+                    : IsValidDnsAddressSilent(host);
+            }
+            catch
+            {
                 result = false;
             }
 

@@ -20,5 +20,22 @@ namespace xyLOGIX.Validators.Interfaces
         /// </param>
         /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
         bool IsValid([NotLogged] string host);
+
+        /// <summary>
+        /// Validates if the given <paramref name="host" /> address is either a valid IPv4
+        /// address or a valid DNS address.
+        /// </summary>
+        /// <param name="host">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// address of the host to be validated.
+        /// </param>
+        /// <remarks>
+        /// This method is not, itself, logged, and refrains from any logging.
+        /// <para />
+        /// If an exception is caught during the execution of this method, it merely
+        /// returns <see langword="false" />.
+        /// </remarks>
+        /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
+        bool IsValidSilent([NotLogged] string host);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 
 namespace xyLOGIX.Validators.Interfaces
 {
@@ -32,5 +33,36 @@ namespace xyLOGIX.Validators.Interfaces
         /// <see langword="false" /> otheriwse.
         /// </returns>
         bool IsValid(DateTime start, DateTime end);
+
+        /// <summary>
+        /// Validates that the <paramref name="end" /> and <paramref name="start" /> dates
+        /// passed are not equal, and that <paramref name="end" /> follows
+        /// <paramref name="start" />.
+        /// </summary>
+        /// <param name="start">
+        /// (Required.) A <see cref="T:System.DateTime" /> value that
+        /// indicates the start of the time interval.
+        /// </param>
+        /// <param name="end">
+        /// (Required.) A <see cref="T:System.DateTime" /> value that
+        /// indicates the end of the time interval.
+        /// </param>
+        /// <remarks>
+        /// This method returns <see langword="true" /> if either <paramref name="start" />
+        /// or <paramref name="end" /> are set to the value
+        /// <c>January 1, 0001 at 00:00:00</c>; but they cannot both be set to this value,
+        /// otherwise then the method returns <see langword="false" />.
+        /// <para />
+        /// This method is, itself, not logged; furthermore, it refrains from creating any
+        /// log message(s).
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the date range is valid;
+        /// <see langword="false" /> otheriwse.
+        /// </returns>
+        bool IsValidSilent(
+            [NotLogged] DateTime start,
+            [NotLogged] DateTime end
+        );
     }
 }

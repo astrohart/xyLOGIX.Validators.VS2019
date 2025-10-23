@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Constants;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
@@ -16,7 +17,8 @@ namespace xyLOGIX.Validators
     public class EmailAddressValidator : IEmailAddressValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static EmailAddressValidator() { }
@@ -33,8 +35,10 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IEmailAddressValidator" />
         /// interface.
         /// </summary>
-        public static IEmailAddressValidator Instance { [DebuggerStepThrough] get; } =
-            new EmailAddressValidator();
+        public static IEmailAddressValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new EmailAddressValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified
@@ -89,7 +93,8 @@ namespace xyLOGIX.Validators
             catch (Exception ex)
             {
                 DebugUtils.WriteLine(
-                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                    DebugLevel.Error,
+                    $"*** ERROR *** {ex.Message.CollapseNewlinesToSpaces()}"
                 );
 
                 result = false;
@@ -99,6 +104,51 @@ namespace xyLOGIX.Validators
                 DebugLevel.Debug,
                 $"EmailAddressValidator.IsValid: Result = {result}"
             );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the contents of the specified
+        /// <paramref name="emailAddress" /> has a valid format.
+        /// </summary>
+        /// <param name="emailAddress">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing an email address whose format is to be checked.
+        /// </param>
+        /// <remarks>
+        /// This method is not, itself, logged; and it refrains from any logging.
+        /// <para />
+        /// If an exception is caught during the execution of this method, it merely
+        /// returns <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified
+        /// <paramref name="emailAddress" /> has a valid format; <see langword="false" />
+        /// otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public bool IsValidSilent([NotLogged] string emailAddress)
+        {
+            var result = true;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(emailAddress))
+                    throw new ArgumentException(
+                        Resources.Error_EmailAddress_IsBlank,
+                        nameof(emailAddress)
+                    );
+
+                if (!Regex.IsMatch(emailAddress, Regexes.EmailAddress))
+                    throw new FormatException(
+                        Resources.Error_EmailAddress_InvalidFormat
+                    );
+            }
+            catch
+            {
+                result = false;
+            }
 
             return result;
         }
