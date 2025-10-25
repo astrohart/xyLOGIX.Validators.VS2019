@@ -8,10 +8,13 @@
 - [IDataValidator](#T-xyLOGIX-Validators-Interfaces-IDataValidator 'xyLOGIX.Validators.Interfaces.IDataValidator')
 - [IDateRangeValidator](#T-xyLOGIX-Validators-Interfaces-IDateRangeValidator 'xyLOGIX.Validators.Interfaces.IDateRangeValidator')
   - [IsValid(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValid-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValid(System.DateTime,System.DateTime)')
+  - [IsValidSilent(start,end)](#M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValidSilent-System-DateTime,System-DateTime- 'xyLOGIX.Validators.Interfaces.IDateRangeValidator.IsValidSilent(System.DateTime,System.DateTime)')
 - [IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator')
   - [IsValid(host)](#M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator.IsValid(System.String)')
+  - [IsValidSilent(host)](#M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator.IsValidSilent(System.String)')
 - [IEmailAddressValidator](#T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator')
   - [IsValid(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValid(System.String)')
+  - [IsValidSilent(emailAddress)](#M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.Interfaces.IEmailAddressValidator.IsValidSilent(System.String)')
 - [IFileWildcardValidator](#T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator')
   - [IsValid(pattern)](#M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator.IsValid(System.String)')
   - [TryValidate(pattern,error)](#M-xyLOGIX-Validators-Interfaces-IFileWildcardValidator-TryValidate-System-String,System-String@- 'xyLOGIX.Validators.Interfaces.IFileWildcardValidator.TryValidate(System.String,System.String@)')
@@ -35,6 +38,8 @@
 - [ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator')
   - [IsValid(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-String- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValid(System.String)')
   - [IsValid(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValid-System-Int32- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValid(System.Int32)')
+  - [IsValidSilent(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValidSilent(System.String)')
+  - [IsValidSilent(port)](#M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValidSilent-System-Int32- 'xyLOGIX.Validators.Interfaces.ITCPPortValidator.IsValidSilent(System.Int32)')
 - [IUUIDValidator](#T-xyLOGIX-Validators-Interfaces-IUUIDValidator 'xyLOGIX.Validators.Interfaces.IUUIDValidator')
   - [IsValid(uuid,silent)](#M-xyLOGIX-Validators-Interfaces-IUUIDValidator-IsValid-System-String,System-Boolean- 'xyLOGIX.Validators.Interfaces.IUUIDValidator.IsValid(System.String,System.Boolean)')
 - [IVersionStringValidator](#T-xyLOGIX-Validators-Interfaces-IVersionStringValidator 'xyLOGIX.Validators.Interfaces.IVersionStringValidator')
@@ -144,6 +149,41 @@ or `end` are set to the value
 `January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
 otherwise then the method returns `false`.
 
+<a name='M-xyLOGIX-Validators-Interfaces-IDateRangeValidator-IsValidSilent-System-DateTime,System-DateTime-'></a>
+### IsValidSilent(start,end) `method`
+
+##### Summary
+
+Validates that the `end` and `start` dates
+passed are not equal, and that `end` follows
+`start`.
+
+##### Returns
+
+`true` if the date range is valid;
+`false` otheriwse.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| start | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the start of the time interval. |
+| end | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
+indicates the end of the time interval. |
+
+##### Remarks
+
+This method returns `true` if either `start`
+or `end` are set to the value
+`January 1, 0001 at 00:00:00`; but they cannot both be set to this value,
+otherwise then the method returns `false`.
+
+
+
+This method is, itself, not logged; furthermore, it refrains from creating any
+log message(s).
+
 <a name='T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator'></a>
 ## IDnsHostnameValidator `type`
 
@@ -177,6 +217,34 @@ address or a valid DNS address.
 | host | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
 address of the host to be validated. |
 
+<a name='M-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(host) `method`
+
+##### Summary
+
+Validates if the given `host` address is either a valid IPv4
+address or a valid DNS address.
+
+##### Returns
+
+`true` if valid, otherwise `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| host | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+address of the host to be validated. |
+
+##### Remarks
+
+This method is not, itself, logged, and refrains from any logging.
+
+
+
+If an exception is caught during the execution of this method, it merely
+returns `false`.
+
 <a name='T-xyLOGIX-Validators-Interfaces-IEmailAddressValidator'></a>
 ## IEmailAddressValidator `type`
 
@@ -194,7 +262,8 @@ responsible for validating the format of email addresses.
 
 ##### Summary
 
-Determines whether the contents of the specified `emailAddress` has a
+Determines whether the contents of the specified
+`emailAddress` has a
 valid format.
 
 ##### Returns
@@ -208,6 +277,36 @@ a valid format; `false` otherwise.
 | ---- | ---- | ----------- |
 | emailAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a
 universally-unique identifier whose format is to be checked. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-IEmailAddressValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(emailAddress) `method`
+
+##### Summary
+
+Determines whether the contents of the specified
+`emailAddress` has a valid format.
+
+##### Returns
+
+`true` if the specified
+`emailAddress` has a valid format; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| emailAddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing an email address whose format is to be checked. |
+
+##### Remarks
+
+This method is not, itself, logged; and it refrains from any logging.
+
+
+
+If an exception is caught during the execution of this method, it merely
+returns `false`.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IFileWildcardValidator'></a>
 ## IFileWildcardValidator `type`
@@ -693,6 +792,52 @@ range `1`-`65535` (inclusive); otherwise, `false`.
 | ---- | ---- | ----------- |
 | port | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that set to the TCP port number
 that is to be validated. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(port) `method`
+
+##### Summary
+
+Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), that
+represents the TCP `port` number using ASCII characters, is
+(a) parsable as an integer and (b) is in the range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is
+parsable as an integer, and in the range `1`-`65535` (inclusive);
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the ASCII representation of a TCP port number. |
+
+<a name='M-xyLOGIX-Validators-Interfaces-ITCPPortValidator-IsValidSilent-System-Int32-'></a>
+### IsValidSilent(port) `method`
+
+##### Summary
+
+Determines whether the specified TCP `port` number is in the
+range of valid values.
+
+##### Returns
+
+`true` if the specified `port` is in the
+range `1`-`65535` (inclusive); otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| port | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that set to the TCP port number
+that is to be validated. |
+
+##### Remarks
+
+This method is not, itself, logged, and it refrains from any logging.
 
 <a name='T-xyLOGIX-Validators-Interfaces-IUUIDValidator'></a>
 ## IUUIDValidator `type`
