@@ -70,7 +70,7 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the value is a valid wildcard pattern;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        public bool IsValid(string pattern)
+        public bool IsValid([NotLogged] string pattern)
         {
             var result = false;
 
@@ -83,6 +83,38 @@ namespace xyLOGIX.Validators
                 Debug.WriteLine(
                     $"FileWildcardValidator.IsValid: Exception: {ex}"
                 );
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="pattern" /> is a
+        /// valid Windows filename wildcard (glob) pattern.
+        /// </summary>
+        /// <param name="pattern">
+        /// A <see cref="T:System.String" /> containing the wildcard
+        /// pattern to validate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is a valid wildcard pattern;
+        /// otherwise, <see langword="false" />.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public bool IsValidSilent([NotLogged] string pattern)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(pattern))
+                    return result;
+
+                result = TryValidate(pattern, out _);
+            }
+            catch
+            {
                 result = false;
             }
 
@@ -166,6 +198,89 @@ namespace xyLOGIX.Validators
                 Debug.WriteLine(
                     $"FileWildcardValidator.TryValidate: Exception: {ex}"
                 );
+                result = false;
+                error = "An exception occurred during validation.";
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Attempts to validate the specified <paramref name="pattern" /> and, if
+        /// invalid, returns a concise reason.
+        /// </summary>
+        /// <param name="pattern">
+        /// A <see cref="T:System.String" /> containing the wildcard
+        /// pattern to validate.
+        /// </param>
+        /// <param name="error">
+        /// On return, receives a <see cref="T:System.String" />
+        /// describing why validation failed, or an empty string if validation succeeded.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is a valid wildcard pattern;
+        /// otherwise, <see langword="false" />.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public bool TryValidateSilent([NotLogged] string pattern,
+            [NotLogged]  out string error)
+        {
+            var result = false;
+            error = "";
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(pattern))
+                {
+                    error = "Pattern is null, empty, or whitespace.";
+                    return result;
+                }
+
+                // Disallow "." and ".." which are path tokens, not filenames.
+                if (pattern == "." || pattern == "..")
+                {
+                    error = "Pattern must be a filename, not a path token.";
+                    return result;
+                }
+
+                // Filename-only: no directory separators or drive qualifiers.
+                if (pattern.IndexOfAny(_disallowedPathChars) >= 0)
+                {
+                    error =
+                        "Pattern must not contain path separators or drive qualifiers.";
+                    return result;
+                }
+
+                // No invalid filename characters (except '*' and '?' which act as wildcards).
+                if (pattern.IndexOfAny(
+                        _invalidFileNameCharsExcludingWildcards
+                    ) >= 0)
+                {
+                    error = "Pattern contains invalid filename character(s).";
+                    return result;
+                }
+
+                // If there are no wildcards, disallow pure reserved device names (with or without extension).
+                if (!ContainsWildcard(pattern) &&
+                    IsReservedDosDeviceName(pattern))
+                {
+                    error = "Pattern matches a reserved DOS device name.";
+                    return result;
+                }
+
+                // Convert to a regex and ensure it compiles (guards edge cases).
+                if (BuildRegexFromWildcard(pattern) == null)
+                {
+                    error =
+                        "Pattern could not be converted into a valid regular expression.";
+                    return result;
+                }
+
+                result = true;
+                error = "";
+            }
+            catch
+            {
                 result = false;
                 error = "An exception occurred during validation.";
             }
