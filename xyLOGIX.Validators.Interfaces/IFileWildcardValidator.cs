@@ -35,7 +35,6 @@ namespace xyLOGIX.Validators.Interfaces
         /// <see langword="true" /> if the value is a valid wildcard pattern;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        [Log(AttributeExclude = true)]
         bool IsValidSilent([NotLogged] string pattern);
 
         /// <summary>
@@ -72,7 +71,6 @@ namespace xyLOGIX.Validators.Interfaces
         /// <see langword="true" /> if the value is a valid wildcard pattern;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        [Log(AttributeExclude = true)]
         bool TryValidateSilent(
             [NotLogged] string pattern,
             [NotLogged] out string error
