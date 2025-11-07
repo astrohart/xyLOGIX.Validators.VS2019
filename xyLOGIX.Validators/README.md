@@ -35,7 +35,9 @@
   - [Instance](#P-xyLOGIX-Validators-FileWildcardValidator-Instance 'xyLOGIX.Validators.FileWildcardValidator.Instance')
   - [#cctor()](#M-xyLOGIX-Validators-FileWildcardValidator-#cctor 'xyLOGIX.Validators.FileWildcardValidator.#cctor')
   - [IsValid(pattern)](#M-xyLOGIX-Validators-FileWildcardValidator-IsValid-System-String- 'xyLOGIX.Validators.FileWildcardValidator.IsValid(System.String)')
+  - [IsValidSilent(pattern)](#M-xyLOGIX-Validators-FileWildcardValidator-IsValidSilent-System-String- 'xyLOGIX.Validators.FileWildcardValidator.IsValidSilent(System.String)')
   - [TryValidate(pattern,error)](#M-xyLOGIX-Validators-FileWildcardValidator-TryValidate-System-String,System-String@- 'xyLOGIX.Validators.FileWildcardValidator.TryValidate(System.String,System.String@)')
+  - [TryValidateSilent(pattern,error)](#M-xyLOGIX-Validators-FileWildcardValidator-TryValidateSilent-System-String,System-String@- 'xyLOGIX.Validators.FileWildcardValidator.TryValidateSilent(System.String,System.String@)')
 - [ObjectValidatorBase\`1](#T-xyLOGIX-Validators-ObjectValidatorBase`1 'xyLOGIX.Validators.ObjectValidatorBase`1')
   - [#ctor(objectToValidate)](#M-xyLOGIX-Validators-ObjectValidatorBase`1-#ctor-`0- 'xyLOGIX.Validators.ObjectValidatorBase`1.#ctor(`0)')
   - [ErrorMessage](#P-xyLOGIX-Validators-ObjectValidatorBase`1-ErrorMessage 'xyLOGIX.Validators.ObjectValidatorBase`1.ErrorMessage')
@@ -606,8 +608,50 @@ otherwise, `false`.
 | pattern | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the wildcard
 pattern to validate. |
 
+<a name='M-xyLOGIX-Validators-FileWildcardValidator-IsValidSilent-System-String-'></a>
+### IsValidSilent(pattern) `method`
+
+##### Summary
+
+Determines whether the specified `pattern` is a
+valid Windows filename wildcard (glob) pattern.
+
+##### Returns
+
+`true` if the value is a valid wildcard pattern;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pattern | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the wildcard
+pattern to validate. |
+
 <a name='M-xyLOGIX-Validators-FileWildcardValidator-TryValidate-System-String,System-String@-'></a>
 ### TryValidate(pattern,error) `method`
+
+##### Summary
+
+Attempts to validate the specified `pattern` and, if
+invalid, returns a concise reason.
+
+##### Returns
+
+`true` if the value is a valid wildcard pattern;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pattern | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the wildcard
+pattern to validate. |
+| error | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | On return, receives a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+describing why validation failed, or an empty string if validation succeeded. |
+
+<a name='M-xyLOGIX-Validators-FileWildcardValidator-TryValidateSilent-System-String,System-String@-'></a>
+### TryValidateSilent(pattern,error) `method`
 
 ##### Summary
 
