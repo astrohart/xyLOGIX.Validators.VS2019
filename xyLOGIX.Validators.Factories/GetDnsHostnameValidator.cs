@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using xyLOGIX.Core.Debug;
-
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators.Factories
@@ -15,7 +14,8 @@ namespace xyLOGIX.Validators.Factories
     {
         /// <summary>
         /// Initializes static data or performs actions that need to be performed
-        /// once only for the <see cref="T:xyLOGIX.Validators.Factories.GetDnsHostnameValidator" /> class.
+        /// once only for the
+        /// <see cref="T:xyLOGIX.Validators.Factories.GetDnsHostnameValidator" /> class.
         /// </summary>
         /// <remarks>
         /// This constructor is called automatically prior to the first instance
@@ -26,7 +26,8 @@ namespace xyLOGIX.Validators.Factories
 
         /// <summary>
         /// Obtains access to the sole instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Validators.Interfaces.IDnsHostnameValidator" /> interface, and returns a reference to
+        /// <see cref="T:xyLOGIX.Validators.Interfaces.IDnsHostnameValidator" /> interface,
+        /// and returns a reference to
         /// it.
         /// </summary>
         /// <returns>
