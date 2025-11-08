@@ -1,7 +1,7 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
+using System.Diagnostics;
 using xyLOGIX.Validators.Events;
 using xyLOGIX.Validators.Interfaces;
 using xyLOGIX.Validators.Properties;
@@ -42,7 +42,11 @@ namespace xyLOGIX.Validators
         /// generated when the condition being validated fails.
         /// </summary>
         /// <returns>The error message to generate.</returns>
-        public string ErrorMessage { [DebuggerStepThrough] get; [DebuggerStepThrough] protected set; }
+        public string ErrorMessage
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] protected set;
+        }
 
         /// <summary>
         /// When implemented by a class, gets or sets a value indicating whether
@@ -52,19 +56,17 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the content is valid; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        public bool IsValid { [DebuggerStepThrough] get; [DebuggerStepThrough] protected set; }
+        public bool IsValid
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] protected set;
+        }
 
         /// <summary>
         /// Gets a reference to the object instance whose data is to be
         /// validated.
         /// </summary>
         protected TObject ObjectToValidate { [DebuggerStepThrough] get; }
-
-        /// <summary> Occurs when validation has failed. </summary>
-        public event ValidationFailedEventHandler ValidationFailed;
-
-        /// <summary> Occurs when validation has succeeded. </summary>
-        public event ValidationSucceededEventHandler ValidationSucceeded;
 
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
@@ -82,6 +84,12 @@ namespace xyLOGIX.Validators
                 );
         }
 
+        /// <summary> Occurs when validation has failed. </summary>
+        public event ValidationFailedEventHandler ValidationFailed;
+
+        /// <summary> Occurs when validation has succeeded. </summary>
+        public event ValidationSucceededEventHandler ValidationSucceeded;
+
         /// <summary>
         /// Raises the
         /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase.ValidationFailed" /> event.
@@ -91,7 +99,9 @@ namespace xyLOGIX.Validators
         /// <see cref="T:xyLOGIX.Validators.Events.ValidationFailedEventArgs" /> that
         /// contains the event data.
         /// </param>
-        protected virtual void OnValidationFailed([NotLogged] ValidationFailedEventArgs e)
+        protected virtual void OnValidationFailed(
+            [NotLogged] ValidationFailedEventArgs e
+        )
         {
             IsValid = false;
             ErrorMessage = e.ErrorMessage;
