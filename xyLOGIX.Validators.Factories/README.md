@@ -165,7 +165,8 @@ Provides access to the one and only instance of the object that implements the
 ##### Summary
 
 Initializes static data or performs actions that need to be performed
-once only for the [GetDnsHostnameValidator](#T-xyLOGIX-Validators-Factories-GetDnsHostnameValidator 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator') class.
+once only for the
+[GetDnsHostnameValidator](#T-xyLOGIX-Validators-Factories-GetDnsHostnameValidator 'xyLOGIX.Validators.Factories.GetDnsHostnameValidator') class.
 
 ##### Parameters
 
@@ -182,7 +183,8 @@ being created or before any static members are referenced.
 ##### Summary
 
 Obtains access to the sole instance of the object that implements the
-[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface, and returns a reference to
+[IDnsHostnameValidator](#T-xyLOGIX-Validators-Interfaces-IDnsHostnameValidator 'xyLOGIX.Validators.Interfaces.IDnsHostnameValidator') interface,
+and returns a reference to
 it.
 
 ##### Returns
@@ -463,7 +465,8 @@ Provides access to the one and only instance of the object that implements the
 ##### Summary
 
 Initializes static data or performs actions that need to be performed
-once only for the [GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator') class.
+once only for the
+[GetTCPPortValidator](#T-xyLOGIX-Validators-Factories-GetTCPPortValidator 'xyLOGIX.Validators.Factories.GetTCPPortValidator') class.
 
 ##### Parameters
 
@@ -480,7 +483,8 @@ being created or before any static members are referenced.
 ##### Summary
 
 Obtains access to the sole instance of the object that implements the
-[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface, and returns a reference to
+[ITCPPortValidator](#T-xyLOGIX-Validators-Interfaces-ITCPPortValidator 'xyLOGIX.Validators.Interfaces.ITCPPortValidator') interface, and
+returns a reference to
 it.
 
 ##### Returns
