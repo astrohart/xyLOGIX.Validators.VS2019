@@ -222,8 +222,10 @@ namespace xyLOGIX.Validators
         /// otherwise, <see langword="false" />.
         /// </returns>
         [Log(AttributeExclude = true)]
-        public bool TryValidateSilent([NotLogged] string pattern,
-            [NotLogged]  out string error)
+        public bool TryValidateSilent(
+            [NotLogged] string pattern,
+            [NotLogged] out string error
+        )
         {
             var result = false;
             error = "";
