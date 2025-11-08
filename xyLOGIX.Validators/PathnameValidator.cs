@@ -86,6 +86,29 @@ namespace xyLOGIX.Validators
         /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
         /// properly-formatted file pathname; <see langword="false" /> otherwise.
         /// </returns>
+        public bool IsValidFilePath([NotLogged] string pathname)
+            => IsValidPath(pathname, false);
+
+        /// <summary>
+        /// Validates that the specified file <paramref name="pathname" /> is of a valid
+        /// format on the Windows operating system.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// Disallows trailing backslashes.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted file pathname; <see langword="false" /> otherwise.
+        /// </returns>
         [Log(AttributeExclude = true)]
         public bool IsValidFilePathSilent([NotLogged] string pathname)
             => IsValidPath(pathname, false);
@@ -112,6 +135,31 @@ namespace xyLOGIX.Validators
         /// properly-formatted folder pathname; <see langword="false" /> otherwise.
         /// </returns>
         public bool IsValidFolderPath([NotLogged] string pathname)
+            => IsValidPath(pathname, true);
+
+        /// <summary>
+        /// Validates that the specified folder <paramref name="pathname" /> is of a valid
+        /// format on the Windows operating system.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// This method allows the value of the <paramref name="pathname" /> parameter to
+        /// have trailing backslashes.
+        /// <para />
+        /// If the value of the <paramref name="pathname" /> parameter is the
+        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
+        /// <see cref="T:System.String" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
+        /// properly-formatted folder pathname; <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public bool IsValidFolderPathSilent([NotLogged] string pathname)
             => IsValidPath(pathname, true);
 
         /// <summary>
@@ -152,54 +200,6 @@ namespace xyLOGIX.Validators
 
             return result;
         }
-
-        /// <summary>
-        /// Validates that the specified file <paramref name="pathname" /> is of a valid
-        /// format on the Windows operating system.
-        /// </summary>
-        /// <param name="pathname">
-        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
-        /// pathname that is to be examined.
-        /// </param>
-        /// <remarks>
-        /// Disallows trailing backslashes.
-        /// <para />
-        /// If the value of the <paramref name="pathname" /> parameter is the
-        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
-        /// <see cref="T:System.String" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
-        /// properly-formatted file pathname; <see langword="false" /> otherwise.
-        /// </returns>
-        public bool IsValidFilePath([NotLogged] string pathname)
-            => IsValidPath(pathname, false);
-
-        /// <summary>
-        /// Validates that the specified folder <paramref name="pathname" /> is of a valid
-        /// format on the Windows operating system.
-        /// </summary>
-        /// <param name="pathname">
-        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
-        /// pathname that is to be examined.
-        /// </param>
-        /// <remarks>
-        /// This method allows the value of the <paramref name="pathname" /> parameter to
-        /// have trailing backslashes.
-        /// <para />
-        /// If the value of the <paramref name="pathname" /> parameter is the
-        /// <see langword="null" />, blank, or <see cref="F:System.String.Empty" />
-        /// <see cref="T:System.String" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="pathname" /> is a
-        /// properly-formatted folder pathname; <see langword="false" /> otherwise.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        public bool IsValidFolderPathSilent([NotLogged] string pathname)
-            => IsValidPath(pathname, true);
 
         /// <summary>
         /// Validates that the specified <paramref name="pathname" /> is of
