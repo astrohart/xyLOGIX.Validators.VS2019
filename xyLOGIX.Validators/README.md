@@ -155,7 +155,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1169,7 +1170,8 @@ valid UTC `RFC 3339` timestamps.
 
 ##### Summary
 
-Empty, `private` constructor to prohibit direct allocation of this class.
+Empty, `private` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1189,7 +1191,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1648,7 +1651,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1717,7 +1721,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
@@ -1788,7 +1793,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of
+this class.
 
 ##### Parameters
 
