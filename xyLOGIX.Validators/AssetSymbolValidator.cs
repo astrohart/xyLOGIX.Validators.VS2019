@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
@@ -15,7 +15,8 @@ namespace xyLOGIX.Validators
     public class AssetSymbolValidator : IAssetSymbolValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static AssetSymbolValidator() { }
@@ -32,8 +33,10 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IAssetSymbolValidator" />
         /// interface.
         /// </summary>
-        public static IAssetSymbolValidator Instance { [DebuggerStepThrough] get; } =
-            new AssetSymbolValidator();
+        public static IAssetSymbolValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new AssetSymbolValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified <paramref name="symbol" /> has
