@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions;
 using xyLOGIX.Validators.Interfaces;
@@ -15,7 +15,8 @@ namespace xyLOGIX.Validators
     public class UUIDValidator : IUUIDValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static UUIDValidator() { }
@@ -32,7 +33,8 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IUUIDValidator" />
         /// interface.
         /// </summary>
-        public static IUUIDValidator Instance { [DebuggerStepThrough] get; } = new UUIDValidator();
+        public static IUUIDValidator Instance { [DebuggerStepThrough] get; } =
+            new UUIDValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified <paramref name="uuid" /> has a
@@ -60,20 +62,22 @@ namespace xyLOGIX.Validators
 
             try
             {
-                if (!silent) DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is a blank or null string..."
-                );
+                if (!silent)
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is a blank or null string..."
+                    );
 
                 if (string.IsNullOrWhiteSpace(uuid))
                     throw new ArgumentException(
                         Resources.Error_UUID_CannotBeBlank, nameof(uuid)
                     );
 
-                if (!silent) DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "UUIDValidator.IsValid: Checking whether the 'uuid' parameter is set to the Zero UUID, i.e., 00000000-0000-0000-0000-000000000000..."
-                );
+                if (!silent)
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        "UUIDValidator.IsValid: Checking whether the 'uuid' parameter is set to the Zero UUID, i.e., 00000000-0000-0000-0000-000000000000..."
+                    );
 
                 if (Guid.Empty.ToString("D")
                         .Equals(uuid))
@@ -81,33 +85,38 @@ namespace xyLOGIX.Validators
                         Resources.Error_UUID_CannotBeZeroGUID
                     );
 
-                if (!silent) DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is of a valid format, e.g., 'a49bf1b0-debd-46d7-b32f-d7db7da00380'..."
-                );
+                if (!silent)
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        "UUIDValidator.IsValid: Checking whether the argument of the 'uuid' parameter is of a valid format, e.g., 'a49bf1b0-debd-46d7-b32f-d7db7da00380'..."
+                    );
 
                 if (!uuid.IsValidLowercaseGuidWithNoBraces())
                     throw new FormatException(
                         Resources.Error_UUID_InvalidFormat
                     );
 
-                if (!silent) DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "UUIDValidator.IsValid: *** SUCCESS *** The argument of the 'uuid' parameter is of a valid format."
-                );
+                if (!silent)
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        "UUIDValidator.IsValid: *** SUCCESS *** The argument of the 'uuid' parameter is of a valid format."
+                    );
             }
             catch (Exception ex)
             {
-                if (!silent) DebugUtils.WriteLine(
-                    DebugLevel.Error, $"*** ERROR *** {ex.Message}"
-                );
+                if (!silent)
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error, $"*** ERROR *** {ex.Message}"
+                    );
 
                 result = false;
             }
 
-            if (!silent) DebugUtils.WriteLine(
-                DebugLevel.Debug, $"UUIDValidator.IsValid: Result = {result}"
-            );
+            if (!silent)
+                DebugUtils.WriteLine(
+                    DebugLevel.Debug,
+                    $"UUIDValidator.IsValid: Result = {result}"
+                );
 
             return result;
         }
