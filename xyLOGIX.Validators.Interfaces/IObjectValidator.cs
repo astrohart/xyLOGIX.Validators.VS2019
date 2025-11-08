@@ -30,12 +30,6 @@ namespace xyLOGIX.Validators.Interfaces
         /// </returns>
         bool IsValid { [DebuggerStepThrough] get; }
 
-        /// <summary> Occurs when validation has failed. </summary>
-        event ValidationFailedEventHandler ValidationFailed;
-
-        /// <summary> Occurs when validation has succeeded. </summary>
-        event ValidationSucceededEventHandler ValidationSucceeded;
-
         /// <summary>
         /// When implemented by a class, evaluates the condition it checks and
         /// updates the
@@ -43,5 +37,11 @@ namespace xyLOGIX.Validators.Interfaces
         /// property.
         /// </summary>
         void Validate();
+
+        /// <summary> Occurs when validation has failed. </summary>
+        event ValidationFailedEventHandler ValidationFailed;
+
+        /// <summary> Occurs when validation has succeeded. </summary>
+        event ValidationSucceededEventHandler ValidationSucceeded;
     }
 }
