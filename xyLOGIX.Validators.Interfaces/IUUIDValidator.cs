@@ -1,6 +1,4 @@
-﻿using PostSharp.Patterns.Diagnostics;
-
-namespace xyLOGIX.Validators.Interfaces
+﻿namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
     /// Defines the publicly-exposed methods and properties of an object that is
