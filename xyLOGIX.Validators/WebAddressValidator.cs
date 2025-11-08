@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Constants;
@@ -16,7 +16,8 @@ namespace xyLOGIX.Validators
     public class WebAddressValidator : IWebAddressValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static WebAddressValidator() { }
@@ -33,8 +34,10 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IWebAddressValidator" />
         /// interface.
         /// </summary>
-        public static IWebAddressValidator Instance { [DebuggerStepThrough] get; } =
-            new WebAddressValidator();
+        public static IWebAddressValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new WebAddressValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified <paramref name="webAddress" />
