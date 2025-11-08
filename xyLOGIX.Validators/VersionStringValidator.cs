@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Constants;
@@ -14,7 +14,8 @@ namespace xyLOGIX.Validators
     public class VersionStringValidator : IVersionStringValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static VersionStringValidator() { }
@@ -30,8 +31,10 @@ namespace xyLOGIX.Validators
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IVersionStringValidator" />
         /// interface.
         /// </summary>
-        public static IVersionStringValidator Instance { [DebuggerStepThrough] get; } =
-            new VersionStringValidator();
+        public static IVersionStringValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new VersionStringValidator();
 
         /// <summary>
         /// Determines whether the contents of the specified
