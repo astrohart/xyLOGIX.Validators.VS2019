@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Constants;
@@ -16,13 +16,15 @@ namespace xyLOGIX.Validators
         RF3339TimestampFormatValidator : IRFC3339TimestampFormatValidator
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static RF3339TimestampFormatValidator() { }
 
         /// <summary>
-        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of this class.
+        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         private RF3339TimestampFormatValidator() { }
@@ -33,8 +35,10 @@ namespace xyLOGIX.Validators
         ///     cref="T:xyLOGIX.Validators.Interfaces.IRFC3339TimestampFormatValidator" />
         /// interface.
         /// </summary>
-        public static IRFC3339TimestampFormatValidator Instance { [DebuggerStepThrough] get; } =
-            new RF3339TimestampFormatValidator();
+        public static IRFC3339TimestampFormatValidator Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new RF3339TimestampFormatValidator();
 
         /// <summary>
         /// Determines whether a <see cref="T:System.String" /> containing a UTC date and
