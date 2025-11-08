@@ -127,6 +127,42 @@ namespace xyLOGIX.Validators
         }
 
         /// <summary>
+        /// Validates if the given <paramref name="host" /> address is either a valid IPv4
+        /// address or a valid DNS address.
+        /// </summary>
+        /// <param name="host">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// address of the host to be validated.
+        /// </param>
+        /// <remarks>
+        /// This method is not, itself, logged, and refrains from any logging.
+        /// <para />
+        /// If an exception is caught during the execution of this method, it merely
+        /// returns <see langword="false" />.
+        /// </remarks>
+        /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
+        [Log(AttributeExclude = true)]
+        public bool IsValidSilent([NotLogged] string host)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(host)) return result;
+
+                result = IPAddress.TryParse(host, out var ip)
+                    ? AddressFamily.InterNetwork.Equals(ip.AddressFamily)
+                    : IsValidDnsAddressSilent(host);
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Validates whether a given string is a valid DNS address.
         /// </summary>
         /// <param name="dnsAddress">
@@ -225,42 +261,6 @@ namespace xyLOGIX.Validators
                     return result;
 
                 result = TheDnsRegex.IsMatch(dnsAddress);
-            }
-            catch
-            {
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Validates if the given <paramref name="host" /> address is either a valid IPv4
-        /// address or a valid DNS address.
-        /// </summary>
-        /// <param name="host">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// address of the host to be validated.
-        /// </param>
-        /// <remarks>
-        /// This method is not, itself, logged, and refrains from any logging.
-        /// <para />
-        /// If an exception is caught during the execution of this method, it merely
-        /// returns <see langword="false" />.
-        /// </remarks>
-        /// <returns><see langword="true" /> if valid, otherwise <see langword="false" />.</returns>
-        [Log(AttributeExclude = true)]
-        public bool IsValidSilent([NotLogged] string host)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(host)) return result;
-
-                result = IPAddress.TryParse(host, out var ip)
-                    ? AddressFamily.InterNetwork.Equals(ip.AddressFamily)
-                    : IsValidDnsAddressSilent(host);
             }
             catch
             {
