@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Legacy;
+using System.Diagnostics;
 using xyLOGIX.Validators.Factories;
 using xyLOGIX.Validators.Interfaces;
 
@@ -18,8 +18,10 @@ namespace xyLOGIX.Validators.Tests
         /// <see cref="T:xyLOGIX.Validators.Interfaces.IVersionStringValidator" />
         /// interface.
         /// </summary>
-        private static IVersionStringValidator VersionStringValidator { [DebuggerStepThrough] get; } =
-            GetVersionStringValidator.SoleInstance();
+        private static IVersionStringValidator VersionStringValidator
+        {
+            [DebuggerStepThrough] get;
+        } = GetVersionStringValidator.SoleInstance();
 
         /// <summary>
         /// Asserts that a <see cref="T:System.String" /> that ends with a dot (<c>.</c>)
