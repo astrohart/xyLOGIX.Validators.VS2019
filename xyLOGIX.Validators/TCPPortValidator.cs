@@ -25,16 +25,14 @@ namespace xyLOGIX.Validators
         /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        private TCPPortValidator()
-        { }
+        private TCPPortValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see cref="T:xyLOGIX.Validators.Interfaces.ITCPPortValidator" /> interface.
         /// </summary>
         public static ITCPPortValidator
-            Instance
-        { [DebuggerStepThrough] get; } = new TCPPortValidator();
+            Instance { [DebuggerStepThrough] get; } = new TCPPortValidator();
 
         /// <summary>
         /// Determines whether the specified <see cref="T:System.String" />, that
