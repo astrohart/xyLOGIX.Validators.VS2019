@@ -54,17 +54,6 @@ namespace xyLOGIX.Validators.Constants
         public const string ThreePartVersion = @"^\d+\.\d+\.\d+$";
 
         /// <summary>
-        /// A regular expression pattern that tokenizes text for XML documentation comment
-        /// formatting,
-        /// ensuring that words, spaces, and self-closing XML tags such as
-        /// <c>&lt;para /&gt;</c>
-        /// remain intact
-        /// as distinct tokens.
-        /// </summary>
-        public const string XmlDocCommentTokenizationPattern =
-            @"<para\s*/>|[^\s<]+|<[^<>]+>";
-
-        /// <summary>
         /// Regular expression pattern that ensures a valid C# <see langword="class" />
         /// name.
         /// </summary>
@@ -93,6 +82,17 @@ namespace xyLOGIX.Validators.Constants
         public static readonly Regex ValidNamespaceNamePattern = new Regex(
             @"^[a-zA-Z_][a-zA-Z0-9_]*$", RegexOptions.Compiled
         );
+
+        /// <summary>
+        /// A regular expression pattern that tokenizes text for XML documentation comment
+        /// formatting,
+        /// ensuring that words, spaces, and self-closing XML tags such as
+        /// <c>&lt;para /&gt;</c>
+        /// remain intact
+        /// as distinct tokens.
+        /// </summary>
+        public const string XmlDocCommentTokenizationPattern =
+            @"<para\s*/>|[^\s<]+|<[^<>]+>";
 
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only
