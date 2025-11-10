@@ -162,10 +162,6 @@
       <Project>{9491B224-3C9A-4DA8-ACC3-50EE379EB555}</Project>
       <Name>xyLOGIX.Validators.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators\xyLOGIX.Validators.csproj">
-      <Project>{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}</Project>
-      <Name>xyLOGIX.Validators</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
