@@ -164,26 +164,6 @@
       <Project>{52243153-1A0D-409A-91A8-638DBD7CF23F}</Project>
       <Name>xyLOGIX.Tests.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Actions\xyLOGIX.Validators.Actions.csproj">
-      <Project>{211a5f2e-5cb5-43b1-b43d-c19952e339dc}</Project>
-      <Name>xyLOGIX.Validators.Actions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Constants\xyLOGIX.Validators.Constants.csproj">
-      <Project>{001C84CE-256E-48F6-A7FC-8180AC07AA43}</Project>
-      <Name>xyLOGIX.Validators.Constants</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Factories\xyLOGIX.Validators.Factories.csproj">
-      <Project>{FBE76875-0298-4D43-8565-84B35E825806}</Project>
-      <Name>xyLOGIX.Validators.Factories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Interfaces\xyLOGIX.Validators.Interfaces.csproj">
-      <Project>{9491B224-3C9A-4DA8-ACC3-50EE379EB555}</Project>
-      <Name>xyLOGIX.Validators.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators\xyLOGIX.Validators.csproj">
-      <Project>{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}</Project>
-      <Name>xyLOGIX.Validators</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
