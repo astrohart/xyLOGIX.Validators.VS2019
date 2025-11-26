@@ -1,4 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using System;
+using System.Diagnostics;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Validators.Interfaces;
 
 namespace xyLOGIX.Validators.Factories
@@ -37,7 +40,25 @@ namespace xyLOGIX.Validators.Factories
         ///     cref="T:xyLOGIX.Validators.Interfaces.IAssetSymbolValidator" />
         /// interface.
         /// </returns>
+        [return: NotLogged]
+        [DebuggerStepThrough]
         public static IAssetSymbolValidator SoleInstance()
-            => AssetSymbolValidator.Instance;
+        {
+            IAssetSymbolValidator result;
+
+            try
+            {
+                result = AssetSymbolValidator.Instance;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = default;
+            }
+
+            return result;
+        }
     }
 }
