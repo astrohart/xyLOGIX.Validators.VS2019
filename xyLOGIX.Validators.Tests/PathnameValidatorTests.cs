@@ -3,6 +3,8 @@ using NUnit.Framework;
 using System;
 using System.Diagnostics;
 using xyLOGIX.Tests.Logging;
+using xyLOGIX.Validators.Constants;
+using Is = xyLOGIX.Validators.Actions.Is;
 
 namespace xyLOGIX.Validators.Tests
 {
