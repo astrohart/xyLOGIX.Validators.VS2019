@@ -159,21 +159,9 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\xyLOGIX.Tests.Logging.VS2019\xyLOGIX.Tests.Logging\xyLOGIX.Tests.Logging.csproj">
-      <Project>{52243153-1A0D-409A-91A8-638DBD7CF23F}</Project>
-      <Name>xyLOGIX.Tests.Logging</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\xyLOGIX.Validators.Data.VS2022\xyLOGIX.Validators.Data.Interfaces\xyLOGIX.Validators.Data.Interfaces.csproj">
       <Project>{3B4530D1-0CFB-4152-97C3-52745C3E8256}</Project>
       <Name>xyLOGIX.Validators.Data.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Actions\xyLOGIX.Validators.Actions.csproj">
-      <Project>{211A5F2E-5CB5-43B1-B43D-C19952E339DC}</Project>
-      <Name>xyLOGIX.Validators.Actions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators.Constants\xyLOGIX.Validators.Constants.csproj">
-      <Project>{001C84CE-256E-48F6-A7FC-8180AC07AA43}</Project>
-      <Name>xyLOGIX.Validators.Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Validators.Factories\xyLOGIX.Validators.Factories.csproj">
       <Project>{FBE76875-0298-4D43-8565-84B35E825806}</Project>
