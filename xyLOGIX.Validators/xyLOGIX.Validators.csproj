@@ -122,7 +122,6 @@
     <Compile Include="VersionStringValidator.cs" />
     <Compile Include="WebAddressValidator.cs" />
     <None Include="key.snk" />
-    <Compile Include="DateRangeValidator.cs" />
     <Compile Include="EmailAddressValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="ObjectValidatorBase.cs" />
