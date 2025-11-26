@@ -31,7 +31,7 @@ namespace xyLOGIX.Validators.Tests
         public void IsValid_InputWithDotAtEnd_ReturnsFalse()
         {
             // Arrange
-            var input = "123.456.";
+            const string input = "123.456.";
 
             // Act
             var result = VersionStringValidator.IsValid(input);
@@ -48,7 +48,7 @@ namespace xyLOGIX.Validators.Tests
         public void IsValid_InputWithDotAtStart_ReturnsFalse()
         {
             // Arrange
-            var input = ".123.456";
+            const string input = ".123.456";
 
             // Act
             var result = VersionStringValidator.IsValid(input);
