@@ -1,4 +1,7 @@
-﻿namespace xyLOGIX.Validators.Interfaces
+﻿using PostSharp.Patterns.Diagnostics;
+using xyLOGIX.Validators.Data.Interfaces;
+
+namespace xyLOGIX.Validators.Interfaces
 {
     /// <summary>
     /// Defines the publicly-exposed methods and properties of an object that is
@@ -25,6 +28,6 @@
         /// <see langword="true" /> if the specified <paramref name="uuid" /> has
         /// a valid format; <see langword="false" /> otherwise.
         /// </returns>
-        bool IsValid(string uuid, bool silent = false);
+        bool IsValid([NotLogged] string uuid, bool silent = false);
     }
 }
