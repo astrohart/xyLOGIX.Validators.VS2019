@@ -134,7 +134,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PathnameValidatorTests.cs" />
     <Compile Include="VersionStringValidatorTests.cs" />
     <None Include="key.snk" />
     <Compile Include="Properties\AssemblyInfo.cs" />
