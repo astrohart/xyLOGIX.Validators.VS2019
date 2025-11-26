@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using xyLOGIX.Validators.Data.Interfaces;
 
 namespace xyLOGIX.Validators.Interfaces
 {
