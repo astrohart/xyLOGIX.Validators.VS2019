@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
-    <Compile Include="GetDateRangeValidator.cs" />
     <Compile Include="GetDnsHostnameValidator.cs" />
     <Compile Include="GetEmailAddressValidator.cs" />
     <Compile Include="GetRF3339TimestampFormatValidator.cs" />
