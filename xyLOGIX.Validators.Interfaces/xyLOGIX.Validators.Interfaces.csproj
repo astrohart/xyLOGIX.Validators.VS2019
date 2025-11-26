@@ -120,7 +120,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDateRangeValidator.cs" />
     <Compile Include="IDnsHostnameValidator.cs" />
     <Compile Include="IEmailAddressValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
