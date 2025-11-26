@@ -120,17 +120,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAssetSymbolValidator.cs" />
-    <Compile Include="IDataValidator.cs" />
     <Compile Include="IDateRangeValidator.cs" />
     <Compile Include="IDnsHostnameValidator.cs" />
     <Compile Include="IEmailAddressValidator.cs" />
-    <Compile Include="IFileWildcardValidator.cs" />
     <Compile Include="IObjectValidator.cs" />
-    <Compile Include="IPathnameValidator.cs" />
-    <Compile Include="IProjectPathnameValidator.cs" />
     <Compile Include="IRFC3339TimestampFormatValidator.cs" />
-    <Compile Include="ISolutionPathnameValidator.cs" />
     <Compile Include="ITCPPortValidator.cs" />
     <Compile Include="IUUIDValidator.cs" />
     <Compile Include="IVersionStringValidator.cs" />
