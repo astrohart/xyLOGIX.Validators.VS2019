@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
     AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Validators.Factories")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2021-25 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2021-26 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(
