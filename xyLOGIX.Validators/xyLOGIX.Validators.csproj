@@ -6,7 +6,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -113,14 +114,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DnsHostnameValidator.cs" />
     <Compile Include="RF3339TimestampFormatValidator.cs" />
     <Compile Include="TCPPortValidator.cs" />
     <Compile Include="UUIDValidator.cs" />
     <Compile Include="VersionStringValidator.cs" />
     <Compile Include="WebAddressValidator.cs" />
     <None Include="key.snk" />
-    <Compile Include="EmailAddressValidator.cs" />
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="ObjectValidatorBase.cs" />
     <None Include="packages.config" />
