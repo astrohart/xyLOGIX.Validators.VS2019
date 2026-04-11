@@ -92,7 +92,7 @@ namespace xyLOGIX.Validators
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase.ValidationFailed" /> event.
+        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase`1.ValidationFailed" /> event.
         /// </summary>
         /// <param name="e">
         /// (Required.) An
@@ -110,7 +110,7 @@ namespace xyLOGIX.Validators
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase.ValidationSucceeded" />
+        /// <see cref="E:xyLOGIX.Validators.ObjectValidatorBase`1.ValidationSucceeded" />
         /// event.
         /// </summary>
         protected virtual void OnValidationSucceeded()
