@@ -121,7 +121,6 @@
     <Compile Include="WebAddressValidator.cs" />
     <None Include="key.snk" />
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="ObjectValidatorBase.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
