@@ -6,7 +6,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{FBE76875-0298-4D43-8565-84B35E825806}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -153,10 +154,6 @@
     <ProjectReference Include="..\xyLOGIX.Validators.Interfaces\xyLOGIX.Validators.Interfaces.csproj">
       <Project>{9491B224-3C9A-4DA8-ACC3-50EE379EB555}</Project>
       <Name>xyLOGIX.Validators.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Validators\xyLOGIX.Validators.csproj">
-      <Project>{C66FD54C-AEDB-4E9D-AFCF-715582500DB9}</Project>
-      <Name>xyLOGIX.Validators</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
