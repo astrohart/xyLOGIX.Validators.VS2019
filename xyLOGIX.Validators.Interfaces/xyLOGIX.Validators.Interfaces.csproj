@@ -20,7 +20,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x86\Debug\xyLOGIX.Validators.Interfaces.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -34,7 +34,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x86\Release\xyLOGIX.Validators.Interfaces.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -59,7 +59,7 @@
     <OutputPath>bin\x64\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DocumentationFile>bin\x64\Debug\xyLOGIX.Validators.Interfaces.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
@@ -71,7 +71,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Validators.Interfaces.xml</DocumentationFile>
     <Optimize>true</Optimize>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
