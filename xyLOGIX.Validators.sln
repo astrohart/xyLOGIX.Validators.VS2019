@@ -12,6 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Validators.Events",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EACF5D61-C683-4EF1-9E5C-1466F6B02F15}"
 	ProjectSection(SolutionItems) = preProject
+		4 Sep 2026 xyLOGIX SEM Rev S.md = 4 Sep 2026 xyLOGIX SEM Rev S.md
 		5 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev L.md = 5 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev L.md
 		2 Sep 2026 Strip Line Breaks from Comments Configuration Spec Rev B.md = 2 Sep 2026 Strip Line Breaks from Comments Configuration Spec Rev B.md
 		approvedPackages.json = approvedPackages.json
